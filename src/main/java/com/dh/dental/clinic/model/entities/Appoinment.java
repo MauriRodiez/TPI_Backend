@@ -1,23 +1,20 @@
-package com.dh.dental.clinic.model.entit.entities;
+package com.dh.dental.clinic.model.entities;
 
-import java.sql.Time;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Appoinment {
     private Long id;
-    private Date dateAppinment;
-    private Time hour;
-    private Patient idPatient;
-    private Dentist iddentist;
+    private LocalDate dateAppinment;
+    private Patient patient;
+    private Dentist dentist;
 
     public Appoinment() {
     }
 
-    public Appoinment(Date dateAppinment, Time hour, Patient idPatient, Dentist iddentist) {
+    public Appoinment(LocalDate dateAppinment, Patient patient, Dentist dentist) {
         this.dateAppinment = dateAppinment;
-        this.hour = hour;
-        this.idPatient = idPatient;
-        this.iddentist = iddentist;
+        this.patient = patient;
+        this.dentist = dentist;
     }
 
     public Long getId() {
@@ -28,35 +25,27 @@ public class Appoinment {
         this.id = id;
     }
 
-    public Date getDateAppinment() {
+    public LocalDate getDateAppinment() {
         return dateAppinment;
     }
 
-    public void setDateAppinment(Date dateAppinment) {
+    public void setDateAppinment(LocalDate dateAppinment) {
         this.dateAppinment = dateAppinment;
     }
 
-    public Time getHour() {
-        return hour;
+    public Patient getPatient() {
+        return patient;
     }
 
-    public void setHour(Time hour) {
-        this.hour = hour;
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 
-    public Patient getIdPatient() {
-        return idPatient;
+    public Dentist getDentist() {
+        return dentist;
     }
 
-    public void setIdPatient(Patient idPatient) {
-        this.idPatient = idPatient;
-    }
-
-    public Dentist getIddentist() {
-        return iddentist;
-    }
-
-    public void setIddentist(Dentist iddentist) {
-        this.iddentist = iddentist;
+    public void setDentist(Dentist dentist) {
+        this.dentist = dentist;
     }
 }

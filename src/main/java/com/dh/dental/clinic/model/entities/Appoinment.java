@@ -4,15 +4,15 @@ import java.time.LocalDate;
 
 public class Appoinment {
     private Long id;
-    private LocalDate dateAppinment;
+    private LocalDate dateAppoinment;
     private Patient patient;
     private Dentist dentist;
 
     public Appoinment() {
     }
 
-    public Appoinment(LocalDate dateAppinment, Patient patient, Dentist dentist) {
-        this.dateAppinment = dateAppinment;
+    public Appoinment(LocalDate dateAppoinment, Patient patient, Dentist dentist) {
+        this.dateAppoinment = dateAppoinment;
         this.patient = patient;
         this.dentist = dentist;
     }
@@ -25,12 +25,12 @@ public class Appoinment {
         this.id = id;
     }
 
-    public LocalDate getDateAppinment() {
-        return dateAppinment;
+    public LocalDate getDateAppoinment() {
+        return dateAppoinment;
     }
 
-    public void setDateAppinment(LocalDate dateAppinment) {
-        this.dateAppinment = dateAppinment;
+    public void setDateAppoinment(LocalDate dateAppoinment) {
+        this.dateAppoinment = dateAppoinment;
     }
 
     public Patient getPatient() {

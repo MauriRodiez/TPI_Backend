@@ -1,4 +1,4 @@
-package com.dh.dental.clinic.model.entities;
+package com.dh.dental.clinic.entities;
 
 import java.time.LocalDate;
 

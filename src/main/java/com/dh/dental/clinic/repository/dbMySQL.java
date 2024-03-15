@@ -1,4 +1,6 @@
-package com.dh.dental.clinic.model.repository;
+package com.dh.dental.clinic.repository;
+
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,10 +13,13 @@ public class dbMySQL {
     private static final String URL = "jdbc:mysql://localhost:3306/Dental_clinic";
     private static final String USER = "root";
     private static final String PASSWORD = "Bdatos2023";
+    private static final Logger LOGGER = Logger.getLogger(dbMySQL.class);
+
     private dbMySQL(){
         try {
             connection = DriverManager.getConnection(URL,USER,PASSWORD);
         } catch (SQLException e){
+            LOGGER.error("No es posible establecer la conexion ala base de datos." + e);
             e.printStackTrace();
         }
     }

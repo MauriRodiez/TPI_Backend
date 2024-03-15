@@ -1,4 +1,4 @@
-package com.dh.dental.clinic.model.entities;
+package com.dh.dental.clinic.entities;
 
 public class Dentist {
     private Long id;

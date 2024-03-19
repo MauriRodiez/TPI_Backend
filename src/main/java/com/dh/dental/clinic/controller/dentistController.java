@@ -1,4 +1,4 @@
 package com.dh.dental.clinic.controller;
 
-public class addressController {
+public class dentistController {
 }

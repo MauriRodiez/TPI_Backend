@@ -1,6 +1,7 @@
 package com.dh.dental.clinic.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +12,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "dentist")
+@Table(name = "dentists")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -23,7 +24,9 @@ public class Dentist {
     private String name;
     private String surname;
     private String enrollment;
-    // Hay que crear la relacion @OnteToMany
+
+    @OneToMany(mappedBy = "dentist")
+    @JsonIgnore
     private Set<Appoinment> appoinmentSet = new HashSet<>();
 
 }

@@ -1,51 +1,31 @@
 package com.dh.dental.clinic.entity;
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.time.LocalDate;
 
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "appoinments")
 public class Appoinment {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDate dateAppoinment;
+
+    @ManyToOne
+    @JoinColumn(name = "patient_id", nullable = false)
     private Patient patient;
+
+    @ManyToOne
+    @JoinColumn(name = "dentist_id", nullable = false)
     private Dentist dentist;
 
-    public Appoinment() {
-    }
-
-    public Appoinment(LocalDate dateAppoinment, Patient patient, Dentist dentist) {
-        this.dateAppoinment = dateAppoinment;
-        this.patient = patient;
-        this.dentist = dentist;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public LocalDate getDateAppoinment() {
-        return dateAppoinment;
-    }
-
-    public void setDateAppoinment(LocalDate dateAppoinment) {
-        this.dateAppoinment = dateAppoinment;
-    }
-
-    public Patient getPatient() {
-        return patient;
-    }
-
-    public void setPatient(Patient patient) {
-        this.patient = patient;
-    }
-
-    public Dentist getDentist() {
-        return dentist;
-    }
-
-    public void setDentist(Dentist dentist) {
-        this.dentist = dentist;
-    }
 }

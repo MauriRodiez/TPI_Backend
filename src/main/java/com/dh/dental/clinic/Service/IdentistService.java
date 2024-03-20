@@ -9,9 +9,13 @@ public interface IdentistService {
 
     Dentist save (Dentist dentist);
 
-    List<Dentist> listAll(Long id);
+    List<Dentist> listAll();
 
-    Optional<Dentist> searchById(Long id);
+    Dentist searchById(Long id);
 
     void update(Dentist dentist);
+
+    boolean delete(Long id);
+
+
 }

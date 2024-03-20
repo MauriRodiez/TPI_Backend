@@ -1,11 +1,10 @@
-package com.dh.dental.clinic.Service;
+package com.dh.dental.clinic.service;
 
 import com.dh.dental.clinic.entity.Dentist;
 
 import java.util.List;
-import java.util.Optional;
 
-public interface IdentistService {
+public interface IDentistService {
 
     Dentist save (Dentist dentist);
 

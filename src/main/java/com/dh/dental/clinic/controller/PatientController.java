@@ -1,9 +1,8 @@
 package com.dh.dental.clinic.controller;
 
-import com.dh.dental.clinic.Service.impl.PatientService;
+import com.dh.dental.clinic.service.impl.PatientService;
 import com.dh.dental.clinic.dto.PatientDTO;
 import com.dh.dental.clinic.entity.Patient;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

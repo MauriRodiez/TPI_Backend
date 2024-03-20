@@ -1,9 +1,10 @@
-package com.dh.dental.clinic.Service.impl;
+package com.dh.dental.clinic.service.impl;
 
-import com.dh.dental.clinic.Service.IPatientService;
+import com.dh.dental.clinic.service.IPatientService;
 import com.dh.dental.clinic.dto.PatientDTO;
 import com.dh.dental.clinic.entity.Patient;
 import com.dh.dental.clinic.repository.IPatientRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ public class PatientService implements IPatientService {
 
 
     private IPatientRepository patientRepository;
-
+    @Autowired
     public PatientService(IPatientRepository patientRepository) {
         this.patientRepository = patientRepository;
     }
@@ -32,7 +33,7 @@ public class PatientService implements IPatientService {
         List<PatientDTO> patientDTOList = new ArrayList<>();
         if (!patientList.isEmpty()){
             for (Patient patient : patientList) {
-                PatientDTO patientDTO = new PatientDTO(patient.getName(), patient.getSurname(), patient.getAddress(), patient.getDni(), patient.getRegistrationDate(), patient.getAppoinmentList());
+                PatientDTO patientDTO = new PatientDTO(patient.getName(), patient.getSurname(), patient.getDni(), patient.getAddress(), patient.getAppoinmentList());
                 patientDTOList.add(patientDTO);
             }
             return  patientDTOList;
@@ -47,7 +48,7 @@ public class PatientService implements IPatientService {
 
         if(patientOptional.isPresent()){
             Patient patient = patientOptional.get();
-            PatientDTO patientDTO = new PatientDTO(patient.getName(), patient.getSurname(), patient.getAddress(), patient.getDni(), patient.getRegistrationDate(), patient.getAppoinmentList());
+            PatientDTO patientDTO = new PatientDTO(patient.getName(), patient.getSurname(), patient.getDni(), patient.getAddress(), patient.getAppoinmentList());
             return patientDTO;
         } else {
             return null;

@@ -56,3 +56,11 @@ Wrong user name or password [28000-224]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	... 50 more
+2024-03-20 15:41:07.467447-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDRESS" no encontrada
+Table "ADDRESS" not found; SQL statement:
+select * from address [42102-224]
+2024-03-20 15:41:16.035257-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ADDRESSES" no encontrada
+Table "ADDRESSES" not found; SQL statement:
+select * from addresses [42102-224]

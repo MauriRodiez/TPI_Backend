@@ -1,8 +1,7 @@
-package com.dh.dental.clinic.Service.impl;
+package com.dh.dental.clinic.service.impl;
 
-import com.dh.dental.clinic.Service.IappoinmentService;
+import com.dh.dental.clinic.service.IAppoinmentService;
 import com.dh.dental.clinic.entity.Appoinment;
-import com.dh.dental.clinic.entity.Dentist;
 import com.dh.dental.clinic.repository.IappoinmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,12 +10,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class appoinmentService implements IappoinmentService {
+public class AppoinmentService implements IAppoinmentService {
 
     private IappoinmentRepository appoinmentRepository;
 
     @Autowired
-    public appoinmentService(IappoinmentRepository appoinmentRepository) {
+    public AppoinmentService(IappoinmentRepository appoinmentRepository) {
         this.appoinmentRepository = appoinmentRepository;
     }
 

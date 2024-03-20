@@ -1,6 +1,6 @@
 package com.dh.dental.clinic.controller;
 
-import com.dh.dental.clinic.Service.IappoinmentService;
+import com.dh.dental.clinic.service.IAppoinmentService;
 import com.dh.dental.clinic.entity.Appoinment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,11 +10,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/appoinment")
-public class appoinmentController {
+public class AppoinmentController {
 
-    private IappoinmentService appoinmentService;
+    private IAppoinmentService appoinmentService;
     @Autowired
-    public appoinmentController(IappoinmentService appoinmentService) {
+    public AppoinmentController(IAppoinmentService appoinmentService) {
         this.appoinmentService = appoinmentService;
     }
 

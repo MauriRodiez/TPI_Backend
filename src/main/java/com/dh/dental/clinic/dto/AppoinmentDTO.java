@@ -1,4 +1,4 @@
 package com.dh.dental.clinic.dto;
 
-public class appoinmentDTO {
+public class AppoinmentDTO {
 }

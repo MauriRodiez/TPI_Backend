@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,13 +25,12 @@ public class Patient {
     private Long id;
     private String name;
     private String surname;
+    private String dni;
+    //private LocalDate registrationDate;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
-
-    private String dni;
-    private Date registrationDate;
 
     @OneToMany(mappedBy = "patient")
     @JsonIgnore

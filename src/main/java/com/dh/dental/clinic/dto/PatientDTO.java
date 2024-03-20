@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,8 +20,8 @@ import java.util.Set;
 public class PatientDTO {
     private String name;
     private String surname;
-    private Address address;
     private String dni;
-    private Date registrationDate;
+    //private LocalDate registrationDate;
+    private Address address;
     private Set<Appoinment> appoinmentList = new HashSet<>();
 }

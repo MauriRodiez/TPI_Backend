@@ -1,6 +1,6 @@
 package com.dh.dental.clinic.controller;
 
-import com.dh.dental.clinic.Service.IdentistService;
+import com.dh.dental.clinic.service.IDentistService;
 import com.dh.dental.clinic.entity.Dentist;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,12 +10,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/dentist")
-public class dentistController {
+public class DentistController {
 
-    private IdentistService dentistService;
+    private IDentistService dentistService;
 
     @Autowired
-    public dentistController(IdentistService dentistService){
+    public DentistController(IDentistService dentistService){
         this.dentistService = dentistService;
     }
 

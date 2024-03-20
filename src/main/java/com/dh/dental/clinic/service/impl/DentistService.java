@@ -1,6 +1,6 @@
-package com.dh.dental.clinic.Service.impl;
+package com.dh.dental.clinic.service.impl;
 
-import com.dh.dental.clinic.Service.IdentistService;
+import com.dh.dental.clinic.service.IDentistService;
 import com.dh.dental.clinic.entity.Dentist;
 import com.dh.dental.clinic.repository.IdentistReepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class dentistService implements IdentistService {
+public class DentistService implements IDentistService {
 
     private IdentistReepository dentistrepository;
     @Autowired
-    public dentistService(IdentistReepository dentistrepository) {
+    public DentistService(IdentistReepository dentistrepository) {
         this.dentistrepository = dentistrepository;
     }
 

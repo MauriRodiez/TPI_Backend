@@ -1,9 +1,6 @@
 package com.dh.dental.clinic.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,12 +14,10 @@ import lombok.Setter;
 @Table(name = "adresses")
 public class Address {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String street;
     private String number;
     private String state;
-
-    @OneToOne(mappedBy = "address")
-    private Patient patient;
 
 }

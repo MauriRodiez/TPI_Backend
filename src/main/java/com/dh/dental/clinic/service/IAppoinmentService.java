@@ -1,11 +1,11 @@
-package com.dh.dental.clinic.Service;
+package com.dh.dental.clinic.service;
 
 
 import com.dh.dental.clinic.entity.Appoinment;
 
 import java.util.List;
 
-public interface IappoinmentService {
+public interface IAppoinmentService {
 
     Appoinment save (Appoinment appoinment);
 

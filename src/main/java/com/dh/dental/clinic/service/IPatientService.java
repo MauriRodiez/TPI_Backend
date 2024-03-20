@@ -1,10 +1,9 @@
-package com.dh.dental.clinic.Service;
+package com.dh.dental.clinic.service;
 
 import com.dh.dental.clinic.dto.PatientDTO;
 import com.dh.dental.clinic.entity.Patient;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface IPatientService {
     Patient save (Patient patient);

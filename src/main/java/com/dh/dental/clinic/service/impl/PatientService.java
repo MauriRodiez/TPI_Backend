@@ -4,9 +4,12 @@ import com.dh.dental.clinic.service.IPatientService;
 import com.dh.dental.clinic.dto.PatientDTO;
 import com.dh.dental.clinic.entity.Patient;
 import com.dh.dental.clinic.repository.IPatientRepository;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -14,8 +17,8 @@ import java.util.Optional;
 @Service
 public class PatientService implements IPatientService {
 
-
     private IPatientRepository patientRepository;
+    private static final Logger LOGGER = Logger.getLogger(PatientService.class);
     @Autowired
     public PatientService(IPatientRepository patientRepository) {
         this.patientRepository = patientRepository;
@@ -23,7 +26,12 @@ public class PatientService implements IPatientService {
 
     @Override
     public Patient save(Patient patient) {
-
+        LOGGER.info("La fecha ingresada del paciente es " + patient.getRegistrationDate());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String formattedDate = patient.getRegistrationDate().format(formatter);
+        LocalDate convertedDate = LocalDate.parse(formattedDate, formatter);
+        patient.setRegistrationDate(convertedDate);
+        LOGGER.info("La fecha convertida es " + patient.getRegistrationDate());
         return patientRepository.save(patient);
     }
 
@@ -69,4 +77,7 @@ public class PatientService implements IPatientService {
             return false;
         }
     }
+
+
+
 }

@@ -1,6 +1,7 @@
 package com.dh.dental.clinic.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,7 +28,9 @@ public class Patient {
     private String name;
     private String surname;
     private String dni;
-    //private LocalDate registrationDate;
+
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate registrationDate;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
@@ -35,6 +39,5 @@ public class Patient {
     @OneToMany(mappedBy = "patient")
     @JsonIgnore
     private Set<Appoinment> appoinmentList = new HashSet<>();
-
 
 }

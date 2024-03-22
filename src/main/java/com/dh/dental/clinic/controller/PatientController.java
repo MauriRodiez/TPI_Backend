@@ -13,8 +13,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/patient")
 public class PatientController {
-    @Autowired
-    PatientService patientService;
+
+    private PatientService patientService;
+
+    public PatientController(PatientService patientService){
+        this.patientService = patientService;
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<PatientDTO> getPatient(@PathVariable Long id){

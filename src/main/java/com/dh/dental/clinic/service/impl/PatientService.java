@@ -19,7 +19,7 @@ public class PatientService implements IPatientService {
 
     private IPatientRepository patientRepository;
     private static final Logger LOGGER = Logger.getLogger(PatientService.class);
-    @Autowired
+
     public PatientService(IPatientRepository patientRepository) {
         this.patientRepository = patientRepository;
     }

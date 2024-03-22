@@ -25,3 +25,5 @@
 [2024-03-2209:11:43] [ INFO ] [PatientService:34] La fecha convertida es 1970-04-21
 [2024-03-2209:11:47] [ INFO ] [PatientService:29] La fecha ingresada antes de convertir 1970-04-21
 [2024-03-2209:11:47] [ INFO ] [PatientService:34] La fecha convertida es 1970-04-21
+[2024-03-2212:33:54] [ INFO ] [PatientService:29] La fecha ingresada antes de convertir 1970-04-21
+[2024-03-2212:33:54] [ INFO ] [PatientService:34] La fecha convertida es 1970-04-21

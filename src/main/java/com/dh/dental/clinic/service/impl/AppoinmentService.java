@@ -14,7 +14,6 @@ public class AppoinmentService implements IAppoinmentService {
 
     private IappoinmentRepository appoinmentRepository;
 
-    @Autowired
     public AppoinmentService(IappoinmentRepository appoinmentRepository) {
         this.appoinmentRepository = appoinmentRepository;
     }

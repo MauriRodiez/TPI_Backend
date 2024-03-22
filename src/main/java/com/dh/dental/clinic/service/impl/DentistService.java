@@ -13,7 +13,7 @@ import java.util.Optional;
 public class DentistService implements IDentistService {
 
     private IdentistReepository dentistrepository;
-    @Autowired
+
     public DentistService(IdentistReepository dentistrepository) {
         this.dentistrepository = dentistrepository;
     }

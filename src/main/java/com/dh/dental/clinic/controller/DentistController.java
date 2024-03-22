@@ -2,6 +2,7 @@ package com.dh.dental.clinic.controller;
 
 import com.dh.dental.clinic.service.IDentistService;
 import com.dh.dental.clinic.entity.Dentist;
+import com.dh.dental.clinic.service.impl.DentistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,8 +15,8 @@ public class DentistController {
 
     private IDentistService dentistService;
 
-    @Autowired
-    public DentistController(IDentistService dentistService){
+
+    public DentistController(DentistService dentistService){
         this.dentistService = dentistService;
     }
 

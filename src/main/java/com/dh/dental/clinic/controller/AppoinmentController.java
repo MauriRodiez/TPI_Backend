@@ -2,6 +2,11 @@ package com.dh.dental.clinic.controller;
 
 import com.dh.dental.clinic.service.IAppoinmentService;
 import com.dh.dental.clinic.entity.Appoinment;
+import com.dh.dental.clinic.service.IDentistService;
+import com.dh.dental.clinic.service.IPatientService;
+import com.dh.dental.clinic.service.impl.AppoinmentService;
+import com.dh.dental.clinic.service.impl.DentistService;
+import com.dh.dental.clinic.service.impl.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,9 +18,13 @@ import java.util.List;
 public class AppoinmentController {
 
     private IAppoinmentService appoinmentService;
-    @Autowired
-    public AppoinmentController(IAppoinmentService appoinmentService) {
+    private IPatientService patientService;
+    private IDentistService dentistService;
+
+    public AppoinmentController(AppoinmentService appoinmentService, PatientService patientService, DentistService dentistService) {
         this.appoinmentService = appoinmentService;
+        this.patientService = patientService;
+        this.dentistService = dentistService;
     }
 
     @PostMapping("/create")

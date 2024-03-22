@@ -11,3 +11,17 @@
 [2024-03-2119:53:23] [ INFO ] [PatientService:34] La fecha convertida es 1981-11-21
 [2024-03-2119:57:57] [ INFO ] [PatientService:29] La fecha ingresada del paciente es 1981-11-21
 [2024-03-2119:57:57] [ INFO ] [PatientService:34] La fecha convertida es 1981-11-21
+[2024-03-2208:10:18] [ INFO ] [PatientService:29] La fecha ingresada antes de convertir 1981-11-21
+[2024-03-2208:10:18] [ INFO ] [PatientService:34] La fecha convertida es 1981-11-21
+[2024-03-2208:11:06] [ INFO ] [PatientService:29] La fecha ingresada antes de convertir 1990-12-21
+[2024-03-2208:11:06] [ INFO ] [PatientService:34] La fecha convertida es 1990-12-21
+[2024-03-2208:12:00] [ INFO ] [PatientService:29] La fecha ingresada antes de convertir 1970-04-21
+[2024-03-2208:12:00] [ INFO ] [PatientService:34] La fecha convertida es 1970-04-21
+[2024-03-2208:35:09] [ INFO ] [PatientService:29] La fecha ingresada antes de convertir 1970-04-21
+[2024-03-2208:35:09] [ INFO ] [PatientService:34] La fecha convertida es 1970-04-21
+[2024-03-2209:11:37] [ INFO ] [PatientService:29] La fecha ingresada antes de convertir 1970-04-21
+[2024-03-2209:11:37] [ INFO ] [PatientService:34] La fecha convertida es 1970-04-21
+[2024-03-2209:11:43] [ INFO ] [PatientService:29] La fecha ingresada antes de convertir 1970-04-21
+[2024-03-2209:11:43] [ INFO ] [PatientService:34] La fecha convertida es 1970-04-21
+[2024-03-2209:11:47] [ INFO ] [PatientService:29] La fecha ingresada antes de convertir 1970-04-21
+[2024-03-2209:11:47] [ INFO ] [PatientService:34] La fecha convertida es 1970-04-21

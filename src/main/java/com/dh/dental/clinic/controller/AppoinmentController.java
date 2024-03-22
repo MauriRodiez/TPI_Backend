@@ -18,12 +18,12 @@ public class AppoinmentController {
         this.appoinmentService = appoinmentService;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Appoinment> save(@RequestBody Appoinment appoinment){
         return ResponseEntity.ok(appoinmentService.save(appoinment));
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Appoinment>> listAll(){
         return ResponseEntity.ok(appoinmentService.listAll());
     }
@@ -33,7 +33,7 @@ public class AppoinmentController {
         return ResponseEntity.ok(appoinmentService.searchById(id));
     }
 
-    @PutMapping
+    @PutMapping("/update")
     public ResponseEntity<String> update(@RequestBody Appoinment dentist){
 
         ResponseEntity<String> response;
@@ -49,7 +49,7 @@ public class AppoinmentController {
         return response;
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public boolean delete(@PathVariable Long id){
         return appoinmentService.delete(id);
     }

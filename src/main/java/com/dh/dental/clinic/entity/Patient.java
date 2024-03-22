@@ -30,8 +30,7 @@ public class Patient {
     private String surname;
     private String dni;
 
-   // @JsonFormat(pattern = "yyyy-MM-dd")
-   @DateTimeFormat(pattern = "dd-MM-yyyy")
+   @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate registrationDate;
 
     @OneToOne(cascade = CascadeType.ALL)

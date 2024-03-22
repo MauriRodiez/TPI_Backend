@@ -19,12 +19,12 @@ public class DentistController {
         this.dentistService = dentistService;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Dentist> save(@RequestBody Dentist dentist){
         return ResponseEntity.ok(dentistService.save(dentist));
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Dentist>> listAll(){
         return ResponseEntity.ok(dentistService.listAll());
     }
@@ -34,7 +34,7 @@ public class DentistController {
         return ResponseEntity.ok(dentistService.searchById(id));
     }
 
-    @PutMapping
+    @PutMapping("/update")
     public ResponseEntity<String> update(@RequestBody Dentist dentist){
 
         ResponseEntity<String> response;
@@ -50,7 +50,7 @@ public class DentistController {
         return response;
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public boolean delete(@PathVariable Long id){
         return dentistService.delete(id);
     }

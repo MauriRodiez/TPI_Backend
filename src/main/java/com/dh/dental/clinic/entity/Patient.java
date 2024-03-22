@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -29,7 +30,8 @@ public class Patient {
     private String surname;
     private String dni;
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
+   // @JsonFormat(pattern = "yyyy-MM-dd")
+   @DateTimeFormat(pattern = "dd-MM-yyyy")
     private LocalDate registrationDate;
 
     @OneToOne(cascade = CascadeType.ALL)

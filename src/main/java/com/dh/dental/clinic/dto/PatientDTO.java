@@ -21,7 +21,7 @@ public class PatientDTO {
     private String name;
     private String surname;
     private String dni;
-    //private LocalDate registrationDate;
+    private LocalDate registrationDate;
     private Address address;
     private Set<Appoinment> appoinmentList = new HashSet<>();
 }

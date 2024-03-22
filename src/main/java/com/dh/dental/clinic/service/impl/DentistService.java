@@ -1,8 +1,8 @@
 package com.dh.dental.clinic.service.impl;
 
-import com.dh.dental.clinic.service.IDentistService;
 import com.dh.dental.clinic.entity.Dentist;
 import com.dh.dental.clinic.repository.IdentistReepository;
+import com.dh.dental.clinic.service.IDentistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

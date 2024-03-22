@@ -26,11 +26,11 @@ public class PatientService implements IPatientService {
 
     @Override
     public Patient save(Patient patient) {
-        LOGGER.info("La fecha ingresada del paciente es " + patient.getRegistrationDate());
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        String formattedDate = patient.getRegistrationDate().format(formatter);
-        LocalDate convertedDate = LocalDate.parse(formattedDate, formatter);
-        patient.setRegistrationDate(convertedDate);
+        LOGGER.info("La fecha ingresada antes de convertir " + patient.getRegistrationDate());
+        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        //String formattedDate = patient.getRegistrationDate().format(formatter);
+        //LocalDate convertedDate = LocalDate.parse(formattedDate, formatter);
+        //patient.setRegistrationDate(convertedDate);
         LOGGER.info("La fecha convertida es " + patient.getRegistrationDate());
         return patientRepository.save(patient);
     }
@@ -41,7 +41,7 @@ public class PatientService implements IPatientService {
         List<PatientDTO> patientDTOList = new ArrayList<>();
         if (!patientList.isEmpty()){
             for (Patient patient : patientList) {
-                PatientDTO patientDTO = new PatientDTO(patient.getName(), patient.getSurname(), patient.getDni(), patient.getAddress(), patient.getAppoinmentList());
+                PatientDTO patientDTO = new PatientDTO(patient.getName(), patient.getSurname(), patient.getDni(), patient.getRegistrationDate(), patient.getAddress(), patient.getAppoinmentList());
                 patientDTOList.add(patientDTO);
             }
             return  patientDTOList;
@@ -56,7 +56,7 @@ public class PatientService implements IPatientService {
 
         if(patientOptional.isPresent()){
             Patient patient = patientOptional.get();
-            PatientDTO patientDTO = new PatientDTO(patient.getName(), patient.getSurname(), patient.getDni(), patient.getAddress(), patient.getAppoinmentList());
+            PatientDTO patientDTO = new PatientDTO(patient.getName(), patient.getSurname(), patient.getDni(), patient.getRegistrationDate(), patient.getAddress(), patient.getAppoinmentList());
             return patientDTO;
         } else {
             return null;

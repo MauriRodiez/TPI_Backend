@@ -21,22 +21,22 @@ public class DentistController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Dentist> save(@RequestBody Dentist dentist){
+    public ResponseEntity<Dentist> createDentist(@RequestBody Dentist dentist){
         return ResponseEntity.ok(dentistService.save(dentist));
     }
 
-    @GetMapping("/all")
-    public ResponseEntity<List<Dentist>> listAll(){
-        return ResponseEntity.ok(dentistService.listAll());
-    }
-
     @GetMapping("/{id}")
-    public ResponseEntity<Dentist> searchById(@PathVariable Long id){
+    public ResponseEntity<Dentist> getDentist(@PathVariable Long id){
         return ResponseEntity.ok(dentistService.searchById(id));
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<List<Dentist>> getAllDentist(){
+        return ResponseEntity.ok(dentistService.listAll());
+    }
+
     @PutMapping("/update")
-    public ResponseEntity<String> update(@RequestBody Dentist dentist){
+    public ResponseEntity<String> updateDentist(@RequestBody Dentist dentist){
 
         ResponseEntity<String> response;
         Dentist dentistFoundIt = dentistService.searchById(dentist.getId());
@@ -52,7 +52,7 @@ public class DentistController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public boolean delete(@PathVariable Long id){
+    public boolean deleteDentist(@PathVariable Long id){
         return dentistService.delete(id);
     }
 

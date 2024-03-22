@@ -7,7 +7,6 @@ import com.dh.dental.clinic.service.IPatientService;
 import com.dh.dental.clinic.service.impl.AppoinmentService;
 import com.dh.dental.clinic.service.impl.DentistService;
 import com.dh.dental.clinic.service.impl.PatientService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,22 +27,22 @@ public class AppoinmentController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Appoinment> save(@RequestBody Appoinment appoinment){
+    public ResponseEntity<Appoinment> createAppoinment(@RequestBody Appoinment appoinment){
         return ResponseEntity.ok(appoinmentService.save(appoinment));
     }
 
-    @GetMapping("/all")
-    public ResponseEntity<List<Appoinment>> listAll(){
-        return ResponseEntity.ok(appoinmentService.listAll());
-    }
-
     @GetMapping("/{id}")
-    public ResponseEntity<Appoinment> searchById(@PathVariable Long id){
+    public ResponseEntity<Appoinment> getAppoinment(@PathVariable Long id){
         return ResponseEntity.ok(appoinmentService.searchById(id));
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<List<Appoinment>> getAllAppoinment(){
+        return ResponseEntity.ok(appoinmentService.listAll());
+    }
+
     @PutMapping("/update")
-    public ResponseEntity<String> update(@RequestBody Appoinment dentist){
+    public ResponseEntity<String> updateAppoinment(@RequestBody Appoinment dentist){
 
         ResponseEntity<String> response;
         Appoinment appoinmentFoundIt = appoinmentService.searchById(dentist.getId());
@@ -59,7 +58,7 @@ public class AppoinmentController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public boolean delete(@PathVariable Long id){
+    public boolean deleteAppoinment(@PathVariable Long id){
         return appoinmentService.delete(id);
     }
 }

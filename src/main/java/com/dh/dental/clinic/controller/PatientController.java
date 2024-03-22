@@ -20,6 +20,12 @@ public class PatientController {
         this.patientService = patientService;
     }
 
+    @PostMapping("/create")
+    public ResponseEntity createPatient(@RequestBody Patient patient){
+        patientService.save(patient);
+        return new ResponseEntity<>("Patient creado exitosamente", HttpStatus.CREATED);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<PatientDTO> getPatient(@PathVariable Long id){
         return new ResponseEntity<>(patientService.searchById(id), HttpStatus.OK);
@@ -28,12 +34,6 @@ public class PatientController {
     @GetMapping("/all")
     public ResponseEntity<List<PatientDTO>> getAllPatients(){
         return new ResponseEntity<>(patientService.listAll(), HttpStatus.OK);
-    }
-
-    @PostMapping("/create")
-    public ResponseEntity createPatient(@RequestBody Patient patient){
-        patientService.save(patient);
-        return new ResponseEntity<>("Patient creado exitosamente", HttpStatus.CREATED);
     }
 
     @PutMapping("/update")

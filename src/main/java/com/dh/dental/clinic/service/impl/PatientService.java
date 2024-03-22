@@ -26,12 +26,6 @@ public class PatientService implements IPatientService {
 
     @Override
     public Patient save(Patient patient) {
-        LOGGER.info("La fecha ingresada antes de convertir " + patient.getRegistrationDate());
-        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        //String formattedDate = patient.getRegistrationDate().format(formatter);
-        //LocalDate convertedDate = LocalDate.parse(formattedDate, formatter);
-        //patient.setRegistrationDate(convertedDate);
-        LOGGER.info("La fecha convertida es " + patient.getRegistrationDate());
         return patientRepository.save(patient);
     }
 

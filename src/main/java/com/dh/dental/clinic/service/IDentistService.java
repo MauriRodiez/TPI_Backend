@@ -1,16 +1,17 @@
 package com.dh.dental.clinic.service;
 
+import com.dh.dental.clinic.dto.DentistDTO;
 import com.dh.dental.clinic.entity.Dentist;
 
 import java.util.List;
 
 public interface IDentistService {
 
-    Dentist save (Dentist dentist);
+    DentistDTO save (DentistDTO dentistDTO);
 
-    List<Dentist> listAll();
+    List<DentistDTO> listAll();
 
-    Dentist searchById(Long id);
+    DentistDTO searchById(Long id);
 
     void update(Dentist dentist);
 

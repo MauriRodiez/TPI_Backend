@@ -1,9 +1,9 @@
 package com.dh.dental.clinic.controller;
 
+import com.dh.dental.clinic.dto.DentistDTO;
 import com.dh.dental.clinic.service.IDentistService;
 import com.dh.dental.clinic.entity.Dentist;
 import com.dh.dental.clinic.service.impl.DentistService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,17 +21,17 @@ public class DentistController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Dentist> createDentist(@RequestBody Dentist dentist){
-        return ResponseEntity.ok(dentistService.save(dentist));
+    public ResponseEntity<DentistDTO> createDentist(@RequestBody DentistDTO dentistDTO){
+        return ResponseEntity.ok(dentistService.save(dentistDTO));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Dentist> getDentist(@PathVariable Long id){
+    public ResponseEntity<DentistDTO> getDentist(@PathVariable Long id){
         return ResponseEntity.ok(dentistService.searchById(id));
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Dentist>> getAllDentist(){
+    public ResponseEntity<List<DentistDTO>> getAllDentist(){
         return ResponseEntity.ok(dentistService.listAll());
     }
 
@@ -39,7 +39,7 @@ public class DentistController {
     public ResponseEntity<String> updateDentist(@RequestBody Dentist dentist){
 
         ResponseEntity<String> response;
-        Dentist dentistFoundIt = dentistService.searchById(dentist.getId());
+        DentistDTO dentistFoundIt = dentistService.searchById(dentist.getId());
 
         if (dentistFoundIt != null){
             dentistService.update(dentist);

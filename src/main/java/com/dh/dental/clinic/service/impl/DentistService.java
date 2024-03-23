@@ -1,11 +1,13 @@
 package com.dh.dental.clinic.service.impl;
 
+import com.dh.dental.clinic.dto.DentistDTO;
 import com.dh.dental.clinic.entity.Dentist;
 import com.dh.dental.clinic.repository.IdentistReepository;
 import com.dh.dental.clinic.service.IDentistService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,28 +15,40 @@ import java.util.Optional;
 public class DentistService implements IDentistService {
 
     private IdentistReepository dentistrepository;
-
+    ModelMapper modelMapper = new ModelMapper();
     public DentistService(IdentistReepository dentistrepository) {
         this.dentistrepository = dentistrepository;
     }
 
     @Override
-    public Dentist save(Dentist dentist) {
-        return dentistrepository.save(dentist);
+    public DentistDTO save(DentistDTO dentistDTO) {
+        Dentist dentist = modelMapper.map(dentistDTO, Dentist.class);
+        dentistrepository.save(dentist);
+        DentistDTO dentistDTOresponse = modelMapper.map(dentist, DentistDTO.class);
+        return dentistDTOresponse;
     }
 
     @Override
-    public List<Dentist> listAll() {
-        return dentistrepository.findAll();
+    public List<DentistDTO> listAll() {
+        List<Dentist> dentistList = dentistrepository.findAll();
+        List<DentistDTO> dentistDTOList = new ArrayList<>();
+        if(!dentistList.isEmpty()){
+            for (Dentist dentist : dentistList){
+                DentistDTO dentistDTO = modelMapper.map(dentist, DentistDTO.class);
+                dentistDTOList.add(dentistDTO);
+            }
+        }
+        return dentistDTOList;
     }
 
     @Override
-    public Dentist searchById(Long id) {
+    public DentistDTO searchById(Long id) {
 
         Optional<Dentist> dentistOptional = dentistrepository.findById(id);
 
         if(dentistOptional.isPresent()){
-            return dentistOptional.get();
+            DentistDTO dentistDTO = modelMapper.map(dentistOptional.get(), DentistDTO.class);
+            return dentistDTO;
         } else {
             return null;
         }

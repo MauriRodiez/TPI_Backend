@@ -15,9 +15,9 @@ import java.util.Optional;
 @Service
 public class PatientService implements IPatientService {
 
-    ObjectMapper objectMapper = new ObjectMapper();
     private IPatientRepository patientRepository;
     private static final Logger LOGGER = Logger.getLogger(PatientService.class);
+    private static final ObjectMapper objectMapper = new ObjectMapper();
 
     public PatientService(IPatientRepository patientRepository) {
         this.patientRepository = patientRepository;

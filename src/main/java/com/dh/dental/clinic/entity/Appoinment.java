@@ -22,7 +22,7 @@ public class Appoinment {
     private Long id;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private LocalDate dateAppoinment;
+    private LocalDateTime dateAppoinment;
 
     @ManyToOne
     @JoinColumn(name = "patient_id", nullable = false)
@@ -31,5 +31,4 @@ public class Appoinment {
     @ManyToOne
     @JoinColumn(name = "dentist_id", nullable = false)
     private Dentist dentist;
-
 }

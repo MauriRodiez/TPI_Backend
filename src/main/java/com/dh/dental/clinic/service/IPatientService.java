@@ -6,7 +6,7 @@ import com.dh.dental.clinic.entity.Patient;
 import java.util.List;
 
 public interface IPatientService {
-    Patient save (Patient patient);
+    PatientDTO save (PatientDTO patientDTO);
 
     List<PatientDTO> listAll();
 

@@ -4,12 +4,10 @@ import com.dh.dental.clinic.service.IPatientService;
 import com.dh.dental.clinic.dto.PatientDTO;
 import com.dh.dental.clinic.entity.Patient;
 import com.dh.dental.clinic.repository.IPatientRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -17,6 +15,7 @@ import java.util.Optional;
 @Service
 public class PatientService implements IPatientService {
 
+    ObjectMapper objectMapper = new ObjectMapper();
     private IPatientRepository patientRepository;
     private static final Logger LOGGER = Logger.getLogger(PatientService.class);
 
@@ -25,8 +24,13 @@ public class PatientService implements IPatientService {
     }
 
     @Override
-    public Patient save(Patient patient) {
-        return patientRepository.save(patient);
+    public PatientDTO save(PatientDTO patientDTO) {
+        objectMapper.registerModule(new JavaTimeModule());
+
+        Patient patient = objectMapper.convertValue(patientDTO, Patient.class);
+        patientRepository.save(patient);
+        PatientDTO patientDTOResponse = objectMapper.convertValue(patient, PatientDTO.class);
+        return patientDTOResponse;
     }
 
     @Override
@@ -35,8 +39,9 @@ public class PatientService implements IPatientService {
         List<PatientDTO> patientDTOList = new ArrayList<>();
         if (!patientList.isEmpty()){
             for (Patient patient : patientList) {
-                PatientDTO patientDTO = new PatientDTO(patient.getName(), patient.getSurname(), patient.getDni(), patient.getRegistrationDate(), patient.getAddress(), patient.getAppoinmentList());
-                patientDTOList.add(patientDTO);
+//                PatientDTO patientDTO = new PatientDTO(patient.getName(), patient.getSurname(), patient.getDni(), patient.getRegistrationDate(), patient.getAddress(), patient.getAppoinmentList());
+//                patientDTOList.add(patientDTO);
+                return null;
             }
             return  patientDTOList;
         } else {
@@ -47,10 +52,11 @@ public class PatientService implements IPatientService {
     @Override
     public PatientDTO searchById(Long id) {
         Optional<Patient> patientOptional = patientRepository.findById(id);
+        objectMapper.registerModule(new JavaTimeModule());
 
         if(patientOptional.isPresent()){
             Patient patient = patientOptional.get();
-            PatientDTO patientDTO = new PatientDTO(patient.getName(), patient.getSurname(), patient.getDni(), patient.getRegistrationDate(), patient.getAddress(), patient.getAppoinmentList());
+            PatientDTO patientDTO = objectMapper.convertValue(patient, PatientDTO.class);
             return patientDTO;
         } else {
             return null;

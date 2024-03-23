@@ -21,8 +21,8 @@ public class PatientController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity createPatient(@RequestBody Patient patient){
-        patientService.save(patient);
+    public ResponseEntity createPatient(@RequestBody PatientDTO patientDTO){
+        patientService.save(patientDTO);
         return new ResponseEntity<>("Patient creado exitosamente", HttpStatus.CREATED);
     }
 

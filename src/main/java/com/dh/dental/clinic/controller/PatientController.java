@@ -1,9 +1,9 @@
 package com.dh.dental.clinic.controller;
 
+import com.dh.dental.clinic.dto.DTOResponse;
 import com.dh.dental.clinic.service.impl.PatientService;
 import com.dh.dental.clinic.dto.PatientDTO;
 import com.dh.dental.clinic.entity.Patient;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,29 +21,57 @@ public class PatientController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity createPatient(@RequestBody PatientDTO patientDTO){
-        patientService.save(patientDTO);
-        return new ResponseEntity<>("Patient creado exitosamente", HttpStatus.CREATED);
+    public ResponseEntity<?> createPatient(@RequestBody PatientDTO patientDTO) {
+        DTOResponse patientDTOResponse = patientService.save(patientDTO);
+        if (patientDTOResponse.getMessage().toLowerCase().contains("error")) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(patientDTOResponse);
+        } else {
+            return ResponseEntity.ok(patientDTOResponse);
+        }
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PatientDTO> getPatient(@PathVariable Long id){
-        return new ResponseEntity<>(patientService.searchById(id), HttpStatus.OK);
+    public ResponseEntity<?> getPatient(@PathVariable Long id){
+        DTOResponse patientDTOResponse = patientService.searchById(id);
+        if (patientDTOResponse.getMessage().toLowerCase().contains("error")) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(patientDTOResponse);
+        } else {
+            return ResponseEntity.ok(patientDTOResponse);
+        }
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<PatientDTO>> getAllPatients(){
-        return new ResponseEntity<>(patientService.listAll(), HttpStatus.OK);
+    public ResponseEntity<?> getAllPatients(){
+        DTOResponse patientsDTOResponse = patientService.listAll();
+        if (patientsDTOResponse.getMessage().toLowerCase().contains("error")) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(patientsDTOResponse);
+        } else {
+            return ResponseEntity.ok(patientsDTOResponse);
+        }
     }
 
     @PutMapping("/update")
-    public ResponseEntity updatePatient(@RequestBody Patient patient){
-        patientService.update(patient);
-        return new ResponseEntity<>("Patient actualizado exitosamente", HttpStatus.OK);
+    public ResponseEntity updatePatient(@RequestBody PatientDTO patientDTO){
+        DTOResponse patientDTOResponse = patientService.update(patientDTO);
+        if (patientDTOResponse.getMessage().toLowerCase().contains("error")) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(patientDTOResponse);
+        } else {
+            return ResponseEntity.ok(patientDTOResponse);
+        }
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Boolean> deletePatient(@PathVariable Long id){
-        return new ResponseEntity<>(patientService.delete(id), HttpStatus.OK);
+    public ResponseEntity<?> deletePatient(@PathVariable Long id){
+        DTOResponse patientDTOResponse = patientService.delete(id);
+        if (patientDTOResponse.getMessage().toLowerCase().contains("error")) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(patientDTOResponse);
+        } else {
+            return ResponseEntity.ok(patientDTOResponse);
+        }
     }
 }

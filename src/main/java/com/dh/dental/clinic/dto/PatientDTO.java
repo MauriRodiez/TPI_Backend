@@ -20,6 +20,7 @@ import java.util.Set;
 @Getter
 @Setter
 public class PatientDTO {
+    private Long id;
     private String name;
     private String surname;
     private String dni;

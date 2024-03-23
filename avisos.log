@@ -27,3 +27,15 @@
 [2024-03-2209:11:47] [ INFO ] [PatientService:34] La fecha convertida es 1970-04-21
 [2024-03-2212:33:54] [ INFO ] [PatientService:29] La fecha ingresada antes de convertir 1970-04-21
 [2024-03-2212:33:54] [ INFO ] [PatientService:34] La fecha convertida es 1970-04-21
+[2024-03-2315:49:22] [ INFO ] [PatientService:32] Patient saved successfully: {}
+[2024-03-2315:57:23] [ ERROR] [PatientService:40] Error saving patient: {} Simulated error: Name cannot be 'error'
+[2024-03-2316:00:16] [ ERROR] [PatientService:40] Error saving patient: {} Simulated error: Name cannot be 'error'
+[2024-03-2316:07:19] [ ERROR] [PatientService:40] Error saving patient: {} Simulated error: Name cannot be 'error'
+[2024-03-2316:07:38] [ ERROR] [PatientService:38] Error saving patient: {} Simulated error: Name cannot be 'error'
+[2024-03-2316:15:05] [ INFO ] [PatientService:33] Patient saved successfully: {}
+[2024-03-2316:16:51] [ INFO ] [PatientService:33] Patient saved successfully: {}
+[2024-03-2316:21:40] [ INFO ] [PatientService:34] Patient saved successfully: {}
+[2024-03-2316:23:25] [ INFO ] [PatientService:34] Patient saved successfully: {}
+[2024-03-2316:30:37] [ INFO ] [PatientService:33] Patient saved successfully: {}
+[2024-03-2316:44:30] [ INFO ] [PatientService:33] Patient saved successfully: {}
+[2024-03-2316:52:44] [ INFO ] [PatientService:35] Patient saved successfully: {}

@@ -1,8 +1,8 @@
 package com.dh.dental.clinic.service.impl;
 
-import com.dh.dental.clinic.dto.DentistDTO;
+import com.dh.dental.clinic.dto.entityDTO.impl.DentistDTO;
 import com.dh.dental.clinic.entity.Dentist;
-import com.dh.dental.clinic.repository.IdentistReepository;
+import com.dh.dental.clinic.repository.IDentistRepository;
 import com.dh.dental.clinic.service.IDentistService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -14,9 +14,9 @@ import java.util.Optional;
 @Service
 public class DentistService implements IDentistService {
 
-    private IdentistReepository dentistrepository;
+    private IDentistRepository dentistrepository;
     ModelMapper modelMapper = new ModelMapper();
-    public DentistService(IdentistReepository dentistrepository) {
+    public DentistService(IDentistRepository dentistrepository) {
         this.dentistrepository = dentistrepository;
     }
 

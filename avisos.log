@@ -39,3 +39,32 @@
 [2024-03-2316:30:37] [ INFO ] [PatientService:33] Patient saved successfully: {}
 [2024-03-2316:44:30] [ INFO ] [PatientService:33] Patient saved successfully: {}
 [2024-03-2316:52:44] [ INFO ] [PatientService:35] Patient saved successfully: {}
+[2024-03-2320:49:07] [ INFO ] [PatientService:29] Patient saved succesfully: {}
+[2024-03-2321:07:27] [ INFO ] [PatientService:28] PatientDTO saved successfully
+[2024-03-2321:08:38] [ INFO ] [PatientService:28] PatientDTO saved successfully
+[2024-03-2321:21:58] [ INFO ] [Patient:27] Patient saved successfully
+[2024-03-2321:39:22] [ INFO ] [Patient:27] Patient saved successfully
+[2024-03-2321:39:32] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2321:39:41] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2322:15:08] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2322:27:56] [ INFO ] [Patient:31] Request to see all Patients completed successfully: {}
+[2024-03-2322:29:45] [ INFO ] [Patient:31] Request to see all Patients completed successfully: {}
+[2024-03-2322:41:16] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2322:41:22] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2323:11:50] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2323:12:11] [ ERROR] [Appointment:35] Error saving Appointment: not-null property references a null or transient value : com.dh.dental.clinic.entity.Appointment.dentist
+[2024-03-2323:13:01] [ ERROR] [PatientService:44] Error saving appointment: {} not-null property references a null or transient value : com.dh.dental.clinic.entity.Appointment.dentist
+[2024-03-2323:14:48] [ ERROR] [PatientService:44] Error saving appointment: {} not-null property references a null or transient value : com.dh.dental.clinic.entity.Appointment.dentist
+[2024-03-2323:16:17] [ INFO ] [PatientService:41] Appointment saved successfully: {}
+[2024-03-2323:18:04] [ INFO ] [PatientService:41] Appointment saved successfully: {}
+[2024-03-2323:19:01] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2323:19:48] [ INFO ] [PatientService:41] Appointment saved successfully: {}
+[2024-03-2323:20:02] [ INFO ] [PatientService:41] Appointment saved successfully: {}
+[2024-03-2323:20:16] [ INFO ] [PatientService:41] Appointment saved successfully: {}
+[2024-03-2323:20:57] [ INFO ] [Appointment:32] Appointment saved successfully
+[2024-03-2323:32:36] [ INFO ] [Appointment:32] Request to see all Appointments completed successfully: {}
+[2024-03-2323:33:04] [ INFO ] [Appointment:61] Appointment successfully found {}
+[2024-03-2323:33:28] [ ERROR] [Appointment:41] Error updating Appointment: {} Unable to find com.dh.dental.clinic.entity.Patient with id 3
+[2024-03-2323:33:38] [ ERROR] [Appointment:41] Error updating Appointment: {} Unable to find com.dh.dental.clinic.entity.Patient with id 24
+[2024-03-2323:33:50] [ INFO ] [Appointment:35] Appointment updated successfully: {}
+[2024-03-2323:33:55] [ INFO ] [Appointment:26] Appointment deleted succesfully: {}

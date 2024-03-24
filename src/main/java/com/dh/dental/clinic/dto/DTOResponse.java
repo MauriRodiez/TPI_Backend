@@ -16,6 +16,6 @@ import java.util.Map;
 @Getter
 @Setter
 public class DTOResponse<T> {
-    String message;
-    List<Map<String, Object>> data = new ArrayList<>();
+    private String message;
+    private List<Map<String, Object>> data = new ArrayList<>();
 }

@@ -8,10 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -39,6 +37,6 @@ public class Patient {
 
     @OneToMany(mappedBy = "patient")
     @JsonIgnore
-    private Set<Appoinment> appoinmentList = new HashSet<>();
+    private Set<Appointment> appoinmentList = new HashSet<>();
 
 }

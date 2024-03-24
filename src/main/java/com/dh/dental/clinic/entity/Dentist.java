@@ -27,6 +27,6 @@ public class Dentist {
 
     @OneToMany(mappedBy = "dentist")
     @JsonIgnore
-    private Set<Appoinment> appoinmentSet = new HashSet<>();
+    private Set<Appointment> appoinmentSet = new HashSet<>();
 
 }

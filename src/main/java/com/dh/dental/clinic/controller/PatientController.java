@@ -2,19 +2,16 @@ package com.dh.dental.clinic.controller;
 
 import com.dh.dental.clinic.dto.DTOResponse;
 import com.dh.dental.clinic.service.impl.PatientService;
-import com.dh.dental.clinic.dto.PatientDTO;
-import com.dh.dental.clinic.entity.Patient;
+import com.dh.dental.clinic.dto.entityDTO.impl.PatientDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/patient")
 public class PatientController {
 
-    private PatientService patientService;
+    private final PatientService patientService;
 
     public PatientController(PatientService patientService){
         this.patientService = patientService;
@@ -22,7 +19,7 @@ public class PatientController {
 
     @PostMapping("/create")
     public ResponseEntity<?> createPatient(@RequestBody PatientDTO patientDTO) {
-        DTOResponse patientDTOResponse = patientService.save(patientDTO);
+        DTOResponse<PatientDTO> patientDTOResponse = patientService.save(patientDTO);
         if (patientDTOResponse.getMessage().toLowerCase().contains("error")) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(patientDTOResponse);
@@ -54,7 +51,7 @@ public class PatientController {
     }
 
     @PutMapping("/update")
-    public ResponseEntity updatePatient(@RequestBody PatientDTO patientDTO){
+    public ResponseEntity<?> updatePatient(@RequestBody PatientDTO patientDTO){
         DTOResponse patientDTOResponse = patientService.update(patientDTO);
         if (patientDTOResponse.getMessage().toLowerCase().contains("error")) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)

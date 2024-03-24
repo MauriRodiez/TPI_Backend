@@ -1,6 +1,7 @@
-package com.dh.dental.clinic.dto;
+package com.dh.dental.clinic.dto.entityDTO.impl;
 
-import com.dh.dental.clinic.entity.Appoinment;
+import com.dh.dental.clinic.dto.entityDTO.EntityIdentificatorDTO;
+import com.dh.dental.clinic.entity.Appointment;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,11 +15,11 @@ import java.util.Set;
 @AllArgsConstructor
 @Getter
 @Setter
-public class DentistDTO {
-
+public class DentistDTO implements EntityIdentificatorDTO {
+    Long id;
     private String name;
     private String surname;
     private String enrollment;
-    private Set<Appoinment> appoinmentSet;
+    private Set<Appointment> appoinmentSet;
 
 }

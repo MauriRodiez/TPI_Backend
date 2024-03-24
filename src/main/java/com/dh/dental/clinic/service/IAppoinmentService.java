@@ -1,20 +1,19 @@
 package com.dh.dental.clinic.service;
 
 
-import com.dh.dental.clinic.entity.Appoinment;
-
-import java.util.List;
+import com.dh.dental.clinic.dto.DTOResponse;
+import com.dh.dental.clinic.dto.entityDTO.impl.AppointmentDTO;
 
 public interface IAppoinmentService {
 
-    Appoinment save (Appoinment appoinment);
+    DTOResponse save (AppointmentDTO appoinmentDTO);
 
-    List<Appoinment> listAll();
+    DTOResponse listAll();
 
-    Appoinment searchById(Long id);
+    DTOResponse searchById(Long id);
 
-    void update(Appoinment appoinment);
+    DTOResponse update(AppointmentDTO appoinmentDTO);
 
-    boolean delete(Long id);
+    DTOResponse delete(Long id);
 
 }

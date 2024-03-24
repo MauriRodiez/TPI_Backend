@@ -1,9 +1,9 @@
-package com.dh.dental.clinic.dto;
+package com.dh.dental.clinic.dto.entityDTO.impl;
 
+import com.dh.dental.clinic.dto.entityDTO.EntityIdentificatorDTO;
 import com.dh.dental.clinic.entity.Address;
-import com.dh.dental.clinic.entity.Appoinment;
+import com.dh.dental.clinic.entity.Appointment;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,17 +14,17 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class PatientDTO {
+public class PatientDTO implements EntityIdentificatorDTO {
     private Long id;
     private String name;
     private String surname;
     private String dni;
-    private String registrationDate;
+    private LocalDate registrationDate;
     private Address address;
-    private Set<Appoinment> appoinmentList = new HashSet<>();
+    private Set<Appointment> appoinmentList = new HashSet<>();
 }

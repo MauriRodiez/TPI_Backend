@@ -1,6 +1,6 @@
 package com.dh.dental.clinic.controller;
 
-import com.dh.dental.clinic.dto.DentistDTO;
+import com.dh.dental.clinic.dto.entityDTO.impl.DentistDTO;
 import com.dh.dental.clinic.service.IDentistService;
 import com.dh.dental.clinic.entity.Dentist;
 import com.dh.dental.clinic.service.impl.DentistService;

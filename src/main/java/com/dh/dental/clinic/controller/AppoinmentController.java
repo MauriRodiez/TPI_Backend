@@ -1,64 +1,76 @@
 package com.dh.dental.clinic.controller;
 
+import com.dh.dental.clinic.dto.DTOResponse;
+import com.dh.dental.clinic.dto.entityDTO.impl.AppointmentDTO;
 import com.dh.dental.clinic.service.IAppoinmentService;
-import com.dh.dental.clinic.entity.Appoinment;
-import com.dh.dental.clinic.service.IDentistService;
-import com.dh.dental.clinic.service.IPatientService;
 import com.dh.dental.clinic.service.impl.AppoinmentService;
-import com.dh.dental.clinic.service.impl.DentistService;
-import com.dh.dental.clinic.service.impl.PatientService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/appoinment")
 public class AppoinmentController {
 
-    private IAppoinmentService appoinmentService;
-    private IPatientService patientService;
-    private IDentistService dentistService;
+    private final IAppoinmentService appoinmentService;
 
-    public AppoinmentController(AppoinmentService appoinmentService, PatientService patientService, DentistService dentistService) {
+    public AppoinmentController(AppoinmentService appoinmentService) {
         this.appoinmentService = appoinmentService;
-        this.patientService = patientService;
-        this.dentistService = dentistService;
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Appoinment> createAppoinment(@RequestBody Appoinment appoinment){
-        return ResponseEntity.ok(appoinmentService.save(appoinment));
+    public ResponseEntity<?> createAppointment(@RequestBody AppointmentDTO appointmentDTO) {
+        DTOResponse appointmentDTOResponse = appoinmentService.save(appointmentDTO);
+        if (appointmentDTOResponse.getMessage().toLowerCase().contains("error")) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(appointmentDTOResponse);
+        } else {
+            return ResponseEntity.ok(appointmentDTOResponse);
+        }
     }
 
+
     @GetMapping("/{id}")
-    public ResponseEntity<Appoinment> getAppoinment(@PathVariable Long id){
-        return ResponseEntity.ok(appoinmentService.searchById(id));
+    public ResponseEntity<?> getAppointment(@PathVariable Long id){
+        DTOResponse appointmentDTOResponse = appoinmentService.searchById(id);
+        if (appointmentDTOResponse.getMessage().toLowerCase().contains("error")) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(appointmentDTOResponse);
+        } else {
+            return ResponseEntity.ok(appointmentDTOResponse);
+        }
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Appoinment>> getAllAppoinment(){
-        return ResponseEntity.ok(appoinmentService.listAll());
+    public ResponseEntity<?> getAllAppointments(){
+        DTOResponse appointmentsDTOResponse = appoinmentService.listAll();
+        if (appointmentsDTOResponse.getMessage().toLowerCase().contains("error")) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(appointmentsDTOResponse);
+        } else {
+            return ResponseEntity.ok(appointmentsDTOResponse);
+        }
     }
 
     @PutMapping("/update")
-    public ResponseEntity<String> updateAppoinment(@RequestBody Appoinment dentist){
-
-        ResponseEntity<String> response;
-        Appoinment appoinmentFoundIt = appoinmentService.searchById(dentist.getId());
-
-        if (appoinmentFoundIt != null){
-            appoinmentService.update(dentist);
-            response = ResponseEntity.ok("El Turno se actualizo correctamente.");
+    public ResponseEntity<?> updateAppointment(@RequestBody AppointmentDTO appointmentDTO){
+        DTOResponse appointmentDTOResponse = appoinmentService.update(appointmentDTO);
+        if (appointmentDTOResponse.getMessage().toLowerCase().contains("error")) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(appointmentDTOResponse);
         } else {
-            response = ResponseEntity.ok().body("No se puede actualizar el turno");
+            return ResponseEntity.ok(appointmentDTOResponse);
         }
-
-        return response;
     }
 
     @DeleteMapping("/delete/{id}")
-    public boolean deleteAppoinment(@PathVariable Long id){
-        return appoinmentService.delete(id);
+    public ResponseEntity<?> deleteAppointment(@PathVariable Long id){
+        DTOResponse appointmentDTOResponse = appoinmentService.delete(id);
+        if (appointmentDTOResponse.getMessage().toLowerCase().contains("error")) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(appointmentDTOResponse);
+        } else {
+            return ResponseEntity.ok(appointmentDTOResponse);
+        }
     }
 }

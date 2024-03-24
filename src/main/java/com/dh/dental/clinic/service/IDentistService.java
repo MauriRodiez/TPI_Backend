@@ -1,6 +1,6 @@
 package com.dh.dental.clinic.service;
 
-import com.dh.dental.clinic.dto.DentistDTO;
+import com.dh.dental.clinic.dto.entityDTO.impl.DentistDTO;
 import com.dh.dental.clinic.entity.Dentist;
 
 import java.util.List;

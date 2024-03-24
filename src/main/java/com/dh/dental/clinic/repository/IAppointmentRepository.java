@@ -5,5 +5,5 @@ import com.dh.dental.clinic.entity.Patient;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IPatientRepository extends IGenericRepository<Patient, Long> {
+public interface IAppointmentRepository extends IGenericRepository<Appointment, Long>  {
 }

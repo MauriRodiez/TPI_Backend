@@ -1,16 +1,15 @@
 package com.dh.dental.clinic.service;
 
-import com.dh.dental.clinic.dto.entityDTO.impl.PatientDTO;
 import com.dh.dental.clinic.dto.DTOResponse;
 
-public interface IPatientService {
-    DTOResponse save (PatientDTO patientDTO);
+public interface ICRUDService<T> {
+    DTOResponse save (T entityDTO);
 
     DTOResponse listAll();
 
     DTOResponse searchById(Long id);
 
-    DTOResponse update(PatientDTO patientDTO);
+    DTOResponse update(T entityDTO);
 
     DTOResponse delete(Long id);
 }

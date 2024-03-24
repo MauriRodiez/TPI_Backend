@@ -1,17 +1,17 @@
 package com.dh.dental.clinic.service.impl;
 
 import com.dh.dental.clinic.dto.DTOResponse;
-import com.dh.dental.clinic.service.IPatientService;
+import com.dh.dental.clinic.service.ICRUDService;
 import com.dh.dental.clinic.dto.entityDTO.impl.PatientDTO;
 import com.dh.dental.clinic.entity.Patient;
-import com.dh.dental.clinic.repository.IPatientRepository;
+import com.dh.dental.clinic.repository.impl.IPatientRepository;
 import com.dh.dental.clinic.service.dao.CreateDAO;
 import com.dh.dental.clinic.service.dao.DeleteDAO;
 import com.dh.dental.clinic.service.dao.ReadDAO;
 import com.dh.dental.clinic.service.dao.UpdateDAO;
 import org.springframework.stereotype.Service;
 @Service
-public class PatientService implements IPatientService {
+public class PatientService implements ICRUDService<PatientDTO> {
     private final IPatientRepository patientRepository;
     public PatientService(IPatientRepository patientRepository) {
         this.patientRepository = patientRepository;

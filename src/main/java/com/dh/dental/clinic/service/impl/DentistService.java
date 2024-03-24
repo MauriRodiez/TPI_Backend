@@ -3,20 +3,18 @@ package com.dh.dental.clinic.service.impl;
 import com.dh.dental.clinic.dto.DTOResponse;
 import com.dh.dental.clinic.dto.entityDTO.impl.DentistDTO;
 import com.dh.dental.clinic.entity.Dentist;
-import com.dh.dental.clinic.repository.IDentistRepository;
-import com.dh.dental.clinic.service.IDentistService;
+import com.dh.dental.clinic.repository.impl.IDentistRepository;
+import com.dh.dental.clinic.service.ICRUDService;
 import com.dh.dental.clinic.service.dao.CreateDAO;
 import com.dh.dental.clinic.service.dao.DeleteDAO;
 import com.dh.dental.clinic.service.dao.ReadDAO;
 import com.dh.dental.clinic.service.dao.UpdateDAO;
-import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DentistService implements IDentistService {
+public class DentistService implements ICRUDService<DentistDTO> {
 
-    private IDentistRepository dentistRepository;
-    ModelMapper modelMapper = new ModelMapper();
+    private final IDentistRepository dentistRepository;
     public DentistService(IDentistRepository dentistRepository) {
         this.dentistRepository = dentistRepository;
     }

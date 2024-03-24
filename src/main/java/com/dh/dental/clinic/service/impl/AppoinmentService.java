@@ -3,8 +3,8 @@ package com.dh.dental.clinic.service.impl;
 import com.dh.dental.clinic.dto.DTOResponse;
 import com.dh.dental.clinic.dto.entityDTO.impl.AppointmentDTO;
 import com.dh.dental.clinic.entity.Appointment;
-import com.dh.dental.clinic.repository.IAppointmentRepository;
-import com.dh.dental.clinic.service.IAppointmentService;
+import com.dh.dental.clinic.repository.impl.IAppointmentRepository;
+import com.dh.dental.clinic.service.ICRUDService;
 import com.dh.dental.clinic.service.dao.CreateDAO;
 import com.dh.dental.clinic.service.dao.DeleteDAO;
 import com.dh.dental.clinic.service.dao.ReadDAO;
@@ -12,7 +12,7 @@ import com.dh.dental.clinic.service.dao.UpdateDAO;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AppoinmentService implements IAppointmentService {
+public class AppoinmentService implements ICRUDService<AppointmentDTO> {
 
     private final IAppointmentRepository appoinmentRepository;
     public AppoinmentService(IAppointmentRepository appoinmentRepository) {

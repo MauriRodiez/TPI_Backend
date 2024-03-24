@@ -92,3 +92,18 @@
 [2024-03-2409:08:17] [ INFO ] [Dentist:32] Dentist saved successfully
 [2024-03-2409:09:07] [ INFO ] [Appointment:32] Appointment saved successfully
 [2024-03-2409:09:23] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2414:59:51] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2415:00:00] [ INFO ] [Appointment:32] Appointment saved successfully
+[2024-03-2415:00:03] [ INFO ] [Appointment:32] Request to see all Appointments completed successfully: {}
+[2024-03-2415:12:41] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2415:13:47] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2415:15:14] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2415:15:32] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2415:15:53] [ ERROR] [Patient:32] Error deleting Patient {}could not execute statement [Cannot delete or update a parent row: a foreign key constraint fails (`dental_clinic`.`appoinments`, CONSTRAINT `FKq9j9hbver0fkjph6wgw00h2ys` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`))] [delete from patients where id=?]; SQL [delete from patients where id=?]; constraint [null]
+[2024-03-2415:17:17] [ ERROR] [Dentist:32] Error deleting Dentist {}could not execute statement [Cannot delete or update a parent row: a foreign key constraint fails (`dental_clinic`.`appoinments`, CONSTRAINT `FKrf36diyp48x8di7vw90choyoi` FOREIGN KEY (`dentist_id`) REFERENCES `dentists` (`id`))] [delete from dentists where id=?]; SQL [delete from dentists where id=?]; constraint [null]
+[2024-03-2415:17:23] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2415:22:43] [ INFO ] [Dentist:32] Dentist saved successfully
+[2024-03-2415:22:49] [ INFO ] [Dentist:32] Request to see all Dentists completed successfully: {}
+[2024-03-2415:23:30] [ INFO ] [Appointment:32] Appointment saved successfully
+[2024-03-2415:23:34] [ ERROR] [Appointment:35] Error saving Appointment: could not execute statement [Cannot add or update a child row: a foreign key constraint fails (`dental_clinic`.`appoinments`, CONSTRAINT `FKq9j9hbver0fkjph6wgw00h2ys` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`))] [insert into appoinments (date_appoinment,dentist_id,patient_id) values (?,?,?)]; SQL [insert into appoinments (date_appoinment,dentist_id,patient_id) values (?,?,?)]; constraint [null]
+[2024-03-2415:24:10] [ INFO ] [Appointment:32] Request to see all Appointments completed successfully: {}

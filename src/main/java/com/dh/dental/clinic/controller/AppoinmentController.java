@@ -2,7 +2,7 @@ package com.dh.dental.clinic.controller;
 
 import com.dh.dental.clinic.dto.DTOResponse;
 import com.dh.dental.clinic.dto.entityDTO.impl.AppointmentDTO;
-import com.dh.dental.clinic.service.IAppoinmentService;
+import com.dh.dental.clinic.service.IAppointmentService;
 import com.dh.dental.clinic.service.impl.AppoinmentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/appoinment")
 public class AppoinmentController {
 
-    private final IAppoinmentService appoinmentService;
+    private final IAppointmentService appoinmentService;
 
     public AppoinmentController(AppoinmentService appoinmentService) {
         this.appoinmentService = appoinmentService;

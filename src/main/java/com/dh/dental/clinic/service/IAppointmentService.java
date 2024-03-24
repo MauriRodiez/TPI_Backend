@@ -4,7 +4,7 @@ package com.dh.dental.clinic.service;
 import com.dh.dental.clinic.dto.DTOResponse;
 import com.dh.dental.clinic.dto.entityDTO.impl.AppointmentDTO;
 
-public interface IAppoinmentService {
+public interface IAppointmentService {
 
     DTOResponse save (AppointmentDTO appoinmentDTO);
 

@@ -1,13 +1,13 @@
 package com.dh.dental.clinic.controller;
 
+import com.dh.dental.clinic.dto.DTOResponse;
 import com.dh.dental.clinic.dto.entityDTO.impl.DentistDTO;
 import com.dh.dental.clinic.service.IDentistService;
-import com.dh.dental.clinic.entity.Dentist;
 import com.dh.dental.clinic.service.impl.DentistService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/dentist")
@@ -21,39 +21,58 @@ public class DentistController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<DentistDTO> createDentist(@RequestBody DentistDTO dentistDTO){
-        return ResponseEntity.ok(dentistService.save(dentistDTO));
+    public ResponseEntity<?> createDentist(@RequestBody DentistDTO dentistDTO){
+        DTOResponse<DentistDTO> dentistDTOResponse = dentistService.save(dentistDTO);
+        if (dentistDTOResponse.getMessage().toLowerCase().contains("error")){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(dentistDTOResponse);
+        } else {
+            return ResponseEntity.ok(dentistDTOResponse);
+        }
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<DentistDTO> getDentist(@PathVariable Long id){
-        return ResponseEntity.ok(dentistService.searchById(id));
+    public ResponseEntity<?> getDentist(@PathVariable Long id){
+        DTOResponse dentistDTOResponse = dentistService.searchById(id);
+        if (dentistDTOResponse.getMessage().toLowerCase().contains("error")){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(dentistDTOResponse);
+        } else {
+            return ResponseEntity.ok(dentistDTOResponse);
+        }
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<DentistDTO>> getAllDentist(){
-        return ResponseEntity.ok(dentistService.listAll());
+    public ResponseEntity<?> getAllDentist(){
+        DTOResponse dentistDTOResponse = dentistService.listAll();
+        if (dentistDTOResponse.getMessage().toLowerCase().contains("error")){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(dentistDTOResponse);
+        } else {
+            return ResponseEntity.ok(dentistDTOResponse);
+        }
     }
 
     @PutMapping("/update")
-    public ResponseEntity<String> updateDentist(@RequestBody Dentist dentist){
-
-        ResponseEntity<String> response;
-        DentistDTO dentistFoundIt = dentistService.searchById(dentist.getId());
-
-        if (dentistFoundIt != null){
-            dentistService.update(dentist);
-            response = ResponseEntity.ok("El odontologo se actualizo correctamente.");
+    public ResponseEntity<?> updateDentist(@RequestBody DentistDTO dentistDTO){
+        DTOResponse<DentistDTO> dentistDTOResponse = dentistService.update(dentistDTO);
+        if (dentistDTOResponse.getMessage().toLowerCase().contains("error")){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(dentistDTOResponse);
         } else {
-            response = ResponseEntity.ok().body("No se puede actualizar el odontologo");
+            return ResponseEntity.ok(dentistDTOResponse);
         }
-
-        return response;
     }
 
     @DeleteMapping("/delete/{id}")
-    public boolean deleteDentist(@PathVariable Long id){
-        return dentistService.delete(id);
+    public ResponseEntity<?> deleteDentist(@PathVariable Long id){
+        DTOResponse<DentistDTO> dentistDTOResponse = dentistService.delete(id);
+        if (dentistDTOResponse.getMessage().toLowerCase().contains("error")){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(dentistDTOResponse);
+        } else {
+            return ResponseEntity.ok(dentistDTOResponse);
+        }
     }
 
 }

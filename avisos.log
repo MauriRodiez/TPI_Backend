@@ -68,3 +68,27 @@
 [2024-03-2323:33:38] [ ERROR] [Appointment:41] Error updating Appointment: {} Unable to find com.dh.dental.clinic.entity.Patient with id 24
 [2024-03-2323:33:50] [ INFO ] [Appointment:35] Appointment updated successfully: {}
 [2024-03-2323:33:55] [ INFO ] [Appointment:26] Appointment deleted succesfully: {}
+[2024-03-2408:11:58] [ INFO ] [Patient:33] Patient saved successfully
+[2024-03-2408:12:53] [ INFO ] [Patient:33] Patient saved successfully
+[2024-03-2408:14:43] [ INFO ] [Patient:33] Patient saved successfully
+[2024-03-2408:14:58] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2408:15:31] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2408:59:34] [ INFO ] [Dentist:32] Dentist saved successfully
+[2024-03-2408:59:48] [ INFO ] [Dentist:32] Dentist saved successfully
+[2024-03-2408:59:49] [ INFO ] [Dentist:32] Dentist saved successfully
+[2024-03-2408:59:51] [ INFO ] [Dentist:32] Dentist saved successfully
+[2024-03-2408:59:55] [ INFO ] [Dentist:32] Request to see all Dentists completed successfully: {}
+[2024-03-2409:00:32] [ INFO ] [Dentist:61] Dentist successfully found {}
+[2024-03-2409:00:54] [ INFO ] [Dentist:35] Dentist updated successfully: {}
+[2024-03-2409:01:04] [ INFO ] [Dentist:61] Dentist successfully found {}
+[2024-03-2409:01:18] [ INFO ] [Dentist:26] Dentist deleted succesfully: {}
+[2024-03-2409:04:07] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2409:04:11] [ ERROR] [Appointment:35] Error saving Appointment: could not execute statement [Cannot add or update a child row: a foreign key constraint fails (`dental_clinic`.`appoinments`, CONSTRAINT `FKq9j9hbver0fkjph6wgw00h2ys` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`))] [insert into appoinments (date_appoinment,dentist_id,patient_id) values (?,?,?)]; SQL [insert into appoinments (date_appoinment,dentist_id,patient_id) values (?,?,?)]; constraint [null]
+[2024-03-2409:05:37] [ INFO ] [Appointment:32] Appointment saved successfully
+[2024-03-2409:05:54] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2409:08:06] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2409:08:09] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2409:08:15] [ INFO ] [Dentist:32] Dentist saved successfully
+[2024-03-2409:08:17] [ INFO ] [Dentist:32] Dentist saved successfully
+[2024-03-2409:09:07] [ INFO ] [Appointment:32] Appointment saved successfully
+[2024-03-2409:09:23] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}

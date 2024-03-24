@@ -1,72 +1,61 @@
 package com.dh.dental.clinic.service.impl;
 
+import com.dh.dental.clinic.dto.DTOResponse;
 import com.dh.dental.clinic.dto.entityDTO.impl.DentistDTO;
 import com.dh.dental.clinic.entity.Dentist;
 import com.dh.dental.clinic.repository.IDentistRepository;
 import com.dh.dental.clinic.service.IDentistService;
+import com.dh.dental.clinic.service.dao.CreateDAO;
+import com.dh.dental.clinic.service.dao.DeleteDAO;
+import com.dh.dental.clinic.service.dao.ReadDAO;
+import com.dh.dental.clinic.service.dao.UpdateDAO;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class DentistService implements IDentistService {
 
-    private IDentistRepository dentistrepository;
+    private IDentistRepository dentistRepository;
     ModelMapper modelMapper = new ModelMapper();
-    public DentistService(IDentistRepository dentistrepository) {
-        this.dentistrepository = dentistrepository;
+    public DentistService(IDentistRepository dentistRepository) {
+        this.dentistRepository = dentistRepository;
     }
 
     @Override
-    public DentistDTO save(DentistDTO dentistDTO) {
-        Dentist dentist = modelMapper.map(dentistDTO, Dentist.class);
-        dentistrepository.save(dentist);
-        DentistDTO dentistDTOresponse = modelMapper.map(dentist, DentistDTO.class);
-        return dentistDTOresponse;
+    public DTOResponse<DentistDTO> save(DentistDTO dentistDTO) {
+        CreateDAO createDAO = new CreateDAO();
+        return createDAO.create(
+                dentistDTO,
+                DentistDTO.class,
+                Dentist.class,
+                dentistRepository);
     }
 
     @Override
-    public List<DentistDTO> listAll() {
-        List<Dentist> dentistList = dentistrepository.findAll();
-        List<DentistDTO> dentistDTOList = new ArrayList<>();
-        if(!dentistList.isEmpty()){
-            for (Dentist dentist : dentistList){
-                DentistDTO dentistDTO = modelMapper.map(dentist, DentistDTO.class);
-                dentistDTOList.add(dentistDTO);
-            }
-        }
-        return dentistDTOList;
+    public DTOResponse<DentistDTO> listAll() {
+        ReadDAO readDAO = new ReadDAO();
+        return readDAO.readAll(DentistDTO.class, Dentist.class, dentistRepository);
     }
 
     @Override
-    public DentistDTO searchById(Long id) {
-
-        Optional<Dentist> dentistOptional = dentistrepository.findById(id);
-
-        if(dentistOptional.isPresent()){
-            DentistDTO dentistDTO = modelMapper.map(dentistOptional.get(), DentistDTO.class);
-            return dentistDTO;
-        } else {
-            return null;
-        }
+    public DTOResponse<DentistDTO> searchById(Long id) {
+        ReadDAO readDAO = new ReadDAO();
+        return readDAO.readById(DentistDTO.class,Dentist.class,dentistRepository, id);
     }
 
     @Override
-    public void update(Dentist dentist) {
-        dentistrepository.save(dentist);
+    public DTOResponse<DentistDTO> update(DentistDTO dentistDTO) {
+        UpdateDAO updateDAO = new UpdateDAO();
+        return updateDAO.update(
+                dentistDTO,
+                DentistDTO.class,
+                Dentist.class,
+                dentistRepository);
     }
 
     @Override
-    public boolean delete(Long id) {
-        Optional<Dentist> dentistOptional = dentistrepository.findById(id);
-        if(dentistOptional.isPresent()){
-            dentistrepository.deleteById(id);
-            return true;
-        } else {
-            return false;
-        }
+    public DTOResponse<DentistDTO> delete(Long id){
+        DeleteDAO deleteDAO = new DeleteDAO();
+        return deleteDAO.delete(Dentist.class, dentistRepository, id);
     }
 }

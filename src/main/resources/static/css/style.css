@@ -1,0 +1,40 @@
+
+*{
+    box-sizing: border-box;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --base-color: #f5f5f5;
+    --section-color: #FAFAFA;
+    --violet-color: #8B48BF;
+    --skyblue:#3CDDF3;
+}
+
+body{
+    background-image: url("../img/background.png");
+    background-size: cover;
+}
+
+.container-log{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.logotipo{
+    width: 35%;
+    height: 45%;
+}
+
+.login-box{
+    background-color: var(--base-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 35%;
+
+}

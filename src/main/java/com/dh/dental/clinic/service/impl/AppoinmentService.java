@@ -15,13 +15,16 @@ import org.springframework.stereotype.Service;
 public class AppoinmentService implements ICRUDService<AppointmentDTO> {
 
     private final IAppointmentRepository appoinmentRepository;
+    CreateDAO createDAO = new CreateDAO();
+    ReadDAO readDAO = new ReadDAO();
+    UpdateDAO updateDAO = new UpdateDAO();
+    DeleteDAO deleteDAO = new DeleteDAO();
     public AppoinmentService(IAppointmentRepository appoinmentRepository) {
         this.appoinmentRepository = appoinmentRepository;
     }
 
     @Override
     public DTOResponse<AppointmentDTO> save(AppointmentDTO appointmentDTO) {
-        CreateDAO createDAO = new CreateDAO();
         return createDAO.create(appointmentDTO,
                 AppointmentDTO.class,
                 Appointment.class,
@@ -30,7 +33,6 @@ public class AppoinmentService implements ICRUDService<AppointmentDTO> {
 
     @Override
     public DTOResponse<AppointmentDTO> listAll() {
-        ReadDAO readDAO = new ReadDAO();
         return readDAO.readAll(AppointmentDTO.class,
                 Appointment.class,
                 appoinmentRepository);
@@ -38,7 +40,6 @@ public class AppoinmentService implements ICRUDService<AppointmentDTO> {
 
     @Override
     public DTOResponse<AppointmentDTO> searchById(Long id) {
-        ReadDAO readDAO = new ReadDAO();
         return readDAO.readById(AppointmentDTO.class,
                 Appointment.class,
                 appoinmentRepository,
@@ -47,7 +48,6 @@ public class AppoinmentService implements ICRUDService<AppointmentDTO> {
 
     @Override
     public DTOResponse<AppointmentDTO> update(AppointmentDTO appoinmentDTO) {
-        UpdateDAO updateDAO = new UpdateDAO();
         return updateDAO.update(
                 appoinmentDTO,
                 AppointmentDTO.class,
@@ -57,7 +57,6 @@ public class AppoinmentService implements ICRUDService<AppointmentDTO> {
 
     @Override
     public DTOResponse<AppointmentDTO> delete(Long id) {
-        DeleteDAO deleteDAO = new DeleteDAO();
         return deleteDAO.delete(
                 Appointment.class,
                 appoinmentRepository,

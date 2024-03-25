@@ -107,3 +107,501 @@
 [2024-03-2415:23:30] [ INFO ] [Appointment:32] Appointment saved successfully
 [2024-03-2415:23:34] [ ERROR] [Appointment:35] Error saving Appointment: could not execute statement [Cannot add or update a child row: a foreign key constraint fails (`dental_clinic`.`appoinments`, CONSTRAINT `FKq9j9hbver0fkjph6wgw00h2ys` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`))] [insert into appoinments (date_appoinment,dentist_id,patient_id) values (?,?,?)]; SQL [insert into appoinments (date_appoinment,dentist_id,patient_id) values (?,?,?)]; constraint [null]
 [2024-03-2415:24:10] [ INFO ] [Appointment:32] Request to see all Appointments completed successfully: {}
+[2024-03-2415:28:42] [ ERROR] [Patient:32] Error deleting Patient {}could not execute statement [Cannot delete or update a parent row: a foreign key constraint fails (`dental_clinic`.`appoinments`, CONSTRAINT `FKq9j9hbver0fkjph6wgw00h2ys` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`))] [delete from patients where id=?]; SQL [delete from patients where id=?]; constraint [null]
+[2024-03-2415:32:50] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2418:12:04] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2418:14:04] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2418:17:49] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2418:21:08] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2418:27:04] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2418:31:08] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2418:34:15] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2418:36:32] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2418:37:33] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2418:47:08] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2418:48:45] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2418:53:42] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2419:00:01] [ ERROR] [Patient:41] Error updating Patient: {} The given id must not be null
+[2024-03-2419:01:06] [ ERROR] [Patient:41] Error updating Patient: {} The given id must not be null
+[2024-03-2419:01:32] [ ERROR] [Patient:41] Error updating Patient: {} The given id must not be null
+[2024-03-2419:01:32] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2419:01:59] [ ERROR] [Patient:41] Error updating Patient: {} The given id must not be null
+[2024-03-2419:01:59] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2419:03:32] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2419:03:32] [ ERROR] [Patient:41] Error updating Patient: {} The given id must not be null
+[2024-03-2419:10:25] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2419:10:25] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2419:13:47] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2419:14:59] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2419:17:28] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2419:18:37] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2419:18:37] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2419:31:02] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2419:31:02] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2419:45:00] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2419:45:00] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2419:45:00] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2419:45:00] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2419:46:03] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2419:46:03] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2419:49:09] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2419:49:09] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2419:49:09] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:00:10] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:00:10] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:00:10] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@4b094115 failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:00:10] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:02:30] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:02:30] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:02:30] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@6d0fe80c failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:02:30] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:05:07] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:05:07] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:05:07] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@4b094115 failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:05:07] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:06:24] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:06:24] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:06:24] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@3979c6e8 failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:06:24] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:06:41] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:06:41] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:08:16] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@14f8fdae failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:08:16] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:08:25] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:08:25] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:08:25] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@77f1026e failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:08:25] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:08:48] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:08:48] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:09:07] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:09:07] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:09:07] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@36003e90 failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:09:07] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:09:07] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:09:08] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:09:08] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@36003e90 failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:09:08] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:09:08] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:09:08] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:09:08] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@36003e90 failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:09:08] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:09:08] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:09:08] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:09:08] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@36003e90 failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:09:08] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:09:48] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:09:48] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:09:49] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@3c592c0c failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:09:49] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:09:49] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:09:49] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:09:49] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@3c592c0c failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:09:49] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:09:49] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:09:49] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:09:49] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@3c592c0c failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:09:49] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:09:49] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:09:49] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:09:49] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@3c592c0c failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:09:49] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:10:32] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:10:32] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:10:32] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@3eb29382 failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:10:33] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:10:33] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:10:33] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:10:33] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@3eb29382 failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:10:33] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:10:33] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:10:33] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:10:33] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@3eb29382 failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:10:33] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:10:33] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:10:33] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:10:33] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@3eb29382 failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:10:33] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:12:27] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@63bdf82d failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:12:27] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:15:32] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:15:32] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:15:32] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@6fb3d3bb failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:15:32] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2420:16:33] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2420:38:59] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:38:59] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:38:59] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@7234db3 failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:38:59] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:38:59] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:38:59] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@7234db3 failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:38:59] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:38:59] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:38:59] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@7234db3 failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:38:59] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:38:59] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:38:59] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@7234db3 failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:41:30] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:41:30] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:41:30] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@71dac63f failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:41:30] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:41:30] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:41:30] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@71dac63f failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:41:30] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:41:30] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:41:30] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@71dac63f failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:41:30] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:41:30] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:41:30] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@71dac63f failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:49:10] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:49:10] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:49:49] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:49:49] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:49:49] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@71dac63f failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:49:50] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:49:50] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:49:50] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@71dac63f failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:49:50] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:49:50] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:49:50] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@71dac63f failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:49:50] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:49:50] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:49:50] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@71dac63f failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:50:27] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:50:27] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:53:41] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@81198ed failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2420:54:02] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:54:02] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:54:49] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:54:49] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:54:49] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:54:49] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:54:49] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:54:49] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:54:49] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:54:49] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:55:09] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:55:09] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:55:25] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:55:25] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2420:55:35] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2420:55:35] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:03:28] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:03:28] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:03:28] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@126ae0ca failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2421:03:28] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:03:28] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:03:29] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@126ae0ca failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2421:03:29] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:03:29] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:03:29] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@126ae0ca failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2421:03:29] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:03:29] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:03:29] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@126ae0ca failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2421:17:09] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:17:09] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:17:09] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@26fee641 failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2421:17:09] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:17:09] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:17:09] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@26fee641 failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2421:17:09] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:17:09] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:17:09] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@26fee641 failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2421:17:09] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:17:09] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:17:09] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@26fee641 failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2421:18:11] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:18:11] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:24:20] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:24:20] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:31:32] [ ERROR] [Patient:67] Error searching Patient: {}ModelMapper mapping errors:
+
+1) Converter org.modelmapper.internal.converter.MergingCollectionConverter@2cea41ab failed to convert org.hibernate.collection.spi.PersistentSet to java.util.Set.
+
+1 error
+[2024-03-2421:31:43] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:31:43] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:32:17] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:33:15] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:33:15] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:33:15] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:33:15] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:33:15] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:33:15] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:33:15] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:33:15] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:33:15] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:33:15] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:33:15] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:33:15] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:35:45] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:35:45] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:35:45] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:35:45] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:35:45] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:35:45] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:35:45] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:35:45] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:35:45] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:35:45] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:35:45] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:35:45] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:36:14] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2421:36:19] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:36:28] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:36:43] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:36:49] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:37:04] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:37:14] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:38:35] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:38:36] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:38:36] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:38:36] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:38:36] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:38:36] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:38:36] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:38:36] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:38:36] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:38:36] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:38:36] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:38:36] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:41:20] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:41:21] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:41:21] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:42:58] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:42:59] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:42:59] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:43:59] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:43:59] [ ERROR] [Patient:41] Error updating Patient: {} The given id must not be null
+[2024-03-2421:43:59] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:47:05] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:47:05] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:47:05] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:47:05] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:47:05] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:47:05] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:47:05] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:47:05] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:47:05] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:47:05] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:47:05] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:47:05] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:52:12] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:52:12] [ ERROR] [Patient:41] Error updating Patient: {} The given id must not be null
+[2024-03-2421:52:12] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:52:12] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:52:12] [ ERROR] [Patient:41] Error updating Patient: {} The given id must not be null
+[2024-03-2421:52:12] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:52:12] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:52:12] [ ERROR] [Patient:41] Error updating Patient: {} The given id must not be null
+[2024-03-2421:52:12] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:52:12] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:52:12] [ ERROR] [Patient:41] Error updating Patient: {} The given id must not be null
+[2024-03-2421:52:12] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:52:49] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:52:49] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:52:49] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:52:49] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:52:49] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:52:49] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:52:49] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:52:49] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:52:49] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:52:49] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:52:49] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:52:49] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:57:32] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:57:32] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:57:32] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:57:32] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2421:57:32] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:57:32] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:57:32] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:57:32] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2421:57:32] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:57:32] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:57:32] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:57:32] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2421:57:32] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:57:32] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:57:32] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:57:32] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2421:58:43] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:58:43] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:58:43] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:58:43] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2421:58:43] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:58:43] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:58:43] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:58:43] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2421:58:43] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:58:43] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:58:43] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:58:43] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2421:58:43] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2421:58:43] [ INFO ] [Patient:35] Patient updated successfully: {}
+[2024-03-2421:58:43] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2421:58:43] [ INFO ] [Patient:26] Patient deleted succesfully: {}

@@ -18,10 +18,13 @@ public class DentistService implements ICRUDService<DentistDTO> {
     public DentistService(IDentistRepository dentistRepository) {
         this.dentistRepository = dentistRepository;
     }
+    ReadDAO readDAO = new ReadDAO();
+    CreateDAO createDAO = new CreateDAO();
+    UpdateDAO updateDAO = new UpdateDAO();
+    DeleteDAO deleteDAO = new DeleteDAO();
 
     @Override
     public DTOResponse<DentistDTO> save(DentistDTO dentistDTO) {
-        CreateDAO createDAO = new CreateDAO();
         return createDAO.create(
                 dentistDTO,
                 DentistDTO.class,
@@ -31,19 +34,16 @@ public class DentistService implements ICRUDService<DentistDTO> {
 
     @Override
     public DTOResponse<DentistDTO> listAll() {
-        ReadDAO readDAO = new ReadDAO();
         return readDAO.readAll(DentistDTO.class, Dentist.class, dentistRepository);
     }
 
     @Override
     public DTOResponse<DentistDTO> searchById(Long id) {
-        ReadDAO readDAO = new ReadDAO();
         return readDAO.readById(DentistDTO.class,Dentist.class,dentistRepository, id);
     }
 
     @Override
     public DTOResponse<DentistDTO> update(DentistDTO dentistDTO) {
-        UpdateDAO updateDAO = new UpdateDAO();
         return updateDAO.update(
                 dentistDTO,
                 DentistDTO.class,
@@ -53,7 +53,6 @@ public class DentistService implements ICRUDService<DentistDTO> {
 
     @Override
     public DTOResponse<DentistDTO> delete(Long id){
-        DeleteDAO deleteDAO = new DeleteDAO();
         return deleteDAO.delete(Dentist.class, dentistRepository, id);
     }
 }

@@ -13,12 +13,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class PatientService implements ICRUDService<PatientDTO> {
     private final IPatientRepository patientRepository;
+    private final CreateDAO createDAO = new CreateDAO();
+    private final ReadDAO readDAO = new ReadDAO();
+    private final UpdateDAO updateDAO = new UpdateDAO();
+    private final DeleteDAO deleteDAO = new DeleteDAO();
     public PatientService(IPatientRepository patientRepository) {
         this.patientRepository = patientRepository;
     }
     @Override
     public DTOResponse<PatientDTO> save(PatientDTO patientDTO) {
-        CreateDAO createDAO = new CreateDAO();
         return createDAO.create(
                 patientDTO,
                 PatientDTO.class,
@@ -28,19 +31,16 @@ public class PatientService implements ICRUDService<PatientDTO> {
 
     @Override
     public DTOResponse<PatientDTO> listAll() {
-        ReadDAO readDAO = new ReadDAO();
         return readDAO.readAll(PatientDTO.class, Patient.class, patientRepository);
     }
 
     @Override
     public DTOResponse<PatientDTO> searchById(Long id) {
-        ReadDAO readDAO = new ReadDAO();
         return readDAO.readById(PatientDTO.class, Patient.class,patientRepository, id);
     }
 
     @Override
     public DTOResponse<PatientDTO> update(PatientDTO patientDTO) {
-        UpdateDAO updateDAO = new UpdateDAO();
         return updateDAO.update(
                 patientDTO,
                 PatientDTO.class,
@@ -50,7 +50,6 @@ public class PatientService implements ICRUDService<PatientDTO> {
 
     @Override
     public DTOResponse<PatientDTO> delete(Long id) {
-        DeleteDAO deleteDAO = new DeleteDAO();
         return deleteDAO.delete(Patient.class, patientRepository, id);
     }
 }

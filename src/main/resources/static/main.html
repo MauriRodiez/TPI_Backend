@@ -24,14 +24,14 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link active" aria-current="page" href="main.html">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Pacientes
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Agregar Paciente</a></li>
+                        <li><a class="dropdown-item" id="create" href="#">Agregar Paciente</a></li>
                         <li><a class="dropdown-item" href="#">Listar Pacientes</a></li>
                         <li><a class="dropdown-item" href="#">Buscar Paciente</a></li>
                         <li><a class="dropdown-item" href="#">Eliminar Paciente</a></li>
@@ -67,5 +67,18 @@
     </div>
 </nav>
 
+
+<main class="container-crud">
+    <!-- Seccion para CRUD pacientes -->
+    <div class="page-patient">
+        <h1>Crear Pacientes</h1>
+        <hr>
+        <div class="box"></div>
+    </div>
+</main>
+
+<script src="js/patient/create.js"></script>
+
 </body>
+
 </html>

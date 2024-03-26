@@ -3,42 +3,75 @@ window.addEventListener('load', function(){
     /*--                  Nodos                    --*/
     /*-----------------------------------------------*/
     const create = document.querySelector("#create");
-    const page = document.querySelector(".page-patient");
-    const box = document.querySelector(".box");
+    const pageCreate = document.querySelector(".page-patient");
+    const form = document.querySelector("#add_new_patient");
+
 
     /*-----------------------------------------------*/
-    /*--                   Form                    --*/
+    /*--      Evento click Agregar Paciente        --*/
     /*-----------------------------------------------*/
-    const form = document.createElement("form");
-    form.id = "createPatient";
+    create.addEventListener("click", function(e){
+        e.preventDefault();
+        pageCreate.style.display = "block";
 
-    // Input name
-    const nombreLabel = document.createElement("label");
-    nombreLabel.textContent = "Nombre:";
-
-    const nameInput = document.createElement("input");
-    nameInput.type = "text";
-    nameInput.name = "namePatient";
-
-    // Button cargar
-    const submitBtn = document.createElement('button');
-    submitBtn.type = 'submit';
-    submitBtn.textContent = 'Registrarse';
-
-    // Add elements to form
-    form.appendChild(nombreLabel);
-    form.appendChild(nameInput);
-    form.appendChild(submitBtn);
-    box.appendChild(form);
-
-    /*-----------------------------------------------*/
-    /*--           Evento click Agregar Paciente    --*/
-    /*-----------------------------------------------*/
-    create.addEventListener("click", function(event){
-        event.preventDefault();
-
-        page.style.display = "block";
-        page.innerHTML = '';
-        page.appendChild(box);
     });
+
+    form.addEventListener("submit", function(e){
+                    e.preventDefault();
+
+                    //Capturo la info
+                    const patientData = {
+                        name: document.querySelector("#name_patient").value,
+                        surname: document.querySelector("#surname_patient").value,
+                        dni: document.querySelector("#dni").value,
+                        registrationDate: document.querySelector("#registration_date").value,
+                        address: {
+                            street: document.querySelector("#street").value,
+                            number: document.querySelector("#street_num").value,
+                            state: document.querySelector("#state").value
+                        }
+                    };
+
+                    const url = '/patient/create';
+                    const settings = {
+                         method: 'POST',
+                         headers: {
+                                 'Content-Type': 'application/json',
+                                },
+                         body: JSON.stringify(patientData)
+                    }
+
+                    fetch(url, settings)
+                         .then(response => response.json())
+                         .then(data => {
+                               let successAlert = '<div class="alert alert-success alert-dismissible">' +
+                                         '<strong></strong> El paciente se agregó correctamente. </div>'
+
+                               document.querySelector('#response').innerHTML = successAlert;
+                               document.querySelector('#response').style.display = "block";
+                               resetForm();
+
+                         })
+                         .catch(error => {
+                               let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
+                                                         '<strong> Se ha producido un error intente nuevamente</strong> </div>'
+
+                               document.querySelector('#response').innerHTML = errorAlert;
+                               document.querySelector('#response').style.display = "block";
+                               resetForm();
+                               })
+                        });
+
+
+        function resetForm(){
+                        document.querySelector('#name_patient').value = "";
+                        document.querySelector('#surname_patient').value = "";
+                        document.querySelector('#dni').value = "";
+                        document.querySelector('#registration_date').value = "";
+                        document.querySelector('#street').value = "";
+                        document.querySelector('#street_num').value = "";
+                        document.querySelector('#state').value = "";
+                    }
+
 });
+

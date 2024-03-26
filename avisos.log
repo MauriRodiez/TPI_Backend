@@ -605,3 +605,13 @@
 [2024-03-2421:58:43] [ INFO ] [Patient:35] Patient updated successfully: {}
 [2024-03-2421:58:43] [ INFO ] [Patient:61] Patient successfully found {}
 [2024-03-2421:58:43] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2610:46:26] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2610:48:39] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2610:48:49] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2611:57:24] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2612:49:59] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2612:57:45] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2613:02:09] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2614:26:26] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2614:57:32] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2616:17:02] [ INFO ] [Patient:32] Patient saved successfully

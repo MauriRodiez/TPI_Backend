@@ -38,9 +38,9 @@ body{
     width: 35%;
 }
 
-/********************************/
-/*          Pacientes           */
-/********************************/
+/*--------------------------------------------------------*/
+/*                       Pacientes                        */
+/*--------------------------------------------------------*/
 
 .container-crud{
     display: flex;
@@ -53,7 +53,16 @@ body{
     background-color: var(--base-color);
     display: flex;
     display: none;
-    height: 600px;
+    margin: 5vh 5vw;
     padding: 50px;
-    width: 80%;
+    width: 80vw;
+}
+
+.get-patient{
+    background-color: var(--base-color);
+    display: flex;
+    display: none;
+    margin: 5vh 5vw;
+    padding: 50px;
+    width: 80vw;
 }

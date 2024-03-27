@@ -7,7 +7,7 @@ import com.dh.dental.clinic.service.ICRUDService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-
+@CrossOrigin(origins = {"http://localhost:5500", "http://127.0.0.1:5500"})
 @RestController
 @RequestMapping("/dentist")
 public class DentistController {

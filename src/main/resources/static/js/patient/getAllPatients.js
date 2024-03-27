@@ -16,25 +16,39 @@ window.addEventListener("load", function () {
     fetch(url, settings)
       .then((response) => response.json())
       .then((data) => {
-        console.log("fff", data);
+        // const
 
-        for (patient of data) {
+        for (patient of data.data[0].Patients) {
           var table = document.getElementById("patientTable");
           var patientRow = table.insertRow();
           let tr_id = "tr_" + patient.id;
           patientRow.id = tr_id;
 
-          //            let deleteButton = '<button' +
-          //                                      ' id=' + '\"' + 'btn_delete_' + patient.id + '\"' +
-          //                                      ' type="button" onclick="deleteBy('+patient.id+')" class="btn btn-danger btn_delete">' +
-          //                                      '&times' +
-          //                                      '</button>';
+          let deleteButton =
+            "<button" +
+            " id=" +
+            '"' +
+            "btn_delete_" +
+            patient.id +
+            '"' +
+            ' type="button" onclick="deleteBy(' +
+            patient.id +
+            ')" class="btn btn-danger btn_delete">' +
+            "&times" +
+            "</button>";
 
-          //            let updateButton = '<button' +
-          //                                      ' id=' + '\"' + 'btn_id_' + patient.id + '\"' +
-          //                                      ' type="button" onclick="findBy('+patient.id+')" class="btn btn-info btn_id">' +
-          //                                      patient.id +
-          //                                      '</button>';
+          let updateButton =
+            "<button" +
+            " id=" +
+            '"' +
+            "btn_id_" +
+            patient.id +
+            '"' +
+            ' type="button" onclick="findBy(' +
+            patient.id +
+            ')" class="btn btn-info btn_id">' +
+            "<i class='bi bi-pencil-square'></i>" +
+            "</button>";
 
           patientRow.innerHTML =
             '<td class="td_nombre">' +
@@ -44,19 +58,25 @@ window.addEventListener("load", function () {
             patient.surname.toUpperCase() +
             "</td>" +
             '<td class="td_dni">' +
-            patient.dni +
+            patient.dni.toUpperCase() +
             "</td>" +
             '<td class="td_fecha">' +
             patient.registrationDate +
             "</td>" +
             '<td class="td_calle">' +
-            patient.street.toUpperCase() +
+            patient.address.street.toUpperCase() +
             "</td>" +
             '<td class="td_numero">' +
-            patient.street +
+            patient.address.number +
             "</td>" +
             '<td class="td_estado">' +
-            patient.state.toUpperCase() +
+            patient.address.state.toUpperCase() +
+            "</td>" +
+            "<td>" +
+            updateButton +
+            "</td>" +
+            "<td>" +
+            deleteButton +
             "</td>";
         }
       })

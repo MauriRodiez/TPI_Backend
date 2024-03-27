@@ -1,4 +1,4 @@
-package com.dh.dental.clinic.dto.entityDTO;
+package com.dh.dental.clinic.dto;
 
 public interface EntityIdentificatorDTO {
     Long getId();

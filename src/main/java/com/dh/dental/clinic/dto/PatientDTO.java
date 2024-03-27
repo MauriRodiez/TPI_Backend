@@ -1,9 +1,7 @@
-package com.dh.dental.clinic.dto.entityDTO.impl;
+package com.dh.dental.clinic.dto;
 
-import com.dh.dental.clinic.dto.entityDTO.EntityIdentificatorDTO;
 import com.dh.dental.clinic.entity.Address;
 import com.dh.dental.clinic.entity.Appointment;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

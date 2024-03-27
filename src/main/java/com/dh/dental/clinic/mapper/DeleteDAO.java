@@ -1,4 +1,4 @@
-package com.dh.dental.clinic.service.dao;
+package com.dh.dental.clinic.mapper;
 
 import com.dh.dental.clinic.dto.DTOResponse;
 import com.dh.dental.clinic.repository.IGenericRepository;

@@ -1,14 +1,14 @@
 package com.dh.dental.clinic.service.impl;
 
 import com.dh.dental.clinic.dto.DTOResponse;
-import com.dh.dental.clinic.dto.entityDTO.impl.AppointmentDTO;
+import com.dh.dental.clinic.dto.AppointmentDTO;
 import com.dh.dental.clinic.entity.Appointment;
 import com.dh.dental.clinic.repository.impl.IAppointmentRepository;
 import com.dh.dental.clinic.service.ICRUDService;
-import com.dh.dental.clinic.service.dao.CreateDAO;
-import com.dh.dental.clinic.service.dao.DeleteDAO;
-import com.dh.dental.clinic.service.dao.ReadDAO;
-import com.dh.dental.clinic.service.dao.UpdateDAO;
+import com.dh.dental.clinic.mapper.CreateDAO;
+import com.dh.dental.clinic.mapper.DeleteDAO;
+import com.dh.dental.clinic.mapper.ReadDAO;
+import com.dh.dental.clinic.mapper.UpdateDAO;
 import org.springframework.stereotype.Service;
 
 @Service

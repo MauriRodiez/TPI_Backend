@@ -1,8 +1,7 @@
-package com.dh.dental.clinic.controller.entityController;
+package com.dh.dental.clinic.controller;
 
-import com.dh.dental.clinic.controller.DTOResponseController;
 import com.dh.dental.clinic.dto.DTOResponse;
-import com.dh.dental.clinic.dto.entityDTO.impl.DentistDTO;
+import com.dh.dental.clinic.dto.DentistDTO;
 import com.dh.dental.clinic.service.ICRUDService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 public class DentistController {
 
     private ICRUDService<DentistDTO> dentistService;
-    private final DTOResponseController dtoResponseController = new DTOResponseController();
+    private final GenericResponseController genericResponseController = new GenericResponseController();
 
     public DentistController(ICRUDService<DentistDTO> dentistService){
         this.dentistService = dentistService;
@@ -22,31 +21,31 @@ public class DentistController {
     @PostMapping("/create")
     public ResponseEntity<?> createDentist(@RequestBody DentistDTO dentistDTO){
         DTOResponse<DentistDTO> dentistDTOResponse = dentistService.save(dentistDTO);
-        return dtoResponseController.getHttpResponse(dentistDTOResponse);
+        return genericResponseController.getHttpResponse(dentistDTOResponse);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getDentist(@PathVariable Long id){
         DTOResponse dentistDTOResponse = dentistService.searchById(id);
-        return dtoResponseController.getHttpResponse(dentistDTOResponse);
+        return genericResponseController.getHttpResponse(dentistDTOResponse);
     }
 
     @GetMapping("/all")
     public ResponseEntity<?> getAllDentist(){
         DTOResponse dentistDTOResponse = dentistService.listAll();
-        return dtoResponseController.getHttpResponse(dentistDTOResponse);
+        return genericResponseController.getHttpResponse(dentistDTOResponse);
     }
 
     @PutMapping("/update")
     public ResponseEntity<?> updateDentist(@RequestBody DentistDTO dentistDTO){
         DTOResponse<DentistDTO> dentistDTOResponse = dentistService.update(dentistDTO);
-        return dtoResponseController.getHttpResponse(dentistDTOResponse);
+        return genericResponseController.getHttpResponse(dentistDTOResponse);
     }
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteDentist(@PathVariable Long id){
         DTOResponse<DentistDTO> dentistDTOResponse = dentistService.delete(id);
-        return dtoResponseController.getHttpResponse(dentistDTOResponse);
+        return genericResponseController.getHttpResponse(dentistDTOResponse);
     }
 
 }

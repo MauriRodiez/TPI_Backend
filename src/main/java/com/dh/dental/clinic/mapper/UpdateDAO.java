@@ -1,7 +1,7 @@
-package com.dh.dental.clinic.service.dao;
+package com.dh.dental.clinic.mapper;
 
 import com.dh.dental.clinic.dto.DTOResponse;
-import com.dh.dental.clinic.dto.entityDTO.EntityIdentificatorDTO;
+import com.dh.dental.clinic.dto.EntityIdentificatorDTO;
 import com.dh.dental.clinic.repository.IGenericRepository;
 import lombok.NoArgsConstructor;
 import org.apache.log4j.Logger;

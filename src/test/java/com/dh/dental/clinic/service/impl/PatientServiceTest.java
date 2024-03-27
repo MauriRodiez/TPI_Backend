@@ -1,8 +1,7 @@
 package com.dh.dental.clinic.service.impl;
 
 import com.dh.dental.clinic.dto.DTOResponse;
-import com.dh.dental.clinic.dto.entityDTO.EntityIdentificatorDTO;
-import com.dh.dental.clinic.dto.entityDTO.impl.PatientDTO;
+import com.dh.dental.clinic.dto.PatientDTO;
 import com.dh.dental.clinic.entity.Address;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,7 +10,6 @@ import org.junit.jupiter.api.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.ui.ModelMap;
 
 import java.time.LocalDate;
 

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @NoArgsConstructor
-public class DTOResponseController {
+public class GenericResponseController {
     public ResponseEntity<?> getHttpResponse(DTOResponse<?> dtoResponse) {
         if (dtoResponse.getMessage().toLowerCase().contains("error")) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)

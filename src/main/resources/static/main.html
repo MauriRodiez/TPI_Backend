@@ -4,294 +4,48 @@
     <meta charset="UTF-8" />
     <title>.: Clinica Odontologica :.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <script
-      src="https://kit.fontawesome.com/495c0b0bf4.js"
-      crossorigin="anonymous"
-    ></script>
     <link rel="shortcut icon" href="img/ico.png" />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="../templates/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
     <link href="css/style.css" rel="stylesheet" />
 
-    <!--    <script src="../templates/bootstrap/js/bootstrap.bundle.min.js"></script>-->
-    <!--    <script src="../templates/bootstrap/js/bootstrap.min.js"></script>-->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrapp/bootstrap.min.js"></script>
+    <script src="js/bootstrapp/bootstrap.bundle.min.js"></script>
     <script src="js/patient/create.js"></script>
-    <script src="js/patient/getAllPatients.js"></script>
+    <script src="js/patient/getAll.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <a class="navbar-brand" href="#">
           <img src="img/logotipo.png" alt="clinica Dental" width="50" />
           Clinica Dental
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="main.html"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Pacientes
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" id="create" href="#"
-                    >Agregar Paciente</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" id="getAll" href="#"
-                    >Listar Pacientes</a
-                  >
-                </li>
-                <li><a class="dropdown-item" href="#">Buscar Paciente</a></li>
-                <li><a class="dropdown-item" href="#">Eliminar Paciente</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Actualizar Paciente</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Odontologos
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="#">Agregar Odontologo</a>
-                </li>
-                <li><a class="dropdown-item" href="#">Listar Odontologo</a></li>
-                <li><a class="dropdown-item" href="#">Buscar Odontologo</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Eliminar Odontologo</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Actualizar Odontologo</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Turnos
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Agregar Turno</a></li>
-                <li><a class="dropdown-item" href="#">Listar Turno</a></li>
-                <li><a class="dropdown-item" href="#">Buscar Turno</a></li>
-                <li><a class="dropdown-item" href="#">Eliminar Turno</a></li>
-                <li><a class="dropdown-item" href="#">Actualizar Turno</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="main.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pacientes.html">Pacientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="odontologos.html">Odontologos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="turnos.html">Turnos</a>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
     <main class="container-crud">
-      <!-- Seccion para CRUD pacientes -->
-      <div class="page-patient">
-        <h1>Crear Pacientes</h1>
-        <hr />
-        <form id="add_new_patient">
-          <fieldset class="form-group">
-            <legend>Datos personales</legend>
-            <label class="form-label" for="name_patient">Nombre:</label>
-            <input
-              class="form-control"
-              type="text"
-              id="name_patient"
-              name="name_patient"
-              placeholder="Ingresa tu nombre"
-              required
-            />
-
-            <label class="form-label" for="surname_patient">Apellido:</label>
-            <input
-              class="form-control"
-              type="text"
-              id="surname_patient"
-              name="surname_patient"
-              placeholder="Ingresa tu apellido"
-              required
-            />
-
-            <label class="form-label" for="dni">DNI:</label>
-            <input
-              class="form-control"
-              type="text"
-              id="dni"
-              name="dni"
-              placeholder="Ingresa tu DNI"
-            />
-
-            <label class="form-label" for="registration_date"
-              >Fecha de registro:</label
-            >
-            <input
-              class="form-control"
-              type="date"
-              id="registration_date"
-              name="registration_date"
-              placeholder="Ingresa la fecha de registro"
-            />
-          </fieldset>
-          <fieldset class="form-group">
-            <legend>Dirección</legend>
-            <label class="form-label" for="street">Nombre de calle:</label>
-            <input
-              class="form-control"
-              type="text"
-              id="street"
-              name="street"
-              placeholder="Ingresa el nombre de calle"
-              required
-            />
-
-            <label class="form-label" for="street_num">Numero de puerta:</label>
-            <input
-              class="form-control"
-              type="text"
-              id="street_num"
-              name="street_num"
-              placeholder="Ingresa el número de puerta"
-              required
-            />
-
-            <label class="form-label" for="state">Estado / Provincia:</label>
-            <input
-              class="form-control"
-              type="text"
-              id="state"
-              name="state"
-              placeholder="Ingresa el nombre de Estado o Provincia"
-            />
-          </fieldset>
-          <button type="submit" class="btn btn-primary" id="btn-add">
-            Agregar
-          </button>
-        </form>
-        <div id="response" style="display: none; margin-top: 10px"></div>
-      </div>
-
-      <div class="get-patient">
-        <div id="div_patient_table">
-          <h1>Pacientes</h1>
-          <div class="row col-md-12 table-responsive">
-            <table id="patientTable" class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Nombre</th>
-                  <th>Apellido</th>
-                  <th>Dni</th>
-                  <th>Fecha de registro</th>
-                  <th>Calle</th>
-                  <th>Número</th>
-                  <th>Estado/Provincia</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody id="patientTableBody"></tbody>
-            </table>
-          </div>
-        </div>
-        <div class="row">
-          <div
-            class="col-sm-12"
-            style="
-              display: none;
-              background-color: #e6fffa;
-              padding: 10px;
-              border-radius: 3px;
-            "
-            id="div_pelicula_updating"
-          >
-            <form id="update_pelicula_form">
-              <div class="form-group">
-                <label>Id:</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="pelicula_id"
-                  readonly
-                />
-              </div>
-              <div class="form-group">
-                <label>Nombre:</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Nombre"
-                  id="name_update"
-                />
-              </div>
-              <div class="form-group">
-                <label>Apellido:</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Apellido"
-                  id="surname_update"
-                />
-              </div>
-              <div class="form-group">
-                <label>Dni:</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Dni"
-                  id="dni_update"
-                />
-              </div>
-
-              <button type="submit" class="btn btn-primary">Modificar</button>
-            </form>
-            <div id="responseMsj" style="display: none; margin: 10px"></div>
-          </div>
-        </div>
-      </div>
+        <h1>Clinica dental</h1>
     </main>
   </body>
 </html>

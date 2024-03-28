@@ -665,3 +665,73 @@
 [2024-03-2622:45:03] [ INFO ] [Patient:35] Patient updated successfully: {}
 [2024-03-2622:45:03] [ INFO ] [Patient:61] Patient successfully found {}
 [2024-03-2622:45:03] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2707:45:01] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2707:47:00] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2707:47:06] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2707:49:11] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2707:50:17] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2708:01:24] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2708:05:24] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2708:11:13] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2710:50:28] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2710:50:28] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2710:50:42] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2710:50:46] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2710:51:14] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2710:51:23] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2710:51:27] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2710:51:34] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2710:51:38] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2710:52:06] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2712:25:52] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2712:25:58] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2712:26:04] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2712:27:01] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2712:27:05] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2712:33:17] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2712:35:35] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2713:00:43] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2713:10:04] [ INFO ] [Patient:32] Patient saved successfully
+[2024-03-2713:10:10] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2713:12:03] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2713:13:08] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2713:13:19] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2713:14:55] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2713:15:04] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2713:15:12] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2713:15:33] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2718:29:54] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2718:30:54] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2719:17:34] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2719:20:18] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2719:22:17] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2719:24:50] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2719:26:30] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2719:26:46] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2719:29:27] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2719:29:38] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2719:35:48] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2719:38:32] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2719:47:20] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2719:47:47] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2719:51:48] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2719:51:53] [ INFO ] [Patient:26] Patient deleted succesfully: {}
+[2024-03-2719:52:16] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2719:53:53] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2719:54:08] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2720:38:03] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2720:41:25] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2720:48:23] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2720:57:13] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2721:05:10] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2721:06:21] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2721:12:59] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2721:13:29] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2721:13:32] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2721:13:54] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2721:26:57] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2721:28:03] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2721:30:05] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2721:30:16] [ INFO ] [Patient:61] Patient successfully found {}
+[2024-03-2721:32:30] [ INFO ] [Patient:32] Request to see all Patients completed successfully: {}
+[2024-03-2721:32:34] [ INFO ] [Patient:61] Patient successfully found {}

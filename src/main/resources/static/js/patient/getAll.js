@@ -1,18 +1,16 @@
 window.addEventListener("load", function () {
-  const getAll = document.querySelector("#getAll");
-  const page = document.querySelector(".get-patient");
-  const pageCreate = document.querySelector(".page-patient");
+  const getAll = document.querySelector("#v-pills-getallPatients-tab");
+  let listOk = false;
 
   getAll.addEventListener("click", function (e) {
     e.preventDefault();
-    pageCreate.style.display = "none";
-    page.style.display = "block";
 
     const url = "http://localhost:8081/patient/all";
     const settings = {
       method: "GET",
     };
 
+if (!listOk) {
     fetch(url, settings)
       .then((response) => response.json())
       .then((data) => {
@@ -34,7 +32,7 @@ window.addEventListener("load", function () {
             ' type="button" onclick="deleteBy(' +
             patient.id +
             ')" class="btn btn-danger btn_delete">' +
-            "&times" +
+            "<i class='bi bi-trash3'></i>" +
             "</button>";
 
           let updateButton =
@@ -79,10 +77,12 @@ window.addEventListener("load", function () {
             deleteButton +
             "</td>";
         }
+        listOk = true;
       })
       .catch((e) => {
         console.error("errorrrrrrrr", e);
         e.alert("error al cargar la info");
       });
+     }
   });
 });

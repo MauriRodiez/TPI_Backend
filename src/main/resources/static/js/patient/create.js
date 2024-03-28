@@ -2,24 +2,12 @@ window.addEventListener('load', function(){
     /*-----------------------------------------------*/
     /*--                  Nodos                    --*/
     /*-----------------------------------------------*/
-    const create = document.querySelector("#create");
-    const pageCreate = document.querySelector(".page-patient");
     const form = document.querySelector("#add_new_patient");
 
-
-    /*-----------------------------------------------*/
-    /*--      Evento click Agregar Paciente        --*/
-    /*-----------------------------------------------*/
-    create.addEventListener("click", function(e){
-        e.preventDefault();
-        pageCreate.style.display = "block";
-
-    });
 
     form.addEventListener("submit", function(e){
                     e.preventDefault();
 
-                    //Capturo la info
                     const patientData = {
                         name: document.querySelector("#name_patient").value,
                         surname: document.querySelector("#surname_patient").value,

@@ -55,6 +55,7 @@ public class CRUDMapper <T, E> {
 
     public DTOResponse<T> readAll() {
         DTOResponse<T> entityDTOResponse = new DTOResponse<>();
+        entityClassName+="s";
         try {
             List<E> entityList = repository.findAll();
             if (!entityList.isEmpty()) {

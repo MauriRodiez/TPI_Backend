@@ -2,64 +2,46 @@ package com.dh.dental.clinic.service.impl;
 
 import com.dh.dental.clinic.dto.DTOResponse;
 import com.dh.dental.clinic.dto.AppointmentDTO;
+import com.dh.dental.clinic.dto.DentistDTO;
 import com.dh.dental.clinic.entity.Appointment;
+import com.dh.dental.clinic.entity.Dentist;
+import com.dh.dental.clinic.mapper.*;
 import com.dh.dental.clinic.repository.impl.IAppointmentRepository;
 import com.dh.dental.clinic.service.ICRUDService;
-import com.dh.dental.clinic.mapper.CreateDAO;
-import com.dh.dental.clinic.mapper.DeleteDAO;
-import com.dh.dental.clinic.mapper.ReadDAO;
-import com.dh.dental.clinic.mapper.UpdateDAO;
 import org.springframework.stereotype.Service;
 
 @Service
 public class AppoinmentService implements ICRUDService<AppointmentDTO> {
 
     private final IAppointmentRepository appoinmentRepository;
-    CreateDAO createDAO = new CreateDAO();
-    ReadDAO readDAO = new ReadDAO();
-    UpdateDAO updateDAO = new UpdateDAO();
-    DeleteDAO deleteDAO = new DeleteDAO();
+    private final CRUDMapper<AppointmentDTO, Appointment> crudMapper;
     public AppoinmentService(IAppointmentRepository appoinmentRepository) {
         this.appoinmentRepository = appoinmentRepository;
+        this.crudMapper = new CRUDMapper<AppointmentDTO, Appointment>(AppointmentDTO.class, Appointment.class, appoinmentRepository);
     }
 
     @Override
     public DTOResponse<AppointmentDTO> save(AppointmentDTO appointmentDTO) {
-        return createDAO.create(appointmentDTO,
-                AppointmentDTO.class,
-                Appointment.class,
-                appoinmentRepository);
+        return crudMapper.create(appointmentDTO);
     }
 
     @Override
     public DTOResponse<AppointmentDTO> listAll() {
-        return readDAO.readAll(AppointmentDTO.class,
-                Appointment.class,
-                appoinmentRepository);
+        return crudMapper.readAll();
     }
 
     @Override
     public DTOResponse<AppointmentDTO> searchById(Long id) {
-        return readDAO.readById(AppointmentDTO.class,
-                Appointment.class,
-                appoinmentRepository,
-                id);
+        return crudMapper.readById(id);
     }
 
     @Override
-    public DTOResponse<AppointmentDTO> update(AppointmentDTO appoinmentDTO) {
-        return updateDAO.update(
-                appoinmentDTO,
-                AppointmentDTO.class,
-                Appointment.class,
-                appoinmentRepository);
+    public DTOResponse<AppointmentDTO> update(AppointmentDTO appointmentDTO) {
+        return crudMapper.update(appointmentDTO);
     }
 
     @Override
     public DTOResponse<AppointmentDTO> delete(Long id) {
-        return deleteDAO.delete(
-                Appointment.class,
-                appoinmentRepository,
-                id);
+        return crudMapper.delete(id);
     }
 }

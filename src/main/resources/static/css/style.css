@@ -20,43 +20,23 @@ body{
 }
 
 .container-log{
-    align-items: center;
     display: flex;
     justify-content: center;
-    padding: 5%;
     width: 100%;
 }
 
 .logotipo{
+    width: 35%;
     height: 45%;
-    margin: auto;
-    width: 40%;
 }
 
 .login-box{
     background-color: var(--base-color);
-    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 45px;
-    padding: 5%;
+    gap: 20px;
+    padding: 20px;
     width: 35%;
-}
-
-.border-log{
-    border: #ccc 1px solid;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px 50px;
-}
-
-.lost-pass{
-    color: var(--skyblue);
-    font-size: 0.7rem;
-    font-style: italic;
 }
 
 .container-crud{
@@ -72,9 +52,7 @@ body{
     padding: 5% 10%;
     width: 100vw;
 }
-
 .container-img img{
-    border: var(--base-color) solid 3px;
     width: 30%;
 }
 /*--------------------------------------------------------*/
@@ -103,7 +81,6 @@ body{
 }
 
 .general-content{
-    border-left: #ccc solid 1px;
     display: flex;
     flex-direction: column;
     padding: 0 50px;
@@ -111,31 +88,8 @@ body{
 }
 
 #add_new_patient{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
     padding: 25px;
     width: 100%;
-}
-
-#add_new_patient fieldset{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-#btn-add{
-    width: 25%;
-}
-
-#patientTable thead{
-    border: #ccc solid 1px;
-}
-
-#patientTable tr th{
-    background-color: #ccc;
-    border: #fff solid 1px;
-    text-align: center;
 }
 
 /*--------------------------------------------------------*/

@@ -1,7 +1,6 @@
 package com.dh.dental.clinic.mapper;
 
-import com.dh.dental.clinic.dto.DTOResponse;
-import com.dh.dental.clinic.dto.EntityIdentificatorDTO;
+import com.dh.dental.clinic.dto.*;
 import com.dh.dental.clinic.exceptions.ResourceNotFoundException;
 import com.dh.dental.clinic.repository.IGenericRepository;
 import lombok.NoArgsConstructor;
@@ -20,12 +19,10 @@ public class CRUDMapper <T, E> {
     private Class<T> dtoClass;
     private Class<E> entityClass;
     private IGenericRepository<E, Long> repository;
-
-
-    private Logger LOGGER;
-    private final ModelMapper modelMapper = new ModelMapper();
     private String entityClassName;
     private String entityClassNamePlural;
+    private Logger LOGGER;
+    private ModelMapper modelMapper;
 
     public CRUDMapper(Class<T> dtoClass, Class<E> entityClass, IGenericRepository<E, Long> repository) {
         this.dtoClass = dtoClass;
@@ -34,6 +31,8 @@ public class CRUDMapper <T, E> {
         this.LOGGER = Logger.getLogger(entityClass);
         this.entityClassName = entityClass.getSimpleName();
         this.entityClassNamePlural = entityClassName + "s";
+        ConfigureMapper configureMapper = new ConfigureMapper();
+        this.modelMapper = configureMapper.configureMapper();
     }
 
 
@@ -86,7 +85,6 @@ public class CRUDMapper <T, E> {
         Optional<E> entityOptional = repository.findById(id);
 
         if (entityOptional.isPresent()) {
-
             E entity = entityOptional.get();
             T entityDTO = modelMapper.map(entity, dtoClass);
 

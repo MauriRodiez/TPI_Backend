@@ -16,7 +16,6 @@ import java.time.LocalDateTime;
 public class AppointmentDTO implements EntityIdentificatorDTO {
     private Long id;
     private LocalDateTime dateAppoinment;
-    private Patient patient;
-    private Dentist dentist;
-
+    private PatientDTO patientDTO;
+    private DentistDTO dentistDTO;
 }

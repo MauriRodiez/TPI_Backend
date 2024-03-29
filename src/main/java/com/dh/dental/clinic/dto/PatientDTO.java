@@ -1,13 +1,10 @@
 package com.dh.dental.clinic.dto;
 
-import com.dh.dental.clinic.entity.Address;
-import com.dh.dental.clinic.entity.Appointment;
 import lombok.*;
 
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
-
 
 
 @NoArgsConstructor
@@ -20,6 +17,6 @@ public class PatientDTO implements EntityIdentificatorDTO {
     private String surname;
     private String dni;
     private LocalDate registrationDate;
-    private Address address;
-    private Set<Appointment> appoinmentList = new HashSet<>();
+    private AddressDTO addressDTO;
+    private Set<AppointmentDTO> appointmentDTOList = new HashSet<>();
 }

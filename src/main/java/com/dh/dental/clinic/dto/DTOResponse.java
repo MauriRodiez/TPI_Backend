@@ -2,6 +2,7 @@ package com.dh.dental.clinic.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
+import org.springframework.http.HttpStatus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.Map;
 @Getter
 @Setter
 public class DTOResponse<T> {
+    private int statusCode;
     private String message;
     private List<Map<String, Object>> data = new ArrayList<>();
 }

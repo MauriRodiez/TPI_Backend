@@ -2,10 +2,7 @@ package com.dh.dental.clinic.dto;
 
 import com.dh.dental.clinic.entity.Address;
 import com.dh.dental.clinic.entity.Appointment;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.HashSet;

@@ -12,8 +12,12 @@
 
     <script src="js/bootstrapp/bootstrap.min.js"></script>
     <script src="js/bootstrapp/bootstrap.bundle.min.js"></script>
-    <script src="js/patient/create.js"></script>
-    <script src="js/patient/getAll.js"></script>
+
+    <script src="js/dentist/create.js"></script>
+    <script src="js/dentist/getAll.js"></script>
+    <script src="js/dentist/delete.js"></script>
+    <script src="js/dentist/update.js"></script>
+    <script src="js/dentist/searchByID.js"></script>
 </head>
 <body>
 
@@ -45,6 +49,106 @@
     </div>
 </nav>
 
+<main class="container-crud">
+
+    <div class="page-dentist">
+
+        <div class="d-flex align-items-start general-tab">
+            <div class="nav flex-column nav-pills me-4" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <button class="nav-link active" id="v-pills-create-tab" data-bs-toggle="pill" data-bs-target="#v-pills-create" type="button" role="tab" aria-controls="v-pills-create" aria-selected="true">Agregar</button>
+                <button class="nav-link" id="v-pills-getallDentist-tab" data-bs-toggle="pill" data-bs-target="#v-pills-getallDentist" type="button" role="tab" aria-controls="v-pills-getallDentist" aria-selected="false">Listar</button>
+                <button class="nav-link" id="v-pills-getBy-tab" data-bs-toggle="pill" data-bs-target="#v-pills-getBy" type="button" role="tab" aria-controls="v-pills-getBy" aria-selected="false">Buscar</button>
+            </div>
+
+            <div class="tab-content general-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-create" role="tabpanel" aria-labelledby="v-pills-create-tab" tabindex="0">
+                    <h2>Odontólogos</h2>
+                    <hr />
+                    <form id="add_new_dentist">
+                        <fieldset class="form-group">
+                            <legend>Datos personales</legend>
+                            <label class="form-label" for="name_dentist">Nombre:</label>
+                            <input class="form-control" type="text" id="name_dentist" name="name_dentist" placeholder="Ingresa tu nombre" required/>
+
+                            <label class="form-label" for="surname_dentist">Apellido:</label>
+                            <input class="form-control" type="text" id="surname_dentist" name="surname_dentist" placeholder="Ingresa tu apellido" required/>
+
+                            <label class="form-label" for="enrollment">DNI:</label>
+                            <input class="form-control" type="text" id="enrollment" name="enrollment" placeholder="Ingresar matrícula" required/>
+                        </fieldset>
+
+                        <button type="submit" class="btn btn-primary" id="btn-add">
+                            Agregar
+                        </button>
+                    </form>
+                    <div id="response" style="display: none; margin-top: 10px"></div>
+                </div>
+
+                <div class="tab-pane fade" id="v-pills-getallDentist" role="tabpanel" aria-labelledby="v-pills-getallDentist-tab" tabindex="0">
+                    <div id="div_dentist_table">
+                        <h2>Listado de odontólogos</h2>
+                        <hr>
+                        <div class="row col-md-12 table-responsive">
+                            <table id="dentistTable" class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Matrícula</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody id="DentistTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12" style="display: none; background-color:#e6fffa; padding:10px; border-radius:3px" id="div_patient_updating">
+                            <form id="update_dentist_form">
+                                <fieldset class="form-group">
+                                    <label >Id:</label>
+                                    <input type="text" class="form-control" id="dentist_id" readonly>
+
+                                    <label>Nombre:</label>
+                                    <input class="form-control" type="text" id="name_dentist_up" placeholder="Ingresa tu nombre"/>
+
+                                    <label>Apellido:</label>
+                                    <input class="form-control" type="text" id="surname_dentist_up" placeholder="Ingresa tu apellido"/>
+
+                                    <label>DNI:</label>
+                                    <input class="form-control" type="text" id="enrollment_up" placeholder="Ingresa tu matrícula"/>
+                                </fieldset>
+                                <button type="submit" class="btn btn-primary" id="btn-update">
+                                    Modificar
+                                </button>
+                            </form>
+                            <div id="responseUpdate" style="display:none; margin:10px">
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="tab-pane fade" id="v-pills-getBy" role="tabpanel" aria-labelledby="v-pills-getBy-tab" tabindex="0">
+                    <h2>Buscar pacientes por ID</h2>
+                    <hr>
+                    <form class="row g-3" id="search-byID">
+                        <div class="col-auto">
+                            <input type="search" class="form-control" id="search" placeholder="Buscar ...">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-3">Buscar</button>
+                        </div>
+                    </form>
+                    <!-- Aquí se mostrará la información del paciente -->
+                    <div id="patient-info"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</main>
 
 </body>
 </html>

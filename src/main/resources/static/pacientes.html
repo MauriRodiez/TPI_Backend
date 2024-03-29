@@ -12,10 +12,13 @@
 
     <script src="js/bootstrapp/bootstrap.min.js"></script>
     <script src="js/bootstrapp/bootstrap.bundle.min.js"></script>
+
     <script src="js/patient/create.js"></script>
     <script src="js/patient/getAll.js"></script>
     <script src="js/patient/delete.js"></script>
     <script src="js/patient/update.js"></script>
+    <script src="js/patient/searchByID.js"></script>
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -159,8 +162,18 @@
             <hr>
         </div>
         <div class="tab-pane fade" id="v-pills-getBy" role="tabpanel" aria-labelledby="v-pills-getBy-tab" tabindex="0">
-            <h2>Buscar pacientes</h2>
+            <h2>Buscar pacientes por ID</h2>
             <hr>
+            <form class="row g-3" id="search-byID">
+                <div class="col-auto">
+                    <input type="search" class="form-control" id="search" placeholder="Buscar ...">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-3">Buscar</button>
+                </div>
+            </form>
+            <!-- Aquí se mostrará la información del paciente -->
+            <div id="patient-info"></div>
         </div>
 
     </div>

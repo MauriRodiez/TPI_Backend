@@ -37,6 +37,6 @@ public class Patient {
 
     @OneToMany(mappedBy = "patient", fetch = FetchType.EAGER)
     @JsonIgnore
-    private Set<Appointment> appoinmentList = new HashSet<>();
+    private Set<Appointment> appointmentList = new HashSet<>();
 
 }

@@ -28,7 +28,7 @@ function findBy(id) {
                 <p>Apellido: ${patient.surname}</p>
                 <p>DNI: ${patient.dni}</p>
                 <p>Fecha de registro: ${patient.registrationDate}</p>
-                <p>Dirección: ${patient.address.street}, ${patient.address.number}, ${patient.address.state}</p>`;
+                <p>Dirección: ${patient.addressDTO.street}, ${patient.addressDTO.number}, ${patient.addressDTO.state}</p>`;
     })
     .catch((error) => {
       alert("Error: " + error);

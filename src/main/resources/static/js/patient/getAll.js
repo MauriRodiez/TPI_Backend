@@ -60,13 +60,13 @@ window.addEventListener("load", function () {
               patient.registrationDate +
               "</td>" +
               '<td class="td_calle">' +
-              patient.address.street.toUpperCase() +
+              patient.addressDTO.street.toUpperCase() +
               "</td>" +
               '<td class="td_numero">' +
-              patient.address.number +
+              patient.addressDTO.number +
               "</td>" +
               '<td class="td_estado">' +
-              patient.address.state.toUpperCase() +
+              patient.addressDTO.state.toUpperCase() +
               "</td>" +
               "<td>" +
               updateButton +

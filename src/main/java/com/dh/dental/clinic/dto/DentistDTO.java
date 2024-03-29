@@ -20,5 +20,4 @@ public class DentistDTO implements EntityIdentificatorDTO {
     private String surname;
     private String enrollment;
     private Set<AppointmentDTO> appointmentDTOList = new HashSet<>();
-
 }

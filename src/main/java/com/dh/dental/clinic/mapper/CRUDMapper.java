@@ -24,6 +24,7 @@ public class CRUDMapper <T, E> {
     private Logger LOGGER;
     private final ModelMapper modelMapper = new ModelMapper();
     private String entityClassName;
+    private String entityClassNamePlural;
 
     public CRUDMapper(Class<T> dtoClass, Class<E> entityClass, IGenericRepository<E, Long> repository) {
         this.dtoClass = dtoClass;
@@ -31,6 +32,7 @@ public class CRUDMapper <T, E> {
         this.repository = repository;
         this.LOGGER = Logger.getLogger(entityClass);
         this.entityClassName = entityClass.getSimpleName();
+        this.entityClassNamePlural = entityClassName + "s";
     }
 
 
@@ -55,22 +57,21 @@ public class CRUDMapper <T, E> {
 
     public DTOResponse<T> readAll() {
         DTOResponse<T> entityDTOResponse = new DTOResponse<>();
-        entityClassName+="s";
         try {
             List<E> entityList = repository.findAll();
             if (!entityList.isEmpty()) {
                 List<T> entityDTOList = entityList.stream()
                         .map(entity -> modelMapper.map(entity, dtoClass))
                         .toList();
-                entityDTOResponse.getData().add(Collections.singletonMap(entityClassName, entityDTOList));
-                entityDTOResponse.setMessage("Request to see all " + entityClassName + " completed successfully: {}");
-                LOGGER.info("Request to see all " + entityClassName + " completed successfully: {}");
+                entityDTOResponse.getData().add(Collections.singletonMap(entityClassNamePlural, entityDTOList));
+                entityDTOResponse.setMessage("Request to see all " + entityClassNamePlural + " completed successfully: {}");
+                LOGGER.info("Request to see all " + entityClassNamePlural + " completed successfully: {}");
             } else {
-                entityDTOResponse.setMessage("Error: There are no registered " + entityClassName);
+                entityDTOResponse.setMessage("Error: There are no registered " + entityClassNamePlural);
             }
         } catch (Exception e) {
-            LOGGER.error("Error showing " + entityClassName + ": {} " + e.getMessage());
-            entityDTOResponse.setMessage("Error showing " + entityClassName + ": {} " + e.getMessage());
+            LOGGER.error("Error showing " + entityClassNamePlural + ": {} " + e.getMessage());
+            entityDTOResponse.setMessage("Error showing " + entityClassNamePlural + ": {} " + e.getMessage());
         }
         return entityDTOResponse;
     }

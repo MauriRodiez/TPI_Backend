@@ -4,7 +4,6 @@ import com.dh.dental.clinic.dto.DTOResponse;
 import com.dh.dental.clinic.dto.EntityIdentificatorDTO;
 import com.dh.dental.clinic.exceptions.ResourceNotFoundException;
 import com.dh.dental.clinic.repository.IGenericRepository;
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.apache.log4j.Logger;
 import org.modelmapper.ModelMapper;
@@ -48,7 +47,7 @@ public class CRUDMapper <T, E> {
 
         entityDTOResponse.setStatusCode(HttpStatus.OK.value());
         entityDTOResponse.setMessage(entityClassName + " saved successfully. {}");
-        entityDTOResponse.getData().add(Collections.singletonMap(entityClassName, entityDTOMapped));
+        entityDTOResponse.setData(Collections.singletonMap(entityClassName, entityDTOMapped));
 
         LOGGER.info(entityClassName + " saved successfully. {}");
 
@@ -69,7 +68,7 @@ public class CRUDMapper <T, E> {
 
             entityDTOResponse.setStatusCode(HttpStatus.OK.value());
             entityDTOResponse.setMessage("Request to see all " + entityClassNamePlural + " completed successfully: {}");
-            entityDTOResponse.getData().add(Collections.singletonMap(entityClassNamePlural, entityDTOList));
+            entityDTOResponse.setData(Collections.singletonMap(entityClassNamePlural, entityDTOList));
 
             LOGGER.info("Request to see all " + entityClassNamePlural + " completed successfully: {}");
 
@@ -93,9 +92,9 @@ public class CRUDMapper <T, E> {
 
             entityDTOResponse.setStatusCode(HttpStatus.OK.value());
             entityDTOResponse.setMessage(entityClassName + " successfully found {}");
-            entityDTOResponse.getData().add(Collections.singletonMap(entityClassName, entityDTO));
+            entityDTOResponse.setData(Collections.singletonMap(entityClassName, entityDTO));
 
-            LOGGER.info(entityClassName + " with id " + id.toString() + " successfully found.");
+            LOGGER.info(entityClassName + " with id " + id + " successfully found.");
 
         } else {
             throw new ResourceNotFoundException(entityClassName);
@@ -119,7 +118,7 @@ public class CRUDMapper <T, E> {
 
             entityDTOResponse.setStatusCode(HttpStatus.OK.value());
             entityDTOResponse.setMessage(entityClassName + " updated successfully: {}");
-            entityDTOResponse.getData().add(Collections.singletonMap(entityClassName, entityDTOMapped));
+            entityDTOResponse.setData(Collections.singletonMap(entityClassName, entityDTOMapped));
 
             LOGGER.info(entityClassName + " updated successfully: {}");
 
@@ -144,9 +143,9 @@ public class CRUDMapper <T, E> {
 
             entityDTOResponse.setStatusCode(HttpStatus.OK.value());
             entityDTOResponse.setMessage(entityClassName + " deleted succesfully: {}");
-            entityDTOResponse.getData().add(Collections.singletonMap(entityClassName, entityDTOMapped));
+            entityDTOResponse.setData(Collections.singletonMap(entityClassName, entityDTOMapped));
 
-            LOGGER.info(entityClassName + " with id " + id.toString() + " deleted succesfully: {}");
+            LOGGER.info(entityClassName + " with id " + id + " deleted succesfully: {}");
 
         } else {
             throw new ResourceNotFoundException(entityClassName);

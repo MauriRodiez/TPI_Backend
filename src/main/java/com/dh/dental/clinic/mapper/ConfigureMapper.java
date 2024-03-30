@@ -8,8 +8,6 @@ import com.dh.dental.clinic.entity.Address;
 import com.dh.dental.clinic.entity.Appointment;
 import com.dh.dental.clinic.entity.Dentist;
 import com.dh.dental.clinic.entity.Patient;
-import com.dh.dental.clinic.repository.impl.IDentistRepository;
-import com.dh.dental.clinic.service.impl.DentistService;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeMap;

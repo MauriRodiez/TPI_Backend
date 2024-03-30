@@ -3,7 +3,6 @@ package com.dh.dental.clinic.service.impl;
 import com.dh.dental.clinic.dto.AddressDTO;
 import com.dh.dental.clinic.dto.DTOResponse;
 import com.dh.dental.clinic.dto.PatientDTO;
-import com.dh.dental.clinic.entity.Address;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;

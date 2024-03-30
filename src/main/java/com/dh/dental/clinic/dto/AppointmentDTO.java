@@ -1,7 +1,5 @@
 package com.dh.dental.clinic.dto;
 
-import com.dh.dental.clinic.entity.Dentist;
-import com.dh.dental.clinic.entity.Patient;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

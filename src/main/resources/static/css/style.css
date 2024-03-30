@@ -149,3 +149,15 @@ body{
     padding: 50px;
     width: 80vw;
 }
+
+/*--------------------------------------------------------*/
+/*                       Turnos                           */
+/*--------------------------------------------------------*/
+
+.page-appoinment{
+    background-color: var(--base-color);
+    display: flex;
+    margin: 5vh 5vw;
+    padding: 50px;
+    width: 80vw;
+}

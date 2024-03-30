@@ -17,6 +17,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!--<script src="js/bootstrapp/bootstrap.bundle.min.js"></script>-->
 
+    <script src="js/appoinment/create.js"></script>
+
 </head>
 <body>
 
@@ -47,6 +49,106 @@
         </div>
     </div>
 </nav>
+
+<main class="container-crud">
+
+    <div class="page-appoinment">
+
+        <div class="d-flex align-items-start general-tab">
+            <div class="nav flex-column nav-pills me-4" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <button class="nav-link active" id="v-pills-create-tab" data-bs-toggle="pill" data-bs-target="#v-pills-create" type="button" role="tab" aria-controls="v-pills-create" aria-selected="true">Agregar</button>
+                <button class="nav-link" id="v-pills-getallAppoinment-tab" data-bs-toggle="pill" data-bs-target="#v-pills-getallAppoinments" type="button" role="tab" aria-controls="v-pills-getallAppoinments" aria-selected="false">Listar</button>
+                <button class="nav-link" id="v-pills-getBy-tab" data-bs-toggle="pill" data-bs-target="#v-pills-getBy" type="button" role="tab" aria-controls="v-pills-getBy" aria-selected="false">Buscar</button>
+            </div>
+            <div class="tab-content general-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-create" role="tabpanel" aria-labelledby="v-pills-create-tab" tabindex="0">
+                    <h2>Turnos</h2>
+                    <hr />
+                    <form id="add_new_appoinment">
+
+                        <fieldset class="form-group">
+                            <legend>Datos del turno</legend>
+                            <label class="form-label" for="date">Fecha:</label>
+                            <input class="form-control" type="datetime-local" id="date" name="date" placeholder="Fecha y hora" required/>
+
+                            <label class="form-label">Paciente:</label>
+                            <select class="form-select" id="patientSelect">
+                            </select>
+                            <label class="form-label">Odontólogo:</label>
+                            <select class="form-select" id="dentistSelect">
+                            </select>
+                        </fieldset>
+                        <button type="submit" class="btn btn-primary" id="btn-add">
+                            Agregar
+                        </button>
+                    </form>
+                    <div id="response" style="display: none; margin-top: 10px"></div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-getallAppoinments" role="tabpanel" aria-labelledby="v-pills-getallAppoinments-tab" tabindex="0">
+                    <div id="div_patient_table">
+                        <h2>Listado de Turnos</h2>
+                        <hr>
+                        <div class="row col-md-12 table-responsive">
+                            <table id="patientTable" class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Fecha y hora</th>
+                                    <th>Paciente</th>
+                                    <th>Odontólogo</th>
+                                    <th>Editar</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                                </thead>
+                                <tbody id="appoinmentTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12" style="display: none; background-color:#e6fffa; padding:10px; border-radius:3px" id="div_appoinment_updating">
+                            <form id="update_appoinment_form">
+                                <fieldset class="form-group">
+                                    <label >Id:</label>
+                                    <input type="text" class="form-control" id="appoinment_id" readonly>
+
+                                    <label class="form-label">Paciente:</label>
+                                    <select class="form-select" id="patientSelect_up">
+                                    </select>
+
+                                    <label class="form-label">Odontólogo:</label>
+                                    <select class="form-select" id="dentistSelect_up">
+                                    </select>
+                                </fieldset>
+                                <button type="submit" class="btn btn-primary" id="btn-update">
+                                    Modificar
+                                </button>
+                            </form>
+                            <div id="responseUpdate" style="display:none; margin:10px">
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="tab-pane fade" id="v-pills-getBy" role="tabpanel" aria-labelledby="v-pills-getBy-tab" tabindex="0">
+                    <h2>Buscar Turno por ID</h2>
+                    <hr>
+                    <form class="row g-3" id="search-byID">
+                        <div class="col-auto">
+                            <input type="search" class="form-control" id="search" placeholder="Buscar ...">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-3">Buscar</button>
+                        </div>
+                    </form>
+                    <!-- Aquí se mostrará la información del paciente -->
+                    <div id="patient-info"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</main>
 
 </body>
 </html>

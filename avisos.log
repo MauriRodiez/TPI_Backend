@@ -16770,3 +16770,156 @@ Caused by: java.lang.NullPointerException: Cannot invoke "com.dh.dental.clinic.d
 [2024-03-3009:55:28] [ ERROR] [GlobalException:34] ERROR 404: Resource Not Found Exception.
 [2024-03-3009:55:47] [ INFO ] [Dentist:51] Dentist saved successfully. {}
 [2024-03-3009:56:02] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:06:51] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:14:20] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:14:29] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:18:46] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:18:46] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:19:55] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:19:56] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:21:32] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:21:32] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:21:42] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:21:44] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:21:44] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:23:00] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:23:00] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:25:49] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:25:49] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:34:21] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:34:21] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:36:20] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:36:20] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:38:14] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:38:14] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:41:11] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:41:11] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:47:29] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:47:29] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:49:04] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:49:04] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:49:06] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:49:06] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:49:48] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:49:48] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:50:30] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:50:30] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:51:03] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:51:04] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:55:39] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:55:39] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:56:22] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3012:56:22] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3012:58:17] [ ERROR] [GlobalException:22] ERROR 500: An unexpected error (NoResourceFoundException) occurred on the server. Trace:
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource patient.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2024-03-3012:58:17] [ ERROR] [GlobalException:22] ERROR 500: An unexpected error (NoResourceFoundException) occurred on the server. Trace:
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource dentist.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2024-03-3013:01:08] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3013:01:08] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3013:01:51] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3013:12:25] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3013:12:25] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3013:12:37] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3013:35:11] [ INFO ] [Dentist:51] Dentist saved successfully. {}
+[2024-03-3013:35:11] [ INFO ] [Patient:51] Patient saved successfully. {}
+[2024-03-3013:35:11] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3013:35:11] [ INFO ] [Patient:95] Patient with id 24 successfully found.
+[2024-03-3013:35:11] [ INFO ] [Patient:146] Patient with id 24 deleted succesfully: {}
+[2024-03-3013:36:00] [ INFO ] [Dentist:51] Dentist saved successfully. {}
+[2024-03-3013:37:30] [ INFO ] [Dentist:51] Dentist saved successfully. {}
+[2024-03-3013:39:39] [ INFO ] [Patient:51] Patient saved successfully. {}
+[2024-03-3013:39:40] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3013:39:40] [ INFO ] [Patient:95] Patient with id 25 successfully found.
+[2024-03-3013:39:40] [ INFO ] [Patient:146] Patient with id 25 deleted succesfully: {}
+[2024-03-3013:41:34] [ INFO ] [Dentist:51] Dentist saved successfully. {}
+[2024-03-3013:46:21] [ INFO ] [Dentist:51] Dentist saved successfully. {}
+[2024-03-3014:21:16] [ INFO ] [Dentist:51] Dentist saved successfully. {}
+[2024-03-3014:36:53] [ INFO ] [Dentist:51] Dentist saved successfully. {}
+[2024-03-3014:37:51] [ INFO ] [Dentist:51] Dentist saved successfully. {}
+[2024-03-3014:38:55] [ INFO ] [Dentist:51] Dentist saved successfully. {}
+[2024-03-3014:40:20] [ INFO ] [Dentist:51] Dentist saved successfully. {}
+[2024-03-3014:42:55] [ INFO ] [Dentist:51] Dentist saved successfully. {}

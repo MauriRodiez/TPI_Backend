@@ -7,6 +7,8 @@ import com.dh.dental.clinic.dto.PatientDTO;
 import com.dh.dental.clinic.entity.Appointment;
 import com.dh.dental.clinic.entity.Dentist;
 import com.dh.dental.clinic.entity.Patient;
+import com.dh.dental.clinic.repository.impl.IDentistRepository;
+import com.dh.dental.clinic.service.impl.DentistService;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeMap;
@@ -32,11 +34,26 @@ public class ConfigureMapper {
             PatientDTO destination = new PatientDTO();
 
             destination.setId(source.getId());
-            destination.setName(source.getName());
-            destination.setSurname(source.getSurname());
-            destination.setDni(source.getDni());
-            destination.setRegistrationDate(source.getRegistrationDate());
-            destination.setAddressDTO(modelMapper.map(source.getAddress(), AddressDTO.class));
+
+            if (source.getName() != null) {
+                destination.setName(source.getName());
+            }
+
+            if (source.getSurname() != null){
+                destination.setSurname(source.getSurname());
+            }
+
+            if (source.getDni() != null) {
+                destination.setDni(source.getDni());
+            }
+
+            if (source.getRegistrationDate() != null) {
+                destination.setRegistrationDate(source.getRegistrationDate());
+            }
+
+            if (source.getAddress() != null) {
+                destination.setAddressDTO(modelMapper.map(source.getAddress(), AddressDTO.class));
+            }
 
             return destination;
         };
@@ -48,9 +65,18 @@ public class ConfigureMapper {
             DentistDTO destination = new DentistDTO();
 
             destination.setId(source.getId());
-            destination.setName(source.getName());
-            destination.setSurname(source.getSurname());
-            destination.setEnrollment(source.getEnrollment());
+
+            if (source.getName() != null){
+                destination.setName(source.getName());
+            }
+
+            if (source.getSurname() != null){
+                destination.setSurname(source.getSurname());
+            }
+
+            if (source.getEnrollment() != null){
+                destination.setEnrollment(source.getEnrollment());
+            }
 
             return destination;
         };

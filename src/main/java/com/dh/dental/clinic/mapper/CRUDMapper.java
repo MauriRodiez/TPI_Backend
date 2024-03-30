@@ -42,13 +42,14 @@ public class CRUDMapper <T, E> {
 
         E entity = modelMapper.map(entityDTO, entityClass);
         repository.save(entity);
-        T entityDTOMapped = modelMapper.map(entity, dtoClass);
+
+        EntityIdentificatorDTO entityMapped = (EntityIdentificatorDTO) modelMapper.map(entity, dtoClass);
+        Long entityId = entityMapped.getId();
 
         entityDTOResponse.setStatusCode(HttpStatus.OK.value());
-        entityDTOResponse.setMessage(entityClassName + " saved successfully. {}");
-        entityDTOResponse.setData(Collections.singletonMap(entityClassName, entityDTOMapped));
+        entityDTOResponse.setMessage(entityClassName + " with id " + entityId + " saved successfully. {}");
 
-        LOGGER.info(entityClassName + " saved successfully. {}");
+        LOGGER.info(entityClassName + " with id + " + entityId + " saved successfully. {}");
 
         return entityDTOResponse;
     }

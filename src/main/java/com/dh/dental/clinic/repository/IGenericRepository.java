@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @NoRepositoryBean
 public interface IGenericRepository <T, Long> extends JpaRepository<T, Long> {
+
 }

@@ -1,9 +1,6 @@
 package com.dh.dental.clinic.mapper;
 
-import com.dh.dental.clinic.dto.AddressDTO;
-import com.dh.dental.clinic.dto.AppointmentDTO;
-import com.dh.dental.clinic.dto.DentistDTO;
-import com.dh.dental.clinic.dto.PatientDTO;
+import com.dh.dental.clinic.dto.*;
 import com.dh.dental.clinic.entity.Address;
 import com.dh.dental.clinic.entity.Appointment;
 import com.dh.dental.clinic.entity.Dentist;
@@ -27,6 +24,7 @@ public class ConfigureMapper {
 
         // TypeMap for Appointment
         TypeMap<Appointment, AppointmentDTO> appointmentMap = modelMapper.createTypeMap(Appointment.class, AppointmentDTO.class);
+        TypeMap<AppointmentDTO, Appointment> appointmentDTOMap = modelMapper.createTypeMap(AppointmentDTO.class, Appointment.class);
 
         // Converter for Appointment skiping AppointmentList in Patient
         Converter<Patient, PatientDTO> patientConverter = context -> {
@@ -82,9 +80,72 @@ public class ConfigureMapper {
             return destination;
         };
 
+        Converter<PatientDTO, Patient> patientDTOConverter = context -> {
+            PatientDTO source = context.getSource();
+            Patient destination = context.getDestination() != null
+                    && source.getId() == context.getDestination().getId()
+                    ? context.getDestination()
+                    : new Patient();
+
+            destination.setId(source.getId());
+
+            if (source.getName() != null) {
+                destination.setName(source.getName());
+            }
+
+            if (source.getSurname() != null){
+                destination.setSurname(source.getSurname());
+            }
+
+            if (source.getDni() != null) {
+                destination.setDni(source.getDni());
+            }
+
+            if (source.getRegistrationDate() != null) {
+                destination.setRegistrationDate(source.getRegistrationDate());
+            }
+
+            if (source.getAddressDTO() != null) {
+                destination.setAddress(modelMapper.map(source.getAddressDTO(), Address.class));
+            }
+
+            return destination;
+        };
+
+        Converter<DentistDTO, Dentist> dentistDTOConverter = context -> {
+            DentistDTO source = context.getSource();
+            Dentist destination = context.getDestination() != null
+                    && source.getId() == context.getDestination().getId()
+                    ? context.getDestination()
+                    : new Dentist();
+
+            destination.setId(source.getId());
+
+            if (source.getName() != null){
+                destination.setName(source.getName());
+            }
+
+            if (source.getSurname() != null){
+                destination.setSurname(source.getSurname());
+            }
+
+            if (source.getEnrollment() != null){
+                destination.setEnrollment(source.getEnrollment());
+            }
+
+            return destination;
+        };
+
         // saving mappings
-        appointmentMap.addMappings(mapper -> mapper.using(patientConverter).map(Appointment::getPatient, AppointmentDTO::setPatientDTO));
-        appointmentMap.addMappings(mapper -> mapper.using(dentistConverter).map(Appointment::getDentist, AppointmentDTO::setDentistDTO));
+        appointmentMap.addMappings(mapper -> mapper.using(patientConverter).map(
+                Appointment::getPatient, AppointmentDTO::setPatientDTO));
+        appointmentMap.addMappings(mapper -> mapper.using(dentistConverter).map(
+                Appointment::getDentist, AppointmentDTO::setDentistDTO));
+
+        appointmentDTOMap.addMappings(mapper -> mapper.using(patientDTOConverter).map(
+                AppointmentDTO::getPatientDTO, Appointment::setPatient));
+        appointmentDTOMap.addMappings(mapper -> mapper.using(dentistDTOConverter).map(
+                AppointmentDTO::getDentistDTO, Appointment::setDentist));
 
 
         /* ---------------------------------------------------------------------- */

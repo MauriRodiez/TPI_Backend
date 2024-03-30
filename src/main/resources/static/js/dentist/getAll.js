@@ -5,7 +5,7 @@ window.addEventListener("load", function () {
   getAll.addEventListener("click", function (e) {
     e.preventDefault();
 
-    const url = "/dentist/all";
+    const url = "http://localhost:8081/dentist/all";
     const settings = {
       method: "GET",
     };

@@ -19,7 +19,7 @@ window.addEventListener("load", function () {
       },
     };
 
-    const url = "/patient/create";
+    const url = "http://localhost:8081/patient/create";
     const settings = {
       method: "POST",
       headers: {

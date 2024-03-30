@@ -1,5 +1,4 @@
 window.addEventListener("load", function () {
-
   const form = document.querySelector("#update_dentist_form");
 
   form.addEventListener("submit", function (e) {
@@ -11,30 +10,28 @@ window.addEventListener("load", function () {
       id: document.querySelector("#dentist_id").value,
       name: document.querySelector("#name_dentist_up").value,
       surname: document.querySelector("#surname_dentist_up").value,
-      enrollment: document.querySelector("#enrollment_up").value
+      enrollment: document.querySelector("#enrollment_up").value,
     };
 
-    const url = "/dentist/update";
+    const url = "http://localhost:8081/dentist/update";
     const settings = {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(dentistData),
-    }
+    };
 
-   fetch(url,settings)
-          .then(response => response.json())
-          .then(() => {
-                        document.querySelector("#div_dentist_updating").style.display = "none";
-                    })
-
+    fetch(url, settings)
+      .then((response) => response.json())
+      .then(() => {
+        document.querySelector("#div_dentist_updating").style.display = "none";
+      });
   });
 });
 
-
 function updateFindBy(id) {
-  const url = "/dentist/" + id;
+  const url = "http://localhost:8081/dentist/" + id;
   const settings = {
     method: "GET",
   };

@@ -3,7 +3,7 @@ function confirmDelete(id) {
 }
 
 function deleteBy(id) {
-  const url = "/patient/delete/" + id;
+  const url = "http://localhost:8081/patient/delete/" + id;
   const settings = {
     method: "DELETE",
   };

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function findBy(id) {
-  const url = "/dentist/" + id;
+  const url = "http://localhost:8081/dentist/" + id;
   const settings = {
     method: "GET",
   };

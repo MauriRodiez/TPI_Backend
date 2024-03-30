@@ -5,7 +5,7 @@ window.addEventListener("load", function () {
   getAll.addEventListener("click", function (e) {
     e.preventDefault();
 
-    const url = "/patient/all";
+    const url = "http://localhost:8081/patient/all";
     const settings = {
       method: "GET",
     };
@@ -48,25 +48,42 @@ window.addEventListener("load", function () {
 
             patientRow.innerHTML =
               '<td class="td_nombre">' +
-              patient.name.toUpperCase() +
+              (patient.name ? patient.name.toUpperCase() : "") +
               "</td>" +
               '<td class="td_apellido">' +
-              patient.surname.toUpperCase() +
+              (patient.surname ? patient.surname.toUpperCase() : "") +
               "</td>" +
               '<td class="td_dni">' +
-              patient.dni.toUpperCase() +
+              (patient.dni ? patient.dni.toUpperCase() : "") +
               "</td>" +
               '<td class="td_fecha">' +
-              patient.registrationDate +
-              "</td>" +
-              '<td class="td_calle">' +
-              //patient.addressDTO.street.toUpperCase() +
-              "</td>" +
-              '<td class="td_numero">' +
-              //patient.addressDTO.number +
-              "</td>" +
-              '<td class="td_estado">' +
-              //patient.addressDTO.state.toUpperCase() +
+              (patient.registrationDate ? patient.registrationDate : "") +
+              "</td>";
+
+            if (patient.addressDTO) {
+              patientRow.innerHTML +=
+                '<td class="td_calle">' +
+                (patient.addressDTO.street
+                  ? patient.addressDTO.street.toUpperCase()
+                  : "") +
+                "</td>" +
+                '<td class="td_numero">' +
+                (patient.addressDTO.number ? patient.addressDTO.number : "") +
+                "</td>" +
+                '<td class="td_estado">' +
+                (patient.addressDTO.state
+                  ? patient.addressDTO.state.toUpperCase()
+                  : "");
+            } else {
+              patientRow.innerHTML +=
+                '<td class="td_calle">' +
+                "</td>" +
+                '<td class="td_numero">' +
+                "</td>" +
+                '<td class="td_estado">';
+            }
+
+            patientRow.innerHTML +=
               "</td>" +
               "<td>" +
               updateButton +
@@ -78,7 +95,7 @@ window.addEventListener("load", function () {
           listOk = true;
         })
         .catch((e) => {
-          console.error("errorrrrrrrr", e);
+          console.error("ERROR:", e);
         });
     }
   });

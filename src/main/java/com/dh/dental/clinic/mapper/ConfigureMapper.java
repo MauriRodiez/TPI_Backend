@@ -4,6 +4,7 @@ import com.dh.dental.clinic.dto.AddressDTO;
 import com.dh.dental.clinic.dto.AppointmentDTO;
 import com.dh.dental.clinic.dto.DentistDTO;
 import com.dh.dental.clinic.dto.PatientDTO;
+import com.dh.dental.clinic.entity.Address;
 import com.dh.dental.clinic.entity.Appointment;
 import com.dh.dental.clinic.entity.Dentist;
 import com.dh.dental.clinic.entity.Patient;
@@ -21,6 +22,8 @@ public class ConfigureMapper {
     public ModelMapper modelMapper = new ModelMapper();
 
     public ModelMapper configureMapper() {
+
+
 
         /* ---------------------------------------------------------------------- */
 
@@ -89,8 +92,9 @@ public class ConfigureMapper {
         /* ---------------------------------------------------------------------- */
 
 
-        // TypeMap for Patient
+        // TypeMap for Patient and PatientMap
         TypeMap<Patient, PatientDTO> patientMap = modelMapper.createTypeMap(Patient.class, PatientDTO.class);
+        TypeMap<PatientDTO, Patient> patientDTOMap = modelMapper.createTypeMap(PatientDTO.class , Patient.class);
 
         // Converter for AppointmentList skiping Patient info
         Converter<Set<Appointment>, Set<AppointmentDTO>> appointmentPatientConverter = context -> {
@@ -108,11 +112,40 @@ public class ConfigureMapper {
             return destinationPatientSet;
         };
 
-        // saving mappings
-        patientMap.addMapping(Patient::getAddress, PatientDTO::setAddressDTO);
+        // Converter for AddressDTO
+        Converter<AddressDTO, Address> addressDTOConverter = context -> {
+            AddressDTO sourceAddress = context.getSource();
+            Address destinationAddress = context.getDestination() != null ? context.getDestination() : new Address();
+
+            if (sourceAddress.getId() != null) {
+                destinationAddress.setId(sourceAddress.getId());
+            }
+
+            if (sourceAddress.getStreet() != null) {
+                destinationAddress.setStreet(sourceAddress.getStreet());
+            }
+
+            if (sourceAddress.getNumber() != null) {
+                destinationAddress.setNumber(sourceAddress.getNumber());
+            }
+
+            if (sourceAddress.getState() != null) {
+                destinationAddress.setState(sourceAddress.getState());
+            }
+
+            return destinationAddress;
+        };
+
         patientMap.addMappings(mapper -> mapper
                 .using(appointmentPatientConverter)
                 .map(Patient::getAppointmentList, PatientDTO::setAppointmentDTOList));
+
+        patientMap.addMapping(Patient::getAddress, PatientDTO::setAddressDTO);
+
+
+        patientDTOMap.addMappings( mapper -> mapper
+                .using(addressDTOConverter)
+                .map(PatientDTO::getAddressDTO, Patient::setAddress));
 
 
         /* ---------------------------------------------------------------------- */

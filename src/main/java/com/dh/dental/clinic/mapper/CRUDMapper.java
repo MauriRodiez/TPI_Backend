@@ -42,14 +42,13 @@ public class CRUDMapper <T, E> {
 
         E entity = modelMapper.map(entityDTO, entityClass);
         repository.save(entity);
-
-        EntityIdentificatorDTO entityMapped = (EntityIdentificatorDTO) modelMapper.map(entity, dtoClass);
-        Long entityId = entityMapped.getId();
+        T entityDTOMapped = modelMapper.map(entity, dtoClass);
 
         entityDTOResponse.setStatusCode(HttpStatus.OK.value());
-        entityDTOResponse.setMessage(entityClassName + " with id " + entityId + " saved successfully. {}");
+        entityDTOResponse.setMessage(entityClassName + " saved successfully. {}");
+        entityDTOResponse.setData(Collections.singletonMap(entityClassName, entityDTOMapped));
 
-        LOGGER.info(entityClassName + " with id + " + entityId + " saved successfully. {}");
+        LOGGER.info(entityClassName + " saved successfully. {}");
 
         return entityDTOResponse;
     }
@@ -110,10 +109,10 @@ public class CRUDMapper <T, E> {
 
         if (entityOptional.isPresent()) {
 
-            E entity = modelMapper.map(entityDTO, entityClass);
-            repository.save(entity);
+            modelMapper.map(entityDTO, entityOptional.get());
+            repository.save(entityOptional.get());
 
-            T entityDTOMapped = modelMapper.map(entity, dtoClass);
+            T entityDTOMapped = modelMapper.map(entityOptional.get(), dtoClass);
 
             entityDTOResponse.setStatusCode(HttpStatus.OK.value());
             entityDTOResponse.setMessage(entityClassName + " updated successfully: {}");

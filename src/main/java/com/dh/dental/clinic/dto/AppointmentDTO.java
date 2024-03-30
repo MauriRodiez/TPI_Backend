@@ -2,6 +2,7 @@ package com.dh.dental.clinic.dto;
 
 import com.dh.dental.clinic.entity.Dentist;
 import com.dh.dental.clinic.entity.Patient;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AppointmentDTO implements EntityIdentificatorDTO {
     private Long id;
     private LocalDateTime dateAppoinment;

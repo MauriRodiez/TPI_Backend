@@ -25,7 +25,7 @@ public class Dentist {
     private String surname;
     private String enrollment;
 
-    @OneToMany(mappedBy = "dentist", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "dentist", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonIgnore
     private Set<Appointment> appointmentList = new HashSet<>();
 

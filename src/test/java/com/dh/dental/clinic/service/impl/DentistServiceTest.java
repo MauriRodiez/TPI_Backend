@@ -34,7 +34,6 @@ class DentistServiceTest {
             throws JsonProcessingException {
 
         String dentistDTOResponseJson = objectMapper.writeValueAsString(dentistDTOResponse);
-
         assertEquals(dentistDTOExpected, dentistDTOResponseJson);
     }
 
@@ -52,17 +51,18 @@ class DentistServiceTest {
         dentistDTOSaved = (DentistDTO) dentistDTOResponseSave.getData().get("Dentist");
         entityID = dentistDTOSaved.getId();
 
-//        // prepare update
-//        DentistDTO dentistDTOForUpdate = modelMapper.map(dentistDTO, DentistDTO.class);
-//        dentistDTOForUpdate.setId(entityID);
-//        dentistDTOForUpdate.setName("Ana Maria");
-//        dentistDTOResponseUpdate = dentistService.update(dentistDTOForUpdate);
-//
-//        // prepare searchById
-//        dentistDTOResponseSearchById = dentistService.searchById(entityID);
-//
-//        // prepare delete
-//        dentistDTOResponseDelete = dentistService.delete(entityID);
+        // prepare update
+        DentistDTO dentistDTOForUpdate = modelMapper.map(dentistDTO, DentistDTO.class);
+        dentistDTOForUpdate.setId(entityID);
+        dentistDTOForUpdate.setName("Ana Maria");
+        dentistDTOForUpdate.setSurname("Prada");
+        dentistDTOResponseUpdate = dentistService.update(dentistDTOForUpdate);
+
+        // prepare searchById
+        dentistDTOResponseSearchById = dentistService.searchById(entityID);
+
+        // prepare delete
+        dentistDTOResponseDelete = dentistService.delete(entityID);
     }
 
     @Test

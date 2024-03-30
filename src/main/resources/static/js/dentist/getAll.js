@@ -11,11 +11,9 @@ window.addEventListener("load", function () {
     };
 
     if (!listOk) {
-      console.log("Estoy en el if");
       fetch(url, settings)
         .then((response) => response.json())
         .then((data) => {
-          console.log("Esta es la info que trae de data" + data);
           for (dentist of data.data.Dentists) {
             var table = document.getElementById("dentistTable");
             var dentistRow = table.insertRow();
@@ -42,7 +40,7 @@ window.addEventListener("load", function () {
               "btn_id_" +
               dentist.id +
               '"' +
-              ' type="button" onclick="findBy(' +
+              ' type="button" onclick="updateFindBy(' +
               dentist.id +
               ')" class="btn btn-info btn_id">' +
               "<i class='bi bi-pencil-square'></i>" +
@@ -65,9 +63,7 @@ window.addEventListener("load", function () {
               deleteButton +
               "</td>";
           }
-          console.log("Esta es la info despues de recorrer el listado" + data);
           listOk = true;
-          console.log("Cambie la bandera");
         })
         .catch((e) => {
           console.error("errorrrrrrrr", e);

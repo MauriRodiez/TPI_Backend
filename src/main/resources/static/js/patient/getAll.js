@@ -60,13 +60,13 @@ window.addEventListener("load", function () {
               patient.registrationDate +
               "</td>" +
               '<td class="td_calle">' +
-              patient.addressDTO.street.toUpperCase() +
+              //patient.addressDTO.street.toUpperCase() +
               "</td>" +
               '<td class="td_numero">' +
-              patient.addressDTO.number +
+              //patient.addressDTO.number +
               "</td>" +
               '<td class="td_estado">' +
-              patient.addressDTO.state.toUpperCase() +
+              //patient.addressDTO.state.toUpperCase() +
               "</td>" +
               "<td>" +
               updateButton +
@@ -79,7 +79,6 @@ window.addEventListener("load", function () {
         })
         .catch((e) => {
           console.error("errorrrrrrrr", e);
-          e.alert("error al cargar la info");
         });
     }
   });

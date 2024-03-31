@@ -45,8 +45,6 @@ public class AppointmentServiceTest {
     Long patientAddressID;
     Long dentistID;
     Long appointmentID;
-    LocalDateTime dateTimeNow;
-    LocalDateTime dateTimeNowUpdated;
 
     public void assertResponse(DTOResponse actualDTOResponse, String expectedDTOResponse)
             throws JsonProcessingException {
@@ -66,7 +64,8 @@ public class AppointmentServiceTest {
         patientDTO.setDni("1212");
         patientDTO.setName("Raul For Test");
         patientDTO.setSurname("Perez Testeable");
-        patientDTO.setRegistrationDate(LocalDate.now());
+        patientDTO.setRegistrationDate(LocalDate.of(2022, 1, 1));
+
         patientDTO.setAddressDTO(addressDTO);
 
         DentistDTO dentistDTO = new DentistDTO();
@@ -94,7 +93,7 @@ public class AppointmentServiceTest {
         patientDTOForAppointment.setId(patientID);
         dentistDTOForAppointment.setId(dentistID);
 
-//        appointmentDTO.setDateAppoinment(dateTimeNow);
+        appointmentDTO.setDateAppoinment(LocalDateTime.of(2022, 1, 1, 10, 30));
         appointmentDTO.setPatientDTO(patientDTOForAppointment);
         appointmentDTO.setDentistDTO(dentistDTOForAppointment);
 
@@ -106,15 +105,16 @@ public class AppointmentServiceTest {
         // appointment update
         AppointmentDTO appointmentDTOForUpdate = modelMapper.map(appointmentDTO, AppointmentDTO.class);
         appointmentDTOForUpdate.setId(appointmentID);
+        appointmentDTOForUpdate.setDateAppoinment(LocalDateTime.of(2035, 5, 5, 15, 30));
         appointmentDTOResponseUpdate = appointmentService.update(appointmentDTOForUpdate);
 
         // appointment search by id
         appointmentDTOResponseSearchById = appointmentService.searchById(appointmentID);
 
         // delete all entities
-//        appointmentDTOResponseDelete = appointmentService.delete(appointmentID);
-//        dentistDTOResponseDelete = dentistService.delete(dentistID);
-//        patientDTOResponseDelete = patientService.delete(patientID);
+        appointmentDTOResponseDelete = appointmentService.delete(appointmentID);
+        dentistDTOResponseDelete = dentistService.delete(dentistID);
+        patientDTOResponseDelete = patientService.delete(patientID);
     }
 
     @Test
@@ -122,7 +122,7 @@ public class AppointmentServiceTest {
     void savePatient() throws JsonProcessingException {
         String patientDtoExpected = "{\"statusCode\":200,\"message\":\"Patient saved successfully. {}\"" +
                 ",\"data\":{\"Patient\":{\"id\":" + patientID + ",\"name\":\"Raul For Test\",\"surname\":\"Perez Testeable\",\"dni\":\"1212\"," +
-                "\"registrationDate\":[2024,3,30],\"addressDTO\":{\"id\":" + patientAddressID + ",\"street\":\"Av italia For Test\",\"number\"" +
+                "\"registrationDate\":[2022,1,1],\"addressDTO\":{\"id\":" + patientAddressID + ",\"street\":\"Av italia For Test\",\"number\"" +
                 ":\"12345\",\"state\":\"Montevideo City\"},\"appointmentDTOList\":[]}}}";
         assertResponse(patientDTOResponseSave, patientDtoExpected);
     }
@@ -140,7 +140,7 @@ public class AppointmentServiceTest {
     @Order(3)
     void saveAppointment() throws JsonProcessingException {
         String appointmentResponseExpected = "{\"statusCode\":200,\"message\":\"Appointment saved successfully. {}\"" +
-                ",\"data\":{\"Appointment\":{\"id\":" + appointmentID +",\"dateAppoinment\":" + dateTimeNow + ",\"patientDTO\":" +
+                ",\"data\":{\"Appointment\":{\"id\":" + appointmentID +",\"dateAppoinment\":" + "[2022,1,1,10,30]" + ",\"patientDTO\":" +
                 "{\"id\":" + patientID + ",\"name\":null,\"surname\":null,\"dni\":null,\"registrationDate\":null,\"addressDTO\":null," +
                 "\"appointmentDTOList\":[]},\"dentistDTO\":{\"id\":" + dentistID + ",\"name\":null,\"surname\":null,\"enrollment" +
                 "\":null,\"appointmentDTOList\":[]}}}}";
@@ -151,7 +151,7 @@ public class AppointmentServiceTest {
     @Order(4)
     void updateAppointment() throws JsonProcessingException {
         String appointmentResponseExpected = "{\"statusCode\":200,\"message\":\"Appointment updated successfully: {}" +
-                "\",\"data\":{\"Appointment\":{\"id\":" + appointmentID + ",\"dateAppoinment\":" + dateTimeNowUpdated + "," +
+                "\",\"data\":{\"Appointment\":{\"id\":" + appointmentID + ",\"dateAppoinment\":" + "[2035,5,5,15,30]" + "," +
                 "\"patientDTO\":{\"id\":" + patientID + ",\"name\":null,\"surname\":null,\"dni\":null,\"registrationDate\":null,\"" +
                 "addressDTO\":null,\"appointmentDTOList\":[]},\"dentistDTO\":{\"id\":" + dentistID + ",\"name\":\"Martin Dentista For Test\"" +
                 ",\"surname\":\"Gimenez Testeable\",\"enrollment\":\"C4CC2\",\"appointmentDTOList\":[]}}}}";
@@ -163,9 +163,9 @@ public class AppointmentServiceTest {
     @Order(5)
     void searchByIdAppointment() throws JsonProcessingException {
         String appointmentResponseExpected = "{\"statusCode\":200,\"message\":\"Appointment successfully found {}\"" +
-                ",\"data\":{\"Appointment\":{\"id\":" + appointmentID + ",\"dateAppoinment\":" + dateTimeNowUpdated + ",\"patientDTO\"" +
+                ",\"data\":{\"Appointment\":{\"id\":" + appointmentID + ",\"dateAppoinment\":" + "[2035,5,5,15,30]" + ",\"patientDTO\"" +
                 ":{\"id\":" + patientID + ",\"name\":\"Raul For Test\",\"surname\":\"Perez Testeable\",\"dni\":\"1212\",\"registrationDate\"" +
-                ":[2024,3,30],\"addressDTO\":{\"id\":" + patientAddressID + ",\"street\":\"Av italia For Test\",\"number\":\"12345\",\"state\":" +
+                ":[2022,1,1],\"addressDTO\":{\"id\":" + patientAddressID + ",\"street\":\"Av italia For Test\",\"number\":\"12345\",\"state\":" +
                 "\"Montevideo City\"},\"appointmentDTOList\":[]},\"dentistDTO\":{\"id\":" + dentistID + ",\"name\":\"Martin Dentista For Test\"" +
                 ",\"surname\":\"Gimenez Testeable\",\"enrollment\":\"C4CC2\",\"appointmentDTOList\":[]}}}}";
 
@@ -175,36 +175,38 @@ public class AppointmentServiceTest {
     @Test
     @Order(6)
     void deletePatient() throws JsonProcessingException {
-        String patientResponseExpected = "{\"statusCode\":200" +
-                ",\"message\":\"Patient deleted succesfully: {}\"," +
-                "\"data\":{\"Patient\":{\"id\":" +  ",\"name\":\"Juan Sebastian\"," +
-                "\"surname\":\"Perez\",\"dni\":\"12345\",\"registrationDate\":[2024,3,30]," +
-                "\"addressDTO\":{\"id\":" +  ",\"street\":\"Av italia\",\"number\":\"123\"," +
-                "\"state\":\"Montevideo\"},\"appointmentDTOList\":[]}}}";
+        String patientResponseExpected = "{\"statusCode\":200,\"message\":" +
+                "\"Patient deleted succesfully: {}\",\"data\":{\"Patient\"" +
+                ":{\"id\":" + patientID + ",\"name\":\"Raul For Test\",\"surname\":" +
+                "\"Perez Testeable\",\"dni\":\"1212\",\"registrationDate\"" +
+                ":[2022,1,1],\"addressDTO\":{\"id\":" + patientAddressID + ",\"street\":\"Av italia For Test\"" +
+                ",\"number\":\"12345\",\"state\":\"Montevideo City\"},\"appointmentDTOList\":[]}}}";
         assertResponse(patientDTOResponseDelete, patientResponseExpected);
     }
 
     @Test
     @Order(7)
     void deleteDentist() throws JsonProcessingException {
-        String dentistResponseExpected = "{\"statusCode\":200" +
-                ",\"message\":\"Patient deleted succesfully: {}\"," +
-                "\"data\":{\"Patient\":{\"id\":" +  ",\"name\":\"Juan Sebastian\"," +
-                "\"surname\":\"Perez\",\"dni\":\"12345\",\"registrationDate\":[2024,3,30]," +
-                "\"addressDTO\":{\"id\":" +  ",\"street\":\"Av italia\",\"number\":\"123\"," +
-                "\"state\":\"Montevideo\"},\"appointmentDTOList\":[]}}}";
+        String dentistResponseExpected = "{\"statusCode\":200,\"message\":" +
+                "\"Dentist deleted succesfully: {}\",\"data\":{\"Dentist\"" +
+                ":{\"id\":" + dentistID + ",\"name\":\"Martin Dentista For Test\",\"surname\"" +
+                ":\"Gimenez Testeable\",\"enrollment\":\"C4CC2\",\"appointmentDTOList\":[]}}}";
         assertResponse(dentistDTOResponseDelete, dentistResponseExpected);
     }
 
     @Test
     @Order(8)
     void deleteAppointment() throws JsonProcessingException {
-        String appointmentResponseExpected = "{\"statusCode\":200" +
-                ",\"message\":\"Patient deleted succesfully: {}\"," +
-                "\"data\":{\"Patient\":{\"id\":" + ",\"name\":\"Juan Sebastian\"," +
-                "\"surname\":\"Perez\",\"dni\":\"12345\",\"registrationDate\":[2024,3,30]," +
-                "\"addressDTO\":{\"id\":" +",\"street\":\"Av italia\",\"number\":\"123\"," +
-                "\"state\":\"Montevideo\"},\"appointmentDTOList\":[]}}}";
+        String appointmentResponseExpected = "{\"statusCode\":200,\"message\":" +
+                "\"Appointment deleted succesfully: {}\",\"data\":{\"Appointment\":" +
+                "{\"id\":" + appointmentID + ",\"dateAppoinment\":[2035,5,5,15,30],\"patientDTO\"" +
+                ":{\"id\":" + patientID + ",\"name" +
+                "\":\"Raul For Test\",\"surname\":\"Perez Testeable\",\"dni\":\"1212\"," +
+                "\"registrationDate\":[2022,1,1],\"addressDTO\":{\"id\":" + patientAddressID + ",\"street\"" +
+                ":\"Av italia For Test\",\"number\":\"12345\",\"state\":\"Montevideo City\"}" +
+                ",\"appointmentDTOList\":[]},\"dentistDTO\":{\"id\":" + dentistID + ",\"name\":" +
+                "\"Martin Dentista For Test\",\"surname\":\"Gimenez Testeable\",\"enrollment\"" +
+                ":\"C4CC2\",\"appointmentDTOList\":[]}}}}";
         assertResponse(appointmentDTOResponseDelete, appointmentResponseExpected);
     }
 

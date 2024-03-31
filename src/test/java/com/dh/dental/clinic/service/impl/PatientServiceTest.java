@@ -3,6 +3,7 @@ package com.dh.dental.clinic.service.impl;
 import com.dh.dental.clinic.dto.AddressDTO;
 import com.dh.dental.clinic.dto.DTOResponse;
 import com.dh.dental.clinic.dto.PatientDTO;
+import com.dh.dental.clinic.exceptions.ResourceNotFoundException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -29,7 +30,8 @@ public class PatientServiceTest {
     DTOResponse<PatientDTO> patientDTOResponseSave;
     DTOResponse<PatientDTO> patientDTOResponseUpdate;
     DTOResponse<PatientDTO> patientDTOResponseDelete;
-    DTOResponse patientDTOResponseSearchById;
+    DTOResponse<PatientDTO> patientDTOResponseSearchById;
+    DTOResponse<PatientDTO> patientDTOResponseSearchByIdWithException;
 
     Long entityID;
     Long addressID;
@@ -121,5 +123,12 @@ public class PatientServiceTest {
         assertResponse(patientDTOResponseDelete, patientDTOExpected);
     }
 
+    @Test
+    @Order(5)
+    void searchByIdWithException() {
+        assertThrows(ResourceNotFoundException.class, () ->{
+            patientDTOResponseSearchByIdWithException = patientService.searchById(entityID);
+        });
+    }
 
 }

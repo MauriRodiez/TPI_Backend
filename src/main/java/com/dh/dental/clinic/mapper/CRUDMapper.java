@@ -1,6 +1,7 @@
 package com.dh.dental.clinic.mapper;
 
 import com.dh.dental.clinic.dto.*;
+import com.dh.dental.clinic.entity.Appointment;
 import com.dh.dental.clinic.exceptions.ResourceNotFoundException;
 import com.dh.dental.clinic.repository.IGenericRepository;
 import lombok.NoArgsConstructor;
@@ -137,7 +138,11 @@ public class CRUDMapper <T, E> {
 
             T entityDTOMapped = modelMapper.map(deletedEntity.get(), dtoClass);
 
-            repository.deleteById(id);
+            if (deletedEntity.get().getClass() != Appointment.class){
+                repository.deleteById(id);
+            } else {
+                repository.forcedDeleteById(id);
+            }
 
             entityDTOResponse.setStatusCode(HttpStatus.OK.value());
             entityDTOResponse.setMessage(entityClassName + " deleted succesfully: {}");

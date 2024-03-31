@@ -138,11 +138,7 @@ public class CRUDMapper <T, E> {
 
             T entityDTOMapped = modelMapper.map(deletedEntity.get(), dtoClass);
 
-            if (deletedEntity.get().getClass() != Appointment.class){
-                repository.deleteById(id);
-            } else {
-                repository.forcedDeleteById(id);
-            }
+            repository.deleteById(id);
 
             entityDTOResponse.setStatusCode(HttpStatus.OK.value());
             entityDTOResponse.setMessage(entityClassName + " deleted succesfully: {}");

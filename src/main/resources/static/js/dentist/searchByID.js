@@ -22,12 +22,13 @@ function findBy(id) {
 
       const dentistInfo = document.getElementById("dentist-info");
       dentistInfo.innerHTML = `
-                <p>ID: ${dentist.id}</p>
-                <p>Nombre: ${dentist.name}</p>
-                <p>Apellido: ${dentist.surname}</p>
-                <p>Matrícula: ${dentist.enrollment}</p>`;
+                <p><b>ID:</b> ${dentist.id}</p>
+                <p><b>Nombre:</b> ${dentist.name}</p>
+                <p><b>Apellido:</b> ${dentist.surname}</p>
+                <p><b>Matrícula:</b> ${dentist.enrollment}</p>
+                <hr>`;
     })
     .catch((error) => {
-      alert("Error: " + error);
+      alert("El odontologo que buscas no se encuentra: " + error);
     });
 }

@@ -23,12 +23,13 @@ function findBy(id) {
       // Mostrar la información del paciente en algún lugar de la página
       const patientInfo = document.getElementById("patient-info");
       patientInfo.innerHTML = `
-                <p>ID: ${patient.id}</p>
-                <p>Nombre: ${patient.name}</p>
-                <p>Apellido: ${patient.surname}</p>
-                <p>DNI: ${patient.dni}</p>
-                <p>Fecha de registro: ${patient.registrationDate}</p>
-                <p>Dirección: ${patient.addressDTO.street}, ${patient.addressDTO.number}, ${patient.addressDTO.state}</p>`;
+                <p><b>ID:</b> ${patient.id}</p>
+                <p><b>Nombre:</b> ${patient.name}</p>
+                <p><b>Apellido:</b> ${patient.surname}</p>
+                <p><b>DNI:</b> ${patient.dni}</p>
+                <p><b>Fecha de registro:</b> ${patient.registrationDate}</p>
+                <p><b>Dirección:</b> ${patient.addressDTO.street}, ${patient.addressDTO.number}, ${patient.addressDTO.state}</p>
+                <hr>`;
     })
     .catch((error) => {
       alert("Error: " + error);

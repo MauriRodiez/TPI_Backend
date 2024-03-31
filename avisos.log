@@ -16923,3 +16923,111 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 [2024-03-3014:38:55] [ INFO ] [Dentist:51] Dentist saved successfully. {}
 [2024-03-3014:40:20] [ INFO ] [Dentist:51] Dentist saved successfully. {}
 [2024-03-3014:42:55] [ INFO ] [Dentist:51] Dentist saved successfully. {}
+[2024-03-3015:35:59] [ INFO ] [Dentist:51] Dentist saved successfully. {}
+[2024-03-3015:35:59] [ INFO ] [Dentist:121] Dentist updated successfully: {}
+[2024-03-3015:35:59] [ INFO ] [Dentist:95] Dentist with id 27 successfully found.
+[2024-03-3015:35:59] [ INFO ] [Dentist:146] Dentist with id 27 deleted succesfully: {}
+[2024-03-3015:36:26] [ INFO ] [Dentist:51] Dentist saved successfully. {}
+[2024-03-3015:36:26] [ INFO ] [Dentist:121] Dentist updated successfully: {}
+[2024-03-3015:36:26] [ INFO ] [Dentist:95] Dentist with id 28 successfully found.
+[2024-03-3015:36:26] [ INFO ] [Dentist:146] Dentist with id 28 deleted succesfully: {}
+[2024-03-3015:37:58] [ INFO ] [Dentist:51] Dentist saved successfully. {}
+[2024-03-3015:37:58] [ INFO ] [Dentist:121] Dentist updated successfully: {}
+[2024-03-3015:37:58] [ INFO ] [Dentist:95] Dentist with id 29 successfully found.
+[2024-03-3015:37:58] [ INFO ] [Dentist:146] Dentist with id 29 deleted succesfully: {}
+[2024-03-3015:39:02] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3015:39:18] [ INFO ] [Patient:146] Patient with id 13 deleted succesfully: {}
+[2024-03-3015:39:27] [ INFO ] [Patient:95] Patient with id 12 successfully found.
+[2024-03-3015:39:33] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3015:39:33] [ INFO ] [Patient:95] Patient with id 12 successfully found.
+[2024-03-3015:39:42] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3015:39:54] [ INFO ] [Patient:95] Patient with id 11 successfully found.
+[2024-03-3021:40:00] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3021:40:09] [ INFO ] [Patient:95] Patient with id 1 successfully found.
+[2024-03-3021:40:18] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:40:18] [ INFO ] [Patient:95] Patient with id 1 successfully found.
+[2024-03-3021:40:19] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:40:19] [ INFO ] [Patient:95] Patient with id 1 successfully found.
+[2024-03-3021:40:24] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3021:40:53] [ INFO ] [Patient:51] Patient saved successfully. {}
+[2024-03-3021:41:07] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3021:41:20] [ INFO ] [Patient:146] Patient with id 21 deleted succesfully: {}
+[2024-03-3021:41:26] [ ERROR] [GlobalException:47] ERROR 404: Resource Not Found Exception.
+[2024-03-3021:41:35] [ INFO ] [Patient:95] Patient with id 12 successfully found.
+[2024-03-3021:43:13] [ INFO ] [Patient:95] Patient with id 2 successfully found.
+[2024-03-3021:44:36] [ INFO ] [Patient:95] Patient with id 2 successfully found.
+[2024-03-3021:45:18] [ ERROR] [GlobalException:47] ERROR 404: Resource Not Found Exception.
+[2024-03-3021:45:26] [ ERROR] [GlobalException:47] ERROR 404: Resource Not Found Exception.
+[2024-03-3021:45:31] [ INFO ] [Patient:95] Patient with id 18 successfully found.
+[2024-03-3021:45:36] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3021:45:44] [ INFO ] [Patient:95] Patient with id 26 successfully found.
+[2024-03-3021:46:34] [ INFO ] [Dentist:51] Dentist saved successfully. {}
+[2024-03-3021:46:35] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3021:46:41] [ INFO ] [Dentist:95] Dentist with id 30 successfully found.
+[2024-03-3021:46:46] [ INFO ] [Dentist:121] Dentist updated successfully: {}
+[2024-03-3021:46:53] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3021:46:59] [ INFO ] [Dentist:146] Dentist with id 25 deleted succesfully: {}
+[2024-03-3021:47:05] [ INFO ] [Dentist:95] Dentist with id 2 successfully found.
+[2024-03-3021:51:17] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3021:51:19] [ INFO ] [Patient:95] Patient with id 22 successfully found.
+[2024-03-3021:51:26] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:51:26] [ INFO ] [Patient:95] Patient with id 22 successfully found.
+[2024-03-3021:51:28] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:51:28] [ INFO ] [Patient:95] Patient with id 22 successfully found.
+[2024-03-3021:51:29] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:51:29] [ INFO ] [Patient:95] Patient with id 22 successfully found.
+[2024-03-3021:51:29] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:51:29] [ INFO ] [Patient:95] Patient with id 22 successfully found.
+[2024-03-3021:51:29] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:51:30] [ INFO ] [Patient:95] Patient with id 22 successfully found.
+[2024-03-3021:51:30] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:51:30] [ INFO ] [Patient:95] Patient with id 22 successfully found.
+[2024-03-3021:51:37] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3021:51:49] [ ERROR] [GlobalException:47] ERROR 404: Resource Not Found Exception.
+[2024-03-3021:52:03] [ INFO ] [Dentist:95] Dentist with id 8 successfully found.
+[2024-03-3021:54:42] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3021:54:45] [ INFO ] [Patient:95] Patient with id 26 successfully found.
+[2024-03-3021:54:51] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:54:51] [ INFO ] [Patient:95] Patient with id 26 successfully found.
+[2024-03-3021:54:53] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:54:53] [ INFO ] [Patient:95] Patient with id 26 successfully found.
+[2024-03-3021:55:01] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:55:01] [ INFO ] [Patient:95] Patient with id 26 successfully found.
+[2024-03-3021:55:01] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:55:01] [ INFO ] [Patient:95] Patient with id 26 successfully found.
+[2024-03-3021:55:06] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3021:55:14] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3021:55:19] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3021:55:21] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3021:55:21] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3021:56:48] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3021:56:48] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3021:56:52] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3021:56:56] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3021:56:59] [ INFO ] [Patient:95] Patient with id 26 successfully found.
+[2024-03-3021:57:04] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:57:04] [ INFO ] [Patient:95] Patient with id 26 successfully found.
+[2024-03-3021:57:05] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:57:05] [ INFO ] [Patient:95] Patient with id 26 successfully found.
+[2024-03-3021:57:06] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:57:06] [ INFO ] [Patient:95] Patient with id 26 successfully found.
+[2024-03-3021:57:06] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:57:06] [ INFO ] [Patient:95] Patient with id 26 successfully found.
+[2024-03-3021:57:06] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:57:06] [ INFO ] [Patient:95] Patient with id 26 successfully found.
+[2024-03-3021:57:06] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:57:07] [ INFO ] [Patient:95] Patient with id 26 successfully found.
+[2024-03-3021:59:09] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3021:59:13] [ INFO ] [Patient:95] Patient with id 26 successfully found.
+[2024-03-3021:59:20] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:59:20] [ INFO ] [Patient:95] Patient with id 26 successfully found.
+[2024-03-3021:59:30] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3021:59:30] [ INFO ] [Patient:95] Patient with id 26 successfully found.
+[2024-03-3022:00:51] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3022:00:53] [ INFO ] [Patient:95] Patient with id 26 successfully found.
+[2024-03-3022:00:59] [ INFO ] [Patient:121] Patient updated successfully: {}
+[2024-03-3022:00:59] [ INFO ] [Patient:95] Patient with id 26 successfully found.
+[2024-03-3022:05:12] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3022:05:12] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}
+[2024-03-3022:05:24] [ INFO ] [Dentist:72] Request to see all Dentists completed successfully: {}
+[2024-03-3022:05:24] [ INFO ] [Patient:72] Request to see all Patients completed successfully: {}

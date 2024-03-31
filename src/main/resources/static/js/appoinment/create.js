@@ -51,12 +51,10 @@ window.addEventListener('load', function(){
         const appointmentData = {
                 dateAppointment: document.querySelector("#date").value,
                 patientDTO: {
-                    id: document.querySelector("#patientSelect").value,
-                    // Otros datos del paciente si es necesario
+                    id: document.querySelector("#patientSelect").value
                 },
                 dentistDTO: {
-                    id: document.querySelector("#dentistSelect").value,
-                    // Otros datos del dentista si es necesario
+                    id: document.querySelector("#dentistSelect").value
                 }
             };
 

@@ -1,5 +1,5 @@
 window.addEventListener("load", function () {
-  const getAll = document.querySelector("#v-pills-getallAppointments");
+  const getAll = document.querySelector("#v-pills-getallAppointment-tab");
   let listOk = false;
 
   getAll.addEventListener("click", function (e) {
@@ -22,48 +22,39 @@ window.addEventListener("load", function () {
 
             console.log("ESta es la info de turno: " + appointment);
 
-            let deleteButton =
-              "<button" +
-              " id=" +
-              '"' +
-              "btn_delete_" +
-              appointment.id +
-              '"' +
-              ' type="button" onclick="deleteBy(' +
-              appointment.id +
-              ')" class="btn btn-danger btn_delete">' +
-              "<i class='bi bi-trash3'></i>" +
-              "</button>";
-
-            let updateButton =
-              "<button" +
-              " id=" +
-              '"' +
-              "btn_id_" +
-              appointment.id +
-              '"' +
-              ' type="button" onclick="updateFindBy(' +
-              appointment.id +
-              ')" class="btn btn-info btn_id">' +
-              "<i class='bi bi-pencil-square'></i>" +
-              "</button>";
+            // let updateButton =
+            //   "<button" +
+            //   " id=" +
+            //   '"' +
+            //   "btn_id_" +
+            //   appointment.id +
+            //   '"' +
+            //   ' type="button" onclick="updateFindBy(' +
+            //   appointment.id +
+            //   ')" class="btn btn-info btn_id">' +
+            //   "<i class='bi bi-pencil-square'></i>" +
+            //   "</button>";
 
             appointmentRow.innerHTML =
               '<td class="td_date">' +
               appointment.dateAppointment +
               "</td>" +
               '<td class="td_patient">' +
-              appointment.patient.id +
+              appointment.patientDTO.name +
+              " " +
+              appointment.patientDTO.surname +
               "</td>" +
               '<td class="td_dentist">' +
-              appointment.dentist.id +
-              "</td>" +
-              "<td>" +
-              updateButton +
-              "</td>" +
-              "<td>" +
-              deleteButton +
+              appointment.dentistDTO.name +
+              " " +
+              appointment.dentistDTO.surname +
               "</td>";
+            // "<td>" +
+            // updateButton +
+            // "</td>" +
+            // "<td>" +
+            // deleteButton +
+            // "</td>";
           }
           listOk = true;
         })

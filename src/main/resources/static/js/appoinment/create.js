@@ -58,8 +58,6 @@ window.addEventListener('load', function(){
                 }
             };
 
-         console.log('Datos del turno a enviar:', appointmentData);
-
         const url = '/appointment/create';
         const settings = {
             method: 'POST',

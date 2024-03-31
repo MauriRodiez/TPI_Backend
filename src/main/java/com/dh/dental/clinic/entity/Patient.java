@@ -35,7 +35,7 @@ public class Patient {
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
-    @OneToMany(mappedBy = "patient", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "patient", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     @JsonIgnore
     private Set<Appointment> appointmentList = new HashSet<>();
 

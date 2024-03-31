@@ -150,11 +150,14 @@ public class AppointmentServiceTest {
     @Test
     @Order(4)
     void updateAppointment() throws JsonProcessingException {
-        String appointmentResponseExpected = "{\"statusCode\":200,\"message\":\"Appointment updated successfully: {}" +
-                "\",\"data\":{\"Appointment\":{\"id\":" + appointmentID + ",\"dateAppoinment\":" + "[2035,5,5,15,30]" + "," +
-                "\"patientDTO\":{\"id\":" + patientID + ",\"name\":null,\"surname\":null,\"dni\":null,\"registrationDate\":null,\"" +
-                "addressDTO\":null,\"appointmentDTOList\":[]},\"dentistDTO\":{\"id\":" + dentistID + ",\"name\":\"Martin Dentista For Test\"" +
-                ",\"surname\":\"Gimenez Testeable\",\"enrollment\":\"C4CC2\",\"appointmentDTOList\":[]}}}}";
+        String appointmentResponseExpected = "{\"statusCode\":200,\"message\":\"Appointment updated" +
+                " successfully: {}\",\"data\":{\"Appointment\":{\"id\":" + appointmentID + ",\"dateAppoinment\"" +
+                ":[2035,5,5,15,30],\"patientDTO\":{\"id\":" + patientID + ",\"name\":\"Raul For Test\"" +
+                ",\"surname\":\"Perez Testeable\",\"dni\":\"1212\",\"registrationDate\"" +
+                ":[2022,1,1],\"addressDTO\":{\"id\":" + patientAddressID + ",\"street\":\"Av italia For Test\"," +
+                "\"number\":\"12345\",\"state\":\"Montevideo City\"},\"appointmentDTOList\"" +
+                ":[]},\"dentistDTO\":{\"id\":" + dentistID + ",\"name\":\"Martin Dentista For Test\",\"surname\":" +
+                "\"Gimenez Testeable\",\"enrollment\":\"C4CC2\",\"appointmentDTOList\":[]}}}}";
 
         assertResponse(appointmentDTOResponseUpdate, appointmentResponseExpected);
     }

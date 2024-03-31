@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AppointmentDTO implements EntityIdentificatorDTO {
     private Long id;
-    private LocalDateTime dateAppoinment;
+    private LocalDateTime dateAppointment;
     private PatientDTO patientDTO;
     private DentistDTO dentistDTO;
 }

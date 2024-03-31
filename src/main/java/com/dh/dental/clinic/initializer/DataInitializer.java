@@ -48,14 +48,14 @@ public class DataInitializer implements CommandLineRunner {
         address3.setNumber("2124");
         address3.setState("Montevideo");
 
-        patient1.setName("Estebam");
+        patient1.setName("Esteban");
         patient1.setSurname("Gimenez");
         patient1.setDni("4445601");
         patient1.setRegistrationDate(LocalDate.now());
         patient1.setAddress(address1);
 
         patient2.setName("Mariana");
-        patient2.setSurname("Estevanes");
+        patient2.setSurname("Estevanez");
         patient2.setDni("1244567");
         patient2.setRegistrationDate(LocalDate.now());
         patient2.setAddress(address2);
@@ -102,15 +102,15 @@ public class DataInitializer implements CommandLineRunner {
 
         appointment1.setDentist(dentist1);
         appointment1.setPatient(patient1);
-        appointment1.setDateAppoinment(LocalDateTime.now());
+        appointment1.setDateAppointment(LocalDateTime.now());
 
         appointment2.setDentist(dentist2);
         appointment2.setPatient(patient2);
-        appointment2.setDateAppoinment(LocalDateTime.now());
+        appointment2.setDateAppointment(LocalDateTime.now());
 
         appointment3.setDentist(dentist3);
         appointment3.setPatient(patient1);
-        appointment3.setDateAppoinment(LocalDateTime.now());
+        appointment3.setDateAppointment(LocalDateTime.now());
 
         appointmentRepository.save(appointment1);
         appointmentRepository.save(appointment2);

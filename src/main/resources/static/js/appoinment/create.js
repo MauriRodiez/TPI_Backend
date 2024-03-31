@@ -1,14 +1,13 @@
 window.addEventListener('load', function(){
     const form = document.querySelector("#add_new_appointment");
 
-    // Función para cargar los pacientes
+    // Función para cargar los pacientes en el select del html
     function loadPatients() {
         fetch('/patient/all')
             .then(response => response.json())
             .then(data => {
-                const patients = data.data.patients;
+                const patients = data.data.Patients;
 
-                // Limpiar select de pacientes
                 const patientSelect = document.getElementById('patientSelect');
                 patientSelect.innerHTML = '<option selected>Selecciona un paciente</option>';
                 patients.forEach(patient => {
@@ -22,14 +21,13 @@ window.addEventListener('load', function(){
             .catch(error => console.error('Error loading patients:', error));
     }
 
-    // Función para cargar odontólogos
+    // Función para cargar odontólogos en el select del html
     function loadDentist() {
         fetch('/dentist/all')
             .then(response => response.json())
             .then(data => {
-                const dentists = data.data.dentists;
+                const dentists = data.data.Dentists;
 
-                // Limpiar select de odontólogos
                 const dentistSelect = document.getElementById('dentistSelect');
                 dentistSelect.innerHTML = '<option selected>Selecciona un odontólogo</option>';
                 dentists.forEach(dentist => {
@@ -55,6 +53,8 @@ window.addEventListener('load', function(){
             patient: document.querySelector("#patientSelect").value,
             dentist: document.querySelector("#dentistSelect").value
         };
+
+        console.log('Datos del turno a enviar:', appointmentData);
 
         const url = '/appointment/create';
         const settings = {
@@ -87,7 +87,7 @@ window.addEventListener('load', function(){
 
     function resetForm(){
         document.querySelector('#date').value = "";
-        document.querySelector('#patientSelect').selectedIndex = 0; // Reiniciar a la primera opción
-        document.querySelector('#dentistSelect').selectedIndex = 0; // Reiniciar a la primera opción
+        document.querySelector('#patientSelect').selectedIndex = 0;
+        document.querySelector('#dentistSelect').selectedIndex = 0;
     }
 });

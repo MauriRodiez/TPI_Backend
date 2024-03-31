@@ -180,7 +180,7 @@ body{
 /*                       Turnos                           */
 /*--------------------------------------------------------*/
 
-.page-appoinment{
+.page-appointment{
     background-color: var(--base-color);
     display: flex;
     margin: 5vh 5vw;
@@ -188,17 +188,17 @@ body{
     width: 80vw;
 }
 
-#appoinmentTable thead{
+#appointmentTable thead{
     border: #ccc solid 1px;
 }
 
-#appoinmentTable tr th{
+#appointmentTable tr th{
     background-color: #ccc;
     border: #fff solid 1px;
     text-align: center;
 }
 
-#add_new_appoinment fieldset{
+#add_new_appointment fieldset{
     display: flex;
     flex-direction: column;
     gap: 10px;

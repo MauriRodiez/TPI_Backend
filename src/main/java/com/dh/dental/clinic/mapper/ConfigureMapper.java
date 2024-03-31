@@ -5,6 +5,7 @@ import com.dh.dental.clinic.entity.Address;
 import com.dh.dental.clinic.entity.Appointment;
 import com.dh.dental.clinic.entity.Dentist;
 import com.dh.dental.clinic.entity.Patient;
+import org.apache.log4j.Logger;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeMap;
@@ -14,9 +15,12 @@ import java.util.Set;
 
 public class ConfigureMapper {
 
+    private static final Logger LOGGER = Logger.getLogger(ConfigureMapper.class);
+
     public ModelMapper modelMapper = new ModelMapper();
 
     public ModelMapper configureMapper() {
+
 
 
 

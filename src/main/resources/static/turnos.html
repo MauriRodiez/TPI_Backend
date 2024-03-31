@@ -52,19 +52,19 @@
 
 <main class="container-crud">
 
-    <div class="page-appoinment">
+    <div class="page-appointment">
 
         <div class="d-flex align-items-start general-tab">
             <div class="nav flex-column nav-pills me-4" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <button class="nav-link active" id="v-pills-create-tab" data-bs-toggle="pill" data-bs-target="#v-pills-create" type="button" role="tab" aria-controls="v-pills-create" aria-selected="true">Agregar</button>
-                <button class="nav-link" id="v-pills-getallAppoinment-tab" data-bs-toggle="pill" data-bs-target="#v-pills-getallAppoinments" type="button" role="tab" aria-controls="v-pills-getallAppoinments" aria-selected="false">Listar</button>
+                <button class="nav-link" id="v-pills-getallAppointment-tab" data-bs-toggle="pill" data-bs-target="#v-pills-getallAppointments" type="button" role="tab" aria-controls="v-pills-getallAppointments" aria-selected="false">Listar</button>
                 <button class="nav-link" id="v-pills-getBy-tab" data-bs-toggle="pill" data-bs-target="#v-pills-getBy" type="button" role="tab" aria-controls="v-pills-getBy" aria-selected="false">Buscar</button>
             </div>
             <div class="tab-content general-content" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-create" role="tabpanel" aria-labelledby="v-pills-create-tab" tabindex="0">
                     <h2>Turnos</h2>
                     <hr />
-                    <form id="add_new_appoinment">
+                    <form id="add_new_appointment">
 
                         <fieldset class="form-group">
                             <legend>Datos del turno</legend>
@@ -72,10 +72,10 @@
                             <input class="form-control" type="datetime-local" id="date" name="date" placeholder="Fecha y hora" required/>
 
                             <label class="form-label">Paciente:</label>
-                            <select class="form-select" id="patientSelect">
+                            <select class="form-select" id="patientSelect" name="id">
                             </select>
                             <label class="form-label">Odontólogo:</label>
-                            <select class="form-select" id="dentistSelect">
+                            <select class="form-select" id="dentistSelect" name="id">
                             </select>
                         </fieldset>
                         <button type="submit" class="btn btn-primary" id="btn-add">
@@ -84,7 +84,7 @@
                     </form>
                     <div id="response" style="display: none; margin-top: 10px"></div>
                 </div>
-                <div class="tab-pane fade" id="v-pills-getallAppoinments" role="tabpanel" aria-labelledby="v-pills-getallAppoinments-tab" tabindex="0">
+                <div class="tab-pane fade" id="v-pills-getallAppointments" role="tabpanel" aria-labelledby="v-pills-getallAppointments-tab" tabindex="0">
                     <div id="div_patient_table">
                         <h2>Listado de Turnos</h2>
                         <hr>
@@ -99,16 +99,16 @@
                                     <th>Eliminar</th>
                                 </tr>
                                 </thead>
-                                <tbody id="appoinmentTableBody"></tbody>
+                                <tbody id="appointmentTableBody"></tbody>
                             </table>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-12" style="display: none; background-color:#e6fffa; padding:10px; border-radius:3px" id="div_appoinment_updating">
-                            <form id="update_appoinment_form">
+                        <div class="col-sm-12" style="display: none; background-color:#e6fffa; padding:10px; border-radius:3px" id="div_appointment_updating">
+                            <form id="update_appointment_form">
                                 <fieldset class="form-group">
                                     <label >Id:</label>
-                                    <input type="text" class="form-control" id="appoinment_id" readonly>
+                                    <input type="text" class="form-control" id="appointment_id" readonly>
 
                                     <label class="form-label">Paciente:</label>
                                     <select class="form-select" id="patientSelect_up">
@@ -140,7 +140,7 @@
                         </div>
                     </form>
                     <!-- Aquí se mostrará la información del paciente -->
-                    <div id="patient-info"></div>
+                    <div id="appointment-info"></div>
                 </div>
 
             </div>

@@ -84,7 +84,7 @@ public class PatientServiceTest {
     void save() throws JsonProcessingException {
         String patientDtoExpected = "{\"statusCode\":200,\"message\":\"Patient saved successfully. {}\"" +
                 ",\"data\":{\"Patient\":{\"id\":" + entityID + ",\"name\":\"Raul\",\"surname\":\"Perez\",\"dni\":\"12345\"," +
-                "\"registrationDate\":[2024,3,30],\"addressDTO\":{\"id\":" + addressID + ",\"street\":\"Av italia\",\"number\"" +
+                "\"registrationDate\":[2024,3,31],\"addressDTO\":{\"id\":" + addressID + ",\"street\":\"Av italia\",\"number\"" +
                 ":\"123\",\"state\":\"Montevideo\"},\"appointmentDTOList\":[]}}}";
         assertResponse(patientDTOResponseSave, patientDtoExpected);
     }
@@ -94,7 +94,7 @@ public class PatientServiceTest {
     void update() throws JsonProcessingException {
         String patientDtoExpected = "{\"statusCode\":200,\"message\":\"Patient updated successfully: {}\"" +
                 ",\"data\":{\"Patient\":{\"id\":" + entityID + ",\"name\":\"Juan Sebastian\",\"surname\":\"Perez\",\"dni\":\"12345\"" +
-                ",\"registrationDate\":[2024,3,30],\"addressDTO\":{\"id\":" + addressID + ",\"street\":\"Av italia\",\"number\":\"123\"" +
+                ",\"registrationDate\":[2024,3,31],\"addressDTO\":{\"id\":" + addressID + ",\"street\":\"Av italia\",\"number\":\"123\"" +
                 ",\"state\":\"Montevideo\"},\"appointmentDTOList\":[]}}}";
 
         assertResponse(patientDTOResponseUpdate, patientDtoExpected);
@@ -105,7 +105,7 @@ public class PatientServiceTest {
     void searchById() throws JsonProcessingException {
         String patientDTOExpected = "{\"statusCode\":200,\"message\":\"Patient successfully found {}" +
                 "\",\"data\":{\"Patient\":{\"id\":" + entityID + ",\"name\":\"Juan Sebastian\",\"surname\":\"Perez\",\"dni\":\"12345\"," +
-                "\"registrationDate\":[2024,3,30],\"addressDTO\":{\"id\":" + addressID + ",\"street\":\"Av italia\",\"number\":\"123\"," +
+                "\"registrationDate\":[2024,3,31],\"addressDTO\":{\"id\":" + addressID + ",\"street\":\"Av italia\",\"number\":\"123\"," +
                 "\"state\":\"Montevideo\"},\"appointmentDTOList\":[]}}}";
 
         assertResponse(patientDTOResponseSearchById, patientDTOExpected);
@@ -117,7 +117,7 @@ public class PatientServiceTest {
         String patientDTOExpected = "{\"statusCode\":200" +
                 ",\"message\":\"Patient deleted succesfully: {}\"," +
                 "\"data\":{\"Patient\":{\"id\":" + entityID + ",\"name\":\"Juan Sebastian\"," +
-                "\"surname\":\"Perez\",\"dni\":\"12345\",\"registrationDate\":[2024,3,30]," +
+                "\"surname\":\"Perez\",\"dni\":\"12345\",\"registrationDate\":[2024,3,31]," +
                 "\"addressDTO\":{\"id\":" + addressID + ",\"street\":\"Av italia\",\"number\":\"123\"," +
                 "\"state\":\"Montevideo\"},\"appointmentDTOList\":[]}}}";
         assertResponse(patientDTOResponseDelete, patientDTOExpected);

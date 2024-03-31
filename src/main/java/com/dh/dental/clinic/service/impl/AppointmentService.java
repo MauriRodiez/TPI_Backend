@@ -2,22 +2,20 @@ package com.dh.dental.clinic.service.impl;
 
 import com.dh.dental.clinic.dto.DTOResponse;
 import com.dh.dental.clinic.dto.AppointmentDTO;
-import com.dh.dental.clinic.dto.DentistDTO;
 import com.dh.dental.clinic.entity.Appointment;
-import com.dh.dental.clinic.entity.Dentist;
 import com.dh.dental.clinic.mapper.*;
 import com.dh.dental.clinic.repository.impl.IAppointmentRepository;
 import com.dh.dental.clinic.service.ICRUDService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AppoinmentService implements ICRUDService<AppointmentDTO> {
+public class AppointmentService implements ICRUDService<AppointmentDTO> {
 
-    private final IAppointmentRepository appoinmentRepository;
+    private final IAppointmentRepository appointmentRepository;
     private final CRUDMapper<AppointmentDTO, Appointment> crudMapper;
-    public AppoinmentService(IAppointmentRepository appoinmentRepository) {
-        this.appoinmentRepository = appoinmentRepository;
-        this.crudMapper = new CRUDMapper<AppointmentDTO, Appointment>(AppointmentDTO.class, Appointment.class, appoinmentRepository);
+    public AppointmentService(IAppointmentRepository appointmentRepository) {
+        this.appointmentRepository = appointmentRepository;
+        this.crudMapper = new CRUDMapper<AppointmentDTO, Appointment>(AppointmentDTO.class, Appointment.class, appointmentRepository);
     }
 
     @Override

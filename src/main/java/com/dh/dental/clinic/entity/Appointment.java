@@ -14,14 +14,14 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "appoinments")
+@Table(name = "appointments")
 public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
-    private LocalDateTime dateAppoinment;
+    private LocalDateTime dateAppointment;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "patient_id", nullable = false)

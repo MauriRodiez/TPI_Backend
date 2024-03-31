@@ -13,7 +13,7 @@ window.addEventListener('load', function(){
                 patients.forEach(patient => {
                     const option = document.createElement('option');
                     option.value = patient.id;
-                    option.textContent = patient.name + " " + patient.surname;
+                    option.textContent = patient.name;
                     patientSelect.appendChild(option);
                 });
             console.log(data);
@@ -33,7 +33,7 @@ window.addEventListener('load', function(){
                 dentists.forEach(dentist => {
                     const option = document.createElement('option');
                     option.value = dentist.id;
-                    option.textContent = dentist.name + " " + dentist.surname;
+                    option.textContent = dentist.name;
                     dentistSelect.appendChild(option);
                 });
             console.log(data);
@@ -49,18 +49,12 @@ window.addEventListener('load', function(){
         e.preventDefault();
 
         const appointmentData = {
-                dateAppointment: document.querySelector("#date").value,
-                patientDTO: {
-                    id: document.querySelector("#patientSelect").value,
-                    // Otros datos del paciente si es necesario
-                },
-                dentistDTO: {
-                    id: document.querySelector("#dentistSelect").value,
-                    // Otros datos del dentista si es necesario
-                }
-            };
+            date: document.querySelector("#date").value,
+            patient: document.querySelector("#patientSelect").value,
+            dentist: document.querySelector("#dentistSelect").value
+        };
 
-         console.log('Datos del turno a enviar:', appointmentData);
+        console.log('Datos del turno a enviar:', appointmentData);
 
         const url = '/appointment/create';
         const settings = {
